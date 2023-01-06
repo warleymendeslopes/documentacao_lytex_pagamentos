@@ -1,6 +1,6 @@
 
 import logo from './logo-lytex.svg';
-
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -12,9 +12,10 @@ function Header() {
           </div>
           <div className='nav-menu-lytex'>
             <ul>
-              <li><a href='#'>Sobre a Lytex</a></li>
-              <li><a href='#'>Documentação</a></li>
-              <li><a href='#'>Login</a></li>
+              <li><Link to="/">Lytex Pagamentos</Link></li>
+              <li><Link to="/documentacao">Documentação</Link></li>
+              <li><Link to="/dashboard">Tutoriais</Link></li>
+              <li><Link to="/nothing-here">Login</Link></li>
             </ul>
           </div>
       </div>
