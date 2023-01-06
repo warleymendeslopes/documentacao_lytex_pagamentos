@@ -25,7 +25,13 @@ function App() {
             />
 
       <style jsx>{`
-
+          .sc-eDvSVe {
+            background: #fafafa;
+            width: 100%;
+          }
+          .api-info {
+            width: 100%;
+          }
       `}</style>
     </>
   );
