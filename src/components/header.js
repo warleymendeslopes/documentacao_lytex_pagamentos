@@ -1,50 +1,56 @@
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from 'react-bootstrap/Nav';
 import logo from './logo-lytex.svg';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 
 function Header() {
   return (
     <div className='header-doc-lytex'>
-      <Row>
-        <Col xs lg="3" className='content-logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></Col>
-        <Col xs lg="3"></Col>
-        <Col xs lg="6">
-            <Nav defaultActiveKey="/home" as="ul" className='content-nav-menu'>
-                <Nav.Item as="li">
-                    <Nav.Link href="/home">Lytex Pagamentos</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                    <Nav.Link eventKey="link-1">Sobre a Lytex</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                    <Nav.Link eventKey="link-2">Documentação</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                    <Nav.Link eventKey="link-2">Login</Nav.Link>
-                </Nav.Item>
-            </Nav>
-        </Col>
-      </Row>
+      <div className='content-nav-menu'>
+          <div className='logo-lytex'>
+            <img src={logo} className="lytex-logo" alt="logo" />
+          </div>
+          <div className='nav-menu-lytex'>
+            <ul>
+              <li><a href='#'>Sobre a Lytex</a></li>
+              <li><a href='#'>Documentação</a></li>
+              <li><a href='#'>Login</a></li>
+            </ul>
+          </div>
+      </div>
+          
+
       <style jsx>{`
         .header-doc-lytex {
             background: #004cff;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
-        .content-logo-lytex.col-lg-3.col {
-            padding: 10px 10px 10px 48px;
+        .content-nav-menu {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 14px;
+            padding-right: 14px;
         }
-        ul.content-nav-menu.nav > li a {
+        .nav-menu-lytex ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .nav-menu-lytex {
+            width: 50%;
+        }
+        
+        .nav-menu-lytex ul li {
+            list-style-type: none;
+        }
+        
+        .nav-menu-lytex ul li a {
             color: white;
+            text-decoration: none;
             font-size: 15px;
             font-weight: 600;
-        }
-        .col-lg-6.col {
-            display: flex;
-            align-content: center;
-            align-items: center;
         }
       `}</style>
     </div>
