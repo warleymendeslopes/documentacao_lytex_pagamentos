@@ -4,14 +4,14 @@ import './App.css';
 import Header from './components/header'
 import { RedocStandalone } from 'redoc';
 
-
+import Doc from './doc.json';
 function App() {
   return (
     <>
       < Header />
     
       <RedocStandalone
-          specUrl="https://api-pay.lytex.com.br/v1/open-api-v3-spec.json"
+          specUrl= {Doc}
           options={{
             nativeScrollbars: true,
               theme: { 
