@@ -32,6 +32,31 @@ function App() {
           .api-info {
             width: 100%;
           }
+          div#section\/Criar-primeira-cobranca\/Criando-token-de-acesso {
+            background: red;
+        }
+        .sc-eDvSVe:nth-child(2){
+          background:#fafafa;
+          width: 100%;
+        }
+        .sc-eDvSVe:nth-child(2) div{
+            width: 100%;
+        }
+        .sc-eDvSVe:nth-child(3){
+            background:#fafafa;
+            width: 100%;
+        }
+        .sc-eDvSVe:nth-child(3) div{
+            width: 100%;
+        }
+        .sc-eDvSVe:nth-child(4){
+            background:#fafafa;
+            width: 100%;
+        }
+        .sc-eDvSVe:nth-child(4) div{
+            width: 100%;
+        }
+      
       `}</style>
     </>
   );
