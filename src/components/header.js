@@ -53,6 +53,12 @@ function Header() {
             font-size: 15px;
             font-weight: 600;
         }
+        @media only screen and (max-width: 1199px){
+          .nav-menu-lytex{
+            display:none;
+          }
+        }
+
       `}</style>
     </div>
   );
