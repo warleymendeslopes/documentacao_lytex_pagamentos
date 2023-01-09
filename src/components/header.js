@@ -14,8 +14,8 @@ function Header() {
             <ul>
               <li><Link to="/">Lytex Pagamentos</Link></li>
               <li><Link to="/documentacao">Documentação</Link></li>
-              <li><Link to="/dashboard">Tutoriais</Link></li>
-              <li><Link to="/nothing-here">Login</Link></li>
+              <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução ao sistema</Link></li>
+              <li><a href="https://pay.lytex.com.br/auth/login">Login</a></li>
             </ul>
           </div>
       </div>
@@ -26,6 +26,10 @@ function Header() {
             background: #004cff;
             padding-top: 10px;
             padding-bottom: 10px;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            top: 0;
         }
         .content-nav-menu {
             display: flex;

@@ -13,21 +13,22 @@ function Home() {
         <div className="lytex__video--logo">
                 <h1>Lytex Pagamentos</h1>
                 <span>Conheça a melhor e mais simples API de Cobranças do Mercado</span>
+                <button>ver API</button>
         </div>
     </section>
     <style jsx>{`
         .background-video {
             background: #00000099;
-            min-height: 91vh;
+            min-height: 93vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         #enterprise-video {
-            height: 100vh;
+            height: 104vh;
             width: 100%;
             position: absolute;
-            top: 0;
+            top:-88px;
             z-index: -1;
             overflow: hidden;
             left: 0;
@@ -36,6 +37,20 @@ function Home() {
         .lytex__video--logo {
             color: white;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lytex__video--logo button {
+            background: transparent;
+            border: solid 1px white;
+            color: white;
+            height: 50px;
+            width: 271px;
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            border-radius: 9px;
         }
         
         .lytex__video--logo h1 {

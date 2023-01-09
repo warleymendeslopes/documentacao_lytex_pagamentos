@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Passos Iniciais para cadastro e Integração da plataforma
+  description: |-
+    # Cadastro
+
+      Para acessar a plataforma LyTex Pagamentos, O usuário poderá entrar através de nosso site https://lytex.com.br/. Assim, sendo direcionado para a tela de login ou poderá acessar o sistema diretamente do link https://pay.lytex.com.br/auth/login.
+        <video width="100%" height="100%" loop="" controls="">
+          <source src="https://homologacao-site.lytex.com.br/videos/Criar-conta-lytex-pagamentos.mov" type="video/mp4">
+        </video>
+
+      Para começar a utilização da plataforma, você precisa ter uma[ conta na LyTex Pagamentos](https://pay.lytex.com.br/auth/registration) e acesso à Internet. Para isso, basta clicar em inscrever-se. Disponível na tela inicial.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Inscreva-se.png" />
+      
+      Após clicar vai aparecer a seguinte tela, selecione a opção **Para Meu Negócio** como descrito na imagem abaixo.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Tipo_de_Cadastro.png" />
+
+      Após selecionar o método de utilização da plataforma, insira os dados solicitados.<br />
+       **Obs:** Os dados que se encontram com * são obrigatórios.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Dados_de_Acesso.png" />
+
+      Inserindo os dados de acesso, aceite os termos de uso e clique em próximo. Logo, abrirá uma segunda tela para inserção dos dados da empresa.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Dados_da_Empresa.png" />
+
+      Após inserir os dados da empresa, clique em próximo e insira os dados do endereço.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Endereco_da_empresa.png" />
+
+      Após inserir os dados do endereço de sua empresa, clique em finalizar. Você será redirecionado a página de boas-vindas.
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Boas-Vindas.png" />
+
+
+
+    # Login
+
+      Após o cadastro, será encaminhado um e-mail para ativação da conta. Para realizar o login é necessário utilizar o e-mail e senha cadastrados anteriormente. Link de acesso https://pay.lytex.com.br/auth/login.
+      
+    # Envio de Documentos
+
+      Após realizar o login, o usuário deverá realizar o cadastro dos documentos para que possa ter as funcionalidades do sistema liberadas. O cadastro poderá ser realizado clicando em “Realizar Verificação” no ícone laranja disponível na parte superior da página.
+
+    # Integração
+      
+      Para realizar a integração de nosso sistema é necessário que o usuário cumpra todos os passos citados acima. Certifique-se de não haver nenhuma pendência com a plataforma. O usuário deverá obter as chaves de acesso conforme será mostrado nos prints abaixo.
+      Realizando o Login, o usuário poderá clicar em configurações, localizado no menu lateral esquerdo.
+
+
+
+  version: 
+
