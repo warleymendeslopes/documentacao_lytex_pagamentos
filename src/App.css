@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+img {
+  max-width: 100%;
+}
 .lytex-logo {
   height: 50px;
   pointer-events: none;

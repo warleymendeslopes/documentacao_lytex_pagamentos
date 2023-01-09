@@ -9,7 +9,7 @@ function Home() {
     <>
     <section className="blocks">
         <div className="container">
-            <div className="row">
+            <div className="row inverter-mobile">
                 <div className="col-lg-6 content-lytex-home">
                     <div className='title-sub-title'>
                         <h1 className='title-lytex'>Lytex</h1>
@@ -92,6 +92,45 @@ function Home() {
         position: absolute;
         top: -26px;
         left: -27px;
+    }
+    @media (max-width: 600px){
+        section.blocks {
+            margin-top: 68px;
+        }
+        .row.inverter-mobile {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .col-lg-6.content-img-home-lytex {
+            height: auto;
+            padding: 0;
+            margin: 0;
+        }
+        img.img-lytex-home {
+            border-radius: 0;
+        }
+        h1.title-lytex {
+            font-size: 5rem;
+        }
+        .title-sub-title span {
+            font-size: 48px;
+            top: 1px;
+        }
+        .card-home-lytex {
+            position: absolute;
+            left: auto;
+            bottom: -21px;
+            color: #150067;
+            width: 299px;
+            background: #ffffff;
+            box-shadow: 0px 0px 33px 6px rgb(0 0 0 / 13%);
+            text-align: center;
+        }
+        img.iconapi-lytex-home {
+            display: none;
+        }
+
+    
     }
     `}</style>
     </>
