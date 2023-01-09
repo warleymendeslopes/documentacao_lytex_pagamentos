@@ -33,7 +33,12 @@ info:
     # Login
 
       Após o cadastro, será encaminhado um e-mail para ativação da conta. Para realizar o login é necessário utilizar o e-mail e senha cadastrados anteriormente. Link de acesso https://pay.lytex.com.br/auth/login.
-      
+        <br /><img class="image-tutorial-sistema" src="https://homologacao-site.lytex.com.br/videos/Login.png" />
+
+      O sistema poderá ser utilizado em qualquer tipo de navegador para acesso a conta. Após o cadastro, o usuário estará ciente e de acordo com os termos de uso da LyTex Pagamentos.
+
+      Caso, ao tentar acesso, os dados sejam inseridos incorretamente o sistema apresentará a seguinte mensagem **Usuário não encontrado**. Ao realizar 6 tentativas seguidas de login o usuário será bloqueado e será necessária uma ação do setor de análise de risco juntamente do usuário para que seja desbloqueado.
+
     # Envio de Documentos
 
       Após realizar o login, o usuário deverá realizar o cadastro dos documentos para que possa ter as funcionalidades do sistema liberadas. O cadastro poderá ser realizado clicando em “Realizar Verificação” no ícone laranja disponível na parte superior da página.

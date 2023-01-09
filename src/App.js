@@ -94,9 +94,7 @@ function Documentacao() {
         .sc-eDvSVe:nth-child(4) div{
             width: 100%;
         }
-        img.image-tutorial-sistema {
-          max-width: 700px !important;
-      }
+      
       
       `}</style>
 

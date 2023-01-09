@@ -1,79 +1,96 @@
 
-//import logo from './logo-lytex.svg';
-//import { Link } from "react-router-dom";
-
+import Imghome from './img/ovGrEUgrkyE.png';
+import IconApi from './img/iconapi.png';
+import { Link } from "react-router-dom";
+import './block.css';
 
 function Home() {
   return (
     <>
-    <section className="background-video">
-        <div>
-            <iframe id="enterprise-video" src="https://www.youtube.com/embed/h97IvNuDQs8?autoplay=1&amp;mute=1&amp;controls=0&amp;playlist=h97IvNuDQs8&amp;loop=1&amp;disablekb=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;showinfo=1" allow="autoplay"></iframe>
+    <section className="blocks">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-6 content-lytex-home">
+                    <div className='title-sub-title'>
+                        <h1 className='title-lytex'>Lytex</h1>
+                        <span>Pagamentos</span>
+                    </div>
+                    <p className='text-lytex-home'>
+                        Conheça a melhor e mais simples API de Cobranças do Mercado
+                    </p>
+                    <Link className='button-document' to="/documentacao">Ler Documento</Link>
+                </div>
+
+                <div className="col-lg-6 content-img-home-lytex">
+                    <img className='img-lytex-home' src={Imghome} />
+                    <div className='card-home-lytex'>
+                            <div class="card">
+                                <img className='iconapi-lytex-home' src={IconApi} />
+                                <div class="card-body">
+                                    <p class="card-text">Uma API de pagamentos feita para simplificar a sua vida com pucos clicks</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="lytex__video--logo">
-                <h1>Lytex Pagamentos</h1>
-                <span>Conheça a melhor e mais simples API de Cobranças do Mercado</span>
-                <button>ver API</button>
-        </div>
+
     </section>
     <style jsx>{`
-        .background-video {
-            background: #00000099;
-            min-height: 93vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #enterprise-video {
-            height: 104vh;
-            width: 100%;
-            position: absolute;
-            top:-88px;
-            z-index: -1;
-            overflow: hidden;
-            left: 0;
-            border: none;
-        }
-        .lytex__video--logo {
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .lytex__video--logo button {
-            background: transparent;
-            border: solid 1px white;
-            color: white;
-            height: 50px;
-            width: 271px;
-            margin-top: 25px;
-            font-size: 1.5rem;
-            font-weight: 900;
-            border-radius: 9px;
-        }
-        
-        .lytex__video--logo h1 {
-            font-size: 3rem;
-            line-height: 11px;
-            font-weight: 900;
-        }
-        
-        .lytex__video--logo span {
-            font-size: 2rem;
-            font-weight: 400;
-        }
-        @media only screen and (max-width: 1199px){
-            #enterprise-video {
-                display:none;
-            }
-            .background-video {
-                background: url(https://lytex.com.br/wp-content/themes/lytexsolutions/assets/img/ovGrEUgrkyE.webp) center center no-repeat;
-                background-size: cover;
-                min-height: 60vw;
-                position: relative;
-            }
-          }
+    .title-sub-title {
+        color: #150067;
+        font-family: 'Montserrat', sans-serif;
+    }
+    h1.title-lytex {
+        font-size: 10rem;
+        line-height: 0;
+    }
+    .title-sub-title span {
+        position: relative;
+        font-size: 90px;
+        line-height: 0;
+        top: -20px;
+    }
+    p.text-lytex-home {
+        font-size: 1.3rem;
+        color: #7D7474;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a.button-document {
+        border: 2px solid #004cff;
+        padding: 12px 20px 12px 20px;
+        border-radius: 13px;
+        top: 30px;
+        position: relative;
+        text-decoration: none;
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    img.img-lytex-home {
+        border-radius: 185px 20px 185px 20px;
+    }
+    .col-lg-6.content-img-home-lytex {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-home-lytex {
+        position: absolute;
+        left: -67px;
+        bottom: 23px;
+        width: 299px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 33px 6px rgb(0 0 0 / 13%);
+    }
+    img.iconapi-lytex-home {
+        width: 59px;
+        position: absolute;
+        top: -26px;
+        left: -27px;
+    }
     `}</style>
     </>
   );
