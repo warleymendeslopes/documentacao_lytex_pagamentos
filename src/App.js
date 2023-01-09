@@ -7,6 +7,7 @@ import Plataforma from './plataforma.yaml';
 import * as React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import HomePage from './blocks/home-page'
+import EsseciaLytex from './blocks/essencia_lytex'
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ function Home() {
   return (
     <div>
       <HomePage />
+      <EsseciaLytex />
     </div>
   );
 }

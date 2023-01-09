@@ -20,12 +20,11 @@ function Home() {
                     </p>
                     <Link className='button-document' to="/documentacao">Ler Documento</Link>
                 </div>
-
                 <div className="col-lg-6 content-img-home-lytex">
-                    <img className='img-lytex-home' src={Imghome} />
+                    <img className='img-lytex-home' src={Imghome} alt="Conheça a melhor e mais simples api de pagamentos" />
                     <div className='card-home-lytex'>
                             <div class="card">
-                                <img className='iconapi-lytex-home' src={IconApi} />
+                                <img className='iconapi-lytex-home' src={IconApi} alt="Uma API de pagamentos feitas para descomplicar a sua vida" />
                                 <div class="card-body">
                                     <p class="card-text">Uma API de pagamentos feita para simplificar a sua vida com pucos clicks</p>
                                 </div>
@@ -37,6 +36,9 @@ function Home() {
 
     </section>
     <style jsx>{`
+    section.blocks {
+        background: #fefefe;
+    }
     .title-sub-title {
         color: #150067;
         font-family: 'Montserrat', sans-serif;

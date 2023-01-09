@@ -23,6 +23,15 @@ section.blocks{
 .App-link {
   color: #61dafb;
 }
+.title-blocks h1 {
+  font-size: 2.3rem;
+  color: #150067;
+}
+.content-text p {
+  font-size: 1.3rem;
+  color: #7D7474;
+  font-family: 'Montserrat', sans-serif;
+}
 
 @keyframes App-logo-spin {
   from {
