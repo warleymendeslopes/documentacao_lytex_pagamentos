@@ -93,6 +93,29 @@ function Home() {
         top: -26px;
         left: -27px;
     }
+    @media only screen and (max-width: 1401px) {
+        h1.title-lytex {
+            font-size: 6rem;
+        }
+        .title-sub-title span {
+            font-size: 53px;
+            top: -5px;
+        }
+    }
+
+    @media only screen and (max-width: 960px) {
+        .col-lg-6.content-lytex-home {
+            margin-bottom: 84px;
+        }
+        img.img-lytex-home {
+            border-radius: 0px;
+        }
+        .card-home-lytex {
+            left: auto;
+            bottom: -47px;
+        }
+    }
+
     @media (max-width: 600px){
         section.blocks {
             margin-top: 68px;
@@ -100,6 +123,7 @@ function Home() {
         .row.inverter-mobile {
             display: flex;
             flex-direction: column-reverse;
+            text-align: center;
         }
         .col-lg-6.content-img-home-lytex {
             height: auto;
