@@ -25,8 +25,8 @@ function Home() {
                     <div className='card-home-lytex'>
                             <div class="card">
                                 <img className='iconapi-lytex-home' src={IconApi} alt="Uma API de pagamentos feitas para descomplicar a sua vida" />
-                                <div class="card-body">
-                                    <p class="card-text">Uma API de pagamentos feita para simplificar a sua vida com pucos clicks</p>
+                                <div className="card-body">
+                                    <p className="card-text">Uma API de pagamentos feita para simplificar a sua vida com pucos clicks</p>
                                 </div>
                         </div>
                     </div>
