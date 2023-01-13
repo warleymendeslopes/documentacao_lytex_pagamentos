@@ -14,7 +14,7 @@ function Header() {
             <ul>
               <li><Link to="/">Lytex Pagamentos</Link></li>
               <li><Link to="/documentacao">Documentação</Link></li>
-              <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução ao sistema</Link></li>
+              <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução do sistema</Link></li>
               <li><a href="https://pay.lytex.com.br/auth/login">Login</a></li>
             </ul>
           </div>

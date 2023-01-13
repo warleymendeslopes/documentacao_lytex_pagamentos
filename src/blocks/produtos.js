@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import Pix from './img/pix_icon.svg';
 export default function SimpleSlider() {
     var settings = {
         dots: true,
@@ -122,21 +121,7 @@ export default function SimpleSlider() {
                 font-size: 1rem;
                 font-weight: 600;
             }
-            .content-icons-lytex {
-                background-color: white;
-                box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-                border-radius: 10px;
-                height: 65px;
-                width: 65px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 13px;
-                align-self: center;
-                position: absolute;
-                /* top: -36px; */
-                /* z-index: 9999999; */
-            }
+
 
             `}</style>
 

@@ -1,6 +1,6 @@
 import './block.css';
 import ImgAPI from './img/img_api_2.png';
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -20,6 +20,7 @@ function Home() {
                             Tornamos a gestão financeira da sua empresa mais eficiente. Nós automatizamos seus processos, aumentamos a produtividade de suas operações e reduzimos a burocracia do seu negócio. Seguimos o padrão PCI-DSS, garantindo mais segurança nas suas transações.
                         </p>
                     </div>
+                    <Link className="btn btn-primary documentation-essencia" to="/introducao-ao-sistema">Introdução ao Sistema</Link>
                 </div>
             </div>
         </div>
@@ -35,6 +36,14 @@ function Home() {
             justify-content: center;
             padding-left: 69px;
 
+        }
+        a.btn.btn-primary.documentation-essencia {
+            background: transparent;
+            color: #150067;
+            border: 2px solid #004cff;
+            font-size: 1rem;
+            font-weight: 600;
+            max-width: 230px;
         }
        
 

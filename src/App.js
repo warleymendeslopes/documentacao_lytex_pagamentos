@@ -98,7 +98,10 @@ function Documentacao() {
         .sc-eDvSVe:nth-child(4) div{
             width: 100%;
         }
-      
+        .sc-jSUZER {
+            padding-top: 54px;
+            padding-bottom: 50px;
+        }
       
       `}</style>
 
@@ -167,6 +170,8 @@ function IntroducaoSistema() {
         .sc-eDvSVe:nth-child(5) div{
             width: 100%;
         }
+
+    
       
       `}</style>
 
