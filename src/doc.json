@@ -6808,6 +6808,7 @@
                     "type": "object",
                     "properties": {
                       "client": {
+                        "description":"Criar um cliente juntamente com a fatura",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -6815,11 +6816,13 @@
                             "enum": [
                               "pf",
                               "pj"
-                            ]
+                            ],
+                            "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
                           },
                           "name": {
                             "type": "string",
-                            "maxLength": 255
+                            "maxLength": 255,
+                            "description": "Nome completo do cliente"
                           },
                           "treatmentPronoun": {
                             "type": "string",
@@ -6827,25 +6830,26 @@
                               "you",
                               "mr",
                               "lady"
-                            ]
+                            ],
+                            "description": "Saudação preferida<br/><br/>\n      you = Neutro<br/>\n      mr = Senhor<br/>\n      lady = Senhora"
                           },
                           "cpfCnpj": {
-                            "oneOf": [
-                              {
-                                "type": "string",
-                                "x-required": true
-                              }
-                            ]
+                            "type": "string",
+                            "minLength": 11,
+                            "maxLength": 14,
+                            "description": "CPF ou CNPJ do cliente, somente números"
                           },
                           "email": {
                             "type": "string",
                             "format": "email",
-                            "maxLength": 255
+                            "maxLength": 255,
+                            "description": "Email do cliente"
                           },
                           "cellphone": {
                             "type": "string",
                             "minLength": 10,
-                            "maxLength": 11
+                            "maxLength": 11,
+                            "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9"
                           },
                           "address": {
                             "type": "object",
@@ -6896,33 +6900,38 @@
                               "city",
                               "state",
                               "zip"
-                            ]
+                            ],
+                            "description": "Endereço do cliente"
                           }
                         },
                         "required": [
                           "type",
                           "name",
+                          "cpfCnpj",
                           "email",
-                          "cellphone",
-                          "address"
+                          "cellphone"
                         ]
                       },
                       "items": {
+                        "description": "Informações do produto",
                         "type": "array",
                         "items": {
                           "type": "object",
                           "properties": {
                             "name": {
                               "type": "string",
-                              "maxLength": 255
+                              "maxLength": 255,
+                              "description": "Nome do Produto"
                             },
                             "quantity": {
                               "type": "integer",
-                              "minimum": 1
+                              "minimum": 1,
+                              "description": "Quantidade"
                             },
                             "value": {
                               "type": "integer",
-                              "minimum": 1
+                              "minimum": 1,
+                              "description": "Valor unitário do produto"
                             }
                           },
                           "required": [
@@ -6935,9 +6944,11 @@
                       },
                       "dueDate": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "description":"Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
+                        "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -7000,28 +7011,28 @@
                         ]
                       },
                       "split": {
+                        "description": "Para os estabelecimentos a fazer o split (tem que ser solicitado previamente no site)",
                         "type": "object",
                         "properties": {
                           "taxationMode": {
                             "type": "string",
+                            "description": "modo de tributação",
                             "enum": [
                               "onlyPrimary"
                             ]
                           },
                           "recipients": {
+                            "description": "Dados do destinatários",
                             "type": "array",
                             "items": {
                               "type": "object",
                               "properties": {
                                 "cpfCnpj": {
-                                  "anyOf": [
-                                    {
-                                      "type": "string",
-                                      "x-required": true
-                                    }
-                                  ]
+                                  "type": "string",
+                                  "description": "CPF/CNPJ do destinatários"
                                 },
                                 "commission": {
+                                  "description": "Configurar a comissão",
                                   "type": "object",
                                   "properties": {
                                     "type": {
@@ -7029,12 +7040,14 @@
                                       "enum": [
                                         "fixedValue",
                                         "percentage"
-                                      ]
+                                      ],
+                                      "description": "Definir se será um valor fixo ou uma porcentagem"
                                     },
                                     "value": {
                                       "type": "number",
                                       "format": "float",
-                                      "minimum": 1
+                                      "minimum": 1,
+                                      "description": "O valorem Porcentagem deve ser maior que 0.01 e menor que 99.99.  Já o valor fixo deve ser  maior que 1 "
                                     }
                                   },
                                   "required": [
@@ -7058,9 +7071,11 @@
                         ]
                       },
                       "discount": {
+                        "description":"Configurar descontos no pagamento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Escolha o tipo de desconto que deseja aplica Fixo ou Porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -7068,6 +7083,7 @@
                             ]
                           },
                           "discounts": {
+                            "description":"Objetos de configurações, podendo inserir ate 3 objetos de configurações ",
                             "oneOf": [
                               {
                                 "type": "array",
@@ -7078,11 +7094,13 @@
                                       "type": "number",
                                       "format": "float",
                                       "minimum": 1,
-                                      "maximum": 99
+                                      "maximum": 99,
+                                      "description":"Valor do desconto em porcentagem deve ser maior que 1 e menor que 99"
                                     },
                                     "validUntil": {
                                       "type": "string",
-                                      "format": "date-time"
+                                      "format": "date-time",
+                                      "description":"Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -7102,11 +7120,13 @@
                                     "value": {
                                       "type": "number",
                                       "format": "float",
-                                      "minimum": 1
+                                      "minimum": 1,
+                                      "description":"Valor do desconto fixo deve ser maior que 1"
                                     },
                                     "validUntil": {
                                       "type": "string",
-                                      "format": "date-time"
+                                      "format": "date-time",
+                                      "description":"Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -7126,27 +7146,44 @@
                         ]
                       },
                       "_paymentLinkId": {
+                        "description":"identificador único do link de pagamento, caso ja esteja criado o link",
                         "type": "string"
                       },
                       "notifications": {
+                        "description": "Habilitar ou desabilitar notificações",
                         "type": "object",
                         "properties": {
                           "enable": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "description": "True para habilitar False para desabilitar" 
                           },
                           "channels": {
-                            "oneOf": [
-                              {
+                            "description": "Canais de notificação ",
                                 "type": "object",
                                 "properties": {
                                   "sms": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Canail de SMS"
                                   },
                                   "email": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Canail de e-mail"
                                   },
                                   "whatsApp": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Canail de whatsApp"
                                   }
                                 },
                                 "required": [
@@ -7155,44 +7192,43 @@
                                   "whatsApp"
                                 ],
                                 "x-required": true
-                              },
-                              {
-                                "type": "object",
-                                "properties": {
-                                  "sms": {
-                                    "type": "boolean"
-                                  },
-                                  "email": {
-                                    "type": "boolean"
-                                  },
-                                  "whatsApp": {
-                                    "type": "boolean"
-                                  }
-                                },
-                                "required": [
-                                  "sms",
-                                  "email",
-                                  "whatsApp"
-                                ]
-                              }
-                            ]
                           },
                           "types": {
-                            "oneOf": [
-                              {
+                            "description": "Configurações de disparo da notificação",
                                 "type": "object",
                                 "properties": {
                                   "invoiceCreate": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Enviar notificação quando a fatura for criada"
                                   },
                                   "daysBeforeExpiration3": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Enviar notificação 3 dias antes da fatura vencer"
                                   },
                                   "expirationDay": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Enviar notificação no dia de expiração"
                                   },
                                   "invoicePaid": {
-                                    "type": "boolean"
+                                    "enum": [
+                                      "true",
+                                      "false"
+                                    ],
+                                    "type": "boolean",
+                                    "description": "Enviar notificação quando a fatura for paga "
+                                
                                   }
                                 },
                                 "required": [
@@ -7202,60 +7238,51 @@
                                   "invoicePaid"
                                 ],
                                 "x-required": true
-                              },
-                              {
-                                "type": "object",
-                                "properties": {
-                                  "invoiceCreate": {
-                                    "type": "boolean"
-                                  },
-                                  "daysBeforeExpiration3": {
-                                    "type": "boolean"
-                                  },
-                                  "expirationDay": {
-                                    "type": "boolean"
-                                  },
-                                  "invoicePaid": {
-                                    "type": "boolean"
-                                  }
-                                },
-                                "required": [
-                                  "invoiceCreate",
-                                  "daysBeforeExpiration3",
-                                  "expirationDay",
-                                  "invoicePaid"
-                                ]
                               }
-                            ]
-                          }
+
                         },
                         "required": [
                           "enable"
                         ]
                       },
                       "referenceId": {
+                        "description":"Pode-se inserir um identificador de referencia",
                         "type": "string",
                         "maxLength": 150
                       },
                       "cancelOverdue": {
-                        "type": "boolean"
+                        "enum": [
+                          true,
+                          false
+                        ],
+                        "type": "boolean",
+                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                       },
                       "cancelOverdueDays": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1,
-                        "maximum": 60
+                        "maximum": 60,
+                        "description": "Determinar dias para o cancelamento da fatura após vencimento"
                       },
                       "mulctAndInterest": {
+                        "description": "Configurar multa e juros",
                         "type": "object",
                         "properties": {
                           "enable": {
-                            "type": "boolean"
+                            "description": "Deseja criar configuração de multa e juros",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ]
                           },
                           "mulct": {
+                            "description": "Multa após o vencimento da fatura",
                             "type": "object",
                             "properties": {
                               "type": {
+                                "description": "Definir se será um valor fixo ou uma porcentagem",
                                 "type": "string",
                                 "enum": [
                                   "fixedValue",
@@ -7265,12 +7292,14 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "integer",
+                                    "type": "Fixo",
+                                    "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "number",
+                                    "type": "Porcentagem",
+                                    "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
                                     "maximum": 99.99,
@@ -7284,9 +7313,11 @@
                             ]
                           },
                           "interest": {
+                            "description": "Juros diário após o vencimento da fatura",
                             "type": "object",
                             "properties": {
                               "type": {
+                                "description": "Definir se será um valor fixo ou uma porcentagem",
                                 "type": "string",
                                 "enum": [
                                   "fixedValue",
@@ -7296,12 +7327,14 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "integer",
+                                    "type": "Fixo",
+                                    "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "number",
+                                    "type": "Porcentagem",
+                                    "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
                                     "maximum": 99.99,
@@ -7320,6 +7353,7 @@
                         ]
                       },
                       "observation": {
+                        "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -8037,6 +8071,7 @@
         "parameters": [
           {
             "name": "search",
+            "description": "Nome a ser pesquisado",
             "in": "query",
             "schema": {
               "type": "string"
@@ -8047,11 +8082,16 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "maxLength": 255
-            }
+              "enum": [
+                "pf",
+                "pj"
+              ]
+            },
+            "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
           },
           {
             "name": "startDate",
+            "description": "Dara Inicial",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8060,6 +8100,7 @@
           },
           {
             "name": "endDate",
+            "description": "Dara final",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8068,6 +8109,7 @@
           },
           {
             "name": "status",
+            "description": "status da fatura",
             "in": "query",
             "schema": {
               "type": "string"
@@ -8075,6 +8117,7 @@
           },
           {
             "name": "payedStartDate",
+            "description":"data de início paga",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8083,6 +8126,7 @@
           },
           {
             "name": "payedEndDate",
+            "description": "data final paga",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8091,6 +8135,7 @@
           },
           {
             "name": "creationStartDate",
+            "description": "data de início da criação",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8099,6 +8144,7 @@
           },
           {
             "name": "creationEndDate",
+            "description": "data final da criação",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8107,6 +8153,7 @@
           },
           {
             "name": "exportTo",
+            "description": "tipo de resposta",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8119,6 +8166,7 @@
           },
           {
             "name": "_paymentLinkId",
+            "description":"identificador único do link de pagamento",
             "in": "query",
             "schema": {
               "type": "string"
@@ -8133,6 +8181,7 @@
           },
           {
             "name": "page",
+            "description": "página atual",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -8141,6 +8190,7 @@
           },
           {
             "name": "perPage",
+            "description": "Quantidade de itens por página",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -8149,6 +8199,7 @@
           },
           {
             "name": "sortField",
+            "description": "campo de classificação",
             "in": "query",
             "schema": {
               "type": "string"
@@ -8156,6 +8207,7 @@
           },
           {
             "name": "sortOrder",
+            "description": "Ordenar resposta ",
             "in": "query",
             "schema": {
               "oneOf": [
@@ -12295,6 +12347,8 @@
         ]
       }
     },
+
+
     "/v1/receivables/{transactionId}": {
       "get": {
         "operationId": "ReceivablesController_getReceivablesByTransaction",
