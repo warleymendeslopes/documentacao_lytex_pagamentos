@@ -6331,8 +6331,6 @@
         ]
       }
     },
-
-
     "/v1/invoices": {
       "post": {
         "operationId": "InvoicesController_createInvoice",
@@ -8567,11 +8565,13 @@
                 "type": "object",
                 "properties": {
                   "totalValue": {
+                    "description":"valor total, maior que 200",
                     "type": "number",
                     "format": "float",
                     "minimum": 200
                   },
                   "taxationMode": {
+                    "description":"modo de tributação",
                     "type": "string",
                     "enum": [
                       "onlyPrimary"
@@ -8804,6 +8804,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador  unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -9737,28 +9738,45 @@
                 "type": "object",
                 "properties": {
                   "dueDate": {
+                    "description": "Data de Vencimento",
                     "type": "string",
                     "format": "date-time"
                   },
                   "notifications": {
+                    "description": "Habilitar ou desabilitar notificações",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "True para habilitar False para desabilitar" 
                       },
                       "channels": {
-                        "oneOf": [
-                          {
+                        "description": "Canais de notificação ",
                             "type": "object",
                             "properties": {
                               "sms": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de SMS"
                               },
                               "email": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
                               },
                               "whatsApp": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
                               }
                             },
                             "required": [
@@ -9767,44 +9785,43 @@
                               "whatsApp"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean"
-                              },
-                              "email": {
-                                "type": "boolean"
-                              },
-                              "whatsApp": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ]
-                          }
-                        ]
                       },
                       "types": {
-                        "oneOf": [
-                          {
+                        "description": "Configurações de disparo da notificação",
                             "type": "object",
                             "properties": {
                               "invoiceCreate": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
                               },
                               "daysBeforeExpiration3": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
                               },
                               "expirationDay": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
                               },
                               "invoicePaid": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
+                            
                               }
                             },
                             "required": [
@@ -9814,60 +9831,51 @@
                               "invoicePaid"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean"
-                              },
-                              "expirationDay": {
-                                "type": "boolean"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ]
                           }
-                        ]
-                      }
+
                     },
                     "required": [
                       "enable"
                     ]
                   },
                   "observation": {
+                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   },
                   "cancelOverdue": {
-                    "type": "boolean"
+                    "enum": [
+                      true,
+                      false
+                    ],
+                    "type": "boolean",
+                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                   },
                   "cancelOverdueDays": {
                     "type": "number",
                     "format": "float",
                     "minimum": 1,
-                    "maximum": 60
+                    "maximum": 60,
+                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
+                    "description": "Configurar multa e juros",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "description": "Deseja criar configuração de multa e juros",
+                        "type": "boolean",
+                        "enum": [
+                          true,
+                          false
+                        ]
                       },
                       "mulct": {
+                        "description": "Multa após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -9877,12 +9885,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -9896,9 +9906,11 @@
                         ]
                       },
                       "interest": {
+                        "description": "Juros diário após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -9908,12 +9920,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -9942,6 +9956,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10652,6 +10667,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10872,6 +10888,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -11601,6 +11618,7 @@
                     ]
                   },
                   "parcels": {
+                    "description":"parcelas a pagar",
                     "oneOf": [
                       {
                         "type": "integer",
@@ -11611,6 +11629,7 @@
                     ]
                   },
                   "paidValue": {
+                    "description":"valor pago",
                     "oneOf": [
                       {
                         "type": "integer",
@@ -11621,6 +11640,7 @@
                     ]
                   },
                   "paidDate": {
+                    "description":"data do pagamento",
                     "oneOf": [
                       {
                         "type": "string",
@@ -11640,6 +11660,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -12347,8 +12368,6 @@
         ]
       }
     },
-
-
     "/v1/receivables/{transactionId}": {
       "get": {
         "operationId": "ReceivablesController_getReceivablesByTransaction",
@@ -12357,6 +12376,7 @@
         "parameters": [
           {
             "name": "transactionId",
+            "description":"Identificador unico da transação",
             "required": true,
             "in": "path",
             "schema": {
@@ -12575,25 +12595,30 @@
                 "type": "object",
                 "properties": {
                   "description": {
+                    "description":"descricao do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
                   "items": {
+                    "description": "Informações do produto",
                     "type": "array",
                     "items": {
                       "type": "object",
                       "properties": {
                         "name": {
                           "type": "string",
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "Nome do Produto"
                         },
                         "quantity": {
                           "type": "integer",
-                          "minimum": 1
+                          "minimum": 1,
+                          "description": "Quantidade"
                         },
                         "value": {
                           "type": "integer",
-                          "minimum": 1
+                          "minimum": 1,
+                          "description": "Valor unitário do produto"
                         }
                       },
                       "required": [
@@ -12605,15 +12630,18 @@
                     "minItems": 1
                   },
                   "expirationDate": {
+                    "description": "Data para expirar o link de pagamento ",
                     "type": "string",
                     "format": "date-time"
                   },
                   "quantity": {
+                    "description": "Quantidade de utilização ( contabiliza as faturas pagas ) ",
                     "type": "number",
                     "format": "float",
                     "minimum": 1
                   },
                   "paymentMethods": {
+                    "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -12676,24 +12704,40 @@
                     ]
                   },
                   "notifications": {
+                    "description": "Habilitar ou desabilitar notificações",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "True para habilitar False para desabilitar" 
                       },
                       "channels": {
-                        "oneOf": [
-                          {
+                        "description": "Canais de notificação ",
                             "type": "object",
                             "properties": {
                               "sms": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de SMS"
                               },
                               "email": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
                               },
                               "whatsApp": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
                               }
                             },
                             "required": [
@@ -12702,44 +12746,43 @@
                               "whatsApp"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean"
-                              },
-                              "email": {
-                                "type": "boolean"
-                              },
-                              "whatsApp": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ]
-                          }
-                        ]
                       },
                       "types": {
-                        "oneOf": [
-                          {
+                        "description": "Configurações de disparo da notificação",
                             "type": "object",
                             "properties": {
                               "invoiceCreate": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
                               },
                               "daysBeforeExpiration3": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
                               },
                               "expirationDay": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
                               },
                               "invoicePaid": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
+                            
                               }
                             },
                             "required": [
@@ -12749,32 +12792,8 @@
                               "invoicePaid"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean"
-                              },
-                              "expirationDay": {
-                                "type": "boolean"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ]
                           }
-                        ]
-                      }
+
                     },
                     "required": [
                       "enable"
@@ -12839,24 +12858,38 @@
                     ]
                   },
                   "cancelOverdue": {
-                    "type": "boolean"
+                    "enum": [
+                      true,
+                      false
+                    ],
+                    "type": "boolean",
+                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                   },
                   "cancelOverdueDays": {
                     "type": "number",
                     "format": "float",
                     "minimum": 1,
-                    "maximum": 60
+                    "maximum": 60,
+                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
+                    "description": "Configurar multa e juros",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "description": "Deseja criar configuração de multa e juros",
+                        "type": "boolean",
+                        "enum": [
+                          true,
+                          false
+                        ]
                       },
                       "mulct": {
+                        "description": "Multa após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -12866,12 +12899,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -12885,9 +12920,11 @@
                         ]
                       },
                       "interest": {
+                        "description": "Juros diário após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -12897,12 +12934,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -12921,6 +12960,7 @@
                     ]
                   },
                   "observation": {
+                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -13350,6 +13390,7 @@
         "parameters": [
           {
             "name": "search",
+            "description": "Nome a ser pesquisado",
             "in": "query",
             "schema": {
               "type": "string"
@@ -13357,6 +13398,7 @@
           },
           {
             "name": "startDate",
+            "description": "Dara Inicial",
             "in": "query",
             "schema": {
               "type": "string",
@@ -13365,6 +13407,7 @@
           },
           {
             "name": "endDate",
+            "description": "Dara final",
             "in": "query",
             "schema": {
               "type": "string",
@@ -13373,13 +13416,19 @@
           },
           {
             "name": "isActive",
+            "description": "buscar por link ativos",
             "in": "query",
             "schema": {
+              "enum":[
+                true,
+                false
+              ],
               "type": "boolean"
             }
           },
           {
             "name": "status",
+            "description": "status do link de pagamento",
             "in": "query",
             "schema": {
               "type": "string"
@@ -13387,6 +13436,7 @@
           },
           {
             "name": "page",
+            "description": "página atual",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -13395,6 +13445,7 @@
           },
           {
             "name": "perPage",
+            "description": "Quantidade de itens por página",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -13403,6 +13454,7 @@
           },
           {
             "name": "sortField",
+            "description": "campo de classificação",
             "in": "query",
             "schema": {
               "type": "string"
@@ -13410,6 +13462,7 @@
           },
           {
             "name": "sortOrder",
+            "description": "Ordenar resposta ",
             "in": "query",
             "schema": {
               "oneOf": [
@@ -13702,6 +13755,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -14156,25 +14210,30 @@
                 "type": "object",
                 "properties": {
                   "description": {
+                    "description":"descricao do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
                   "items": {
+                    "description": "Informações do produto",
                     "type": "array",
                     "items": {
                       "type": "object",
                       "properties": {
                         "name": {
                           "type": "string",
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "Nome do Produto"
                         },
                         "quantity": {
                           "type": "integer",
-                          "minimum": 1
+                          "minimum": 1,
+                          "description": "Quantidade"
                         },
                         "value": {
                           "type": "integer",
-                          "minimum": 1
+                          "minimum": 1,
+                          "description": "Valor unitário do produto"
                         }
                       },
                       "required": [
@@ -14186,15 +14245,18 @@
                     "minItems": 1
                   },
                   "expirationDate": {
+                    "description": "Data para expirar o link de pagamento ",
                     "type": "string",
                     "format": "date-time"
                   },
                   "quantity": {
+                    "description": "Quantidade de utilização ( contabiliza as faturas pagas ) ",
                     "type": "number",
                     "format": "float",
                     "minimum": 1
                   },
                   "paymentMethods": {
+                    "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -14257,24 +14319,40 @@
                     ]
                   },
                   "notifications": {
+                    "description": "Habilitar ou desabilitar notificações",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "True para habilitar False para desabilitar" 
                       },
                       "channels": {
-                        "oneOf": [
-                          {
+                        "description": "Canais de notificação ",
                             "type": "object",
                             "properties": {
                               "sms": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de SMS"
                               },
                               "email": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
                               },
                               "whatsApp": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
                               }
                             },
                             "required": [
@@ -14283,44 +14361,43 @@
                               "whatsApp"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean"
-                              },
-                              "email": {
-                                "type": "boolean"
-                              },
-                              "whatsApp": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ]
-                          }
-                        ]
                       },
                       "types": {
-                        "oneOf": [
-                          {
+                        "description": "Configurações de disparo da notificação",
                             "type": "object",
                             "properties": {
                               "invoiceCreate": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
                               },
                               "daysBeforeExpiration3": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
                               },
                               "expirationDay": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
                               },
                               "invoicePaid": {
-                                "type": "boolean"
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
+                            
                               }
                             },
                             "required": [
@@ -14330,32 +14407,8 @@
                               "invoicePaid"
                             ],
                             "x-required": true
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean"
-                              },
-                              "expirationDay": {
-                                "type": "boolean"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ]
                           }
-                        ]
-                      }
+
                     },
                     "required": [
                       "enable"
@@ -14420,24 +14473,38 @@
                     ]
                   },
                   "cancelOverdue": {
-                    "type": "boolean"
+                    "enum": [
+                      true,
+                      false
+                    ],
+                    "type": "boolean",
+                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                   },
                   "cancelOverdueDays": {
                     "type": "number",
                     "format": "float",
                     "minimum": 1,
-                    "maximum": 60
+                    "maximum": 60,
+                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
+                    "description": "Configurar multa e juros",
                     "type": "object",
                     "properties": {
                       "enable": {
-                        "type": "boolean"
+                        "description": "Deseja criar configuração de multa e juros",
+                        "type": "boolean",
+                        "enum": [
+                          true,
+                          false
+                        ]
                       },
                       "mulct": {
+                        "description": "Multa após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -14447,12 +14514,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -14466,9 +14535,11 @@
                         ]
                       },
                       "interest": {
+                        "description": "Juros diário após o vencimento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
+                            "description": "Definir se será um valor fixo ou uma porcentagem",
                             "type": "string",
                             "enum": [
                               "fixedValue",
@@ -14478,12 +14549,14 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "integer",
+                                "type": "Fixo",
+                                "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "number",
+                                "type": "Porcentagem",
+                                "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
                                 "maximum": 99.99,
@@ -14502,6 +14575,7 @@
                     ]
                   },
                   "observation": {
+                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -14518,6 +14592,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -14943,6 +15018,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15368,6 +15444,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15793,6 +15870,7 @@
         "parameters": [
           {
             "name": "id",
+            "description":"Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -16058,6 +16136,9 @@
         ]
       }
     },
+
+
+
     "/v1/products": {
       "post": {
         "operationId": "ProductsController_createProduct",
@@ -16071,11 +16152,13 @@
                 "type": "object",
                 "properties": {
                   "name": {
+                    "description": "nome do produto",
                     "type": "string",
                     "maxLength": 40
                   },
                   "value": {
                     "type": "integer",
+                    "description": "valor do produto",
                     "minimum": 200,
                     "maximum": 1500000
                   }
@@ -16358,6 +16441,7 @@
           },
           {
             "name": "search",
+            "description": "nome a ser pesquisado",
             "in": "query",
             "schema": {
               "type": "string"
@@ -16365,6 +16449,7 @@
           },
           {
             "name": "startDate",
+            "description": "data inicial",
             "in": "query",
             "schema": {
               "type": "string",
@@ -16373,6 +16458,7 @@
           },
           {
             "name": "endDate",
+            "description": "data final",
             "in": "query",
             "schema": {
               "type": "string",
@@ -16381,6 +16467,7 @@
           },
           {
             "name": "page",
+            "description": "pagina atual",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -16389,6 +16476,7 @@
           },
           {
             "name": "perPage",
+            "description": "Quantidade de resultado por pagina",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -16397,6 +16485,7 @@
           },
           {
             "name": "sortField",
+            "description": "campo de classificação",
             "in": "query",
             "schema": {
               "type": "string"
@@ -16404,6 +16493,7 @@
           },
           {
             "name": "sortOrder",
+            "description": "ordem de classificação",
             "in": "query",
             "schema": {
               "oneOf": [
@@ -16679,6 +16769,7 @@
                 "type": "object",
                 "properties": {
                   "file": {
+                    "description": "arquivo com produtos para importar",
                     "type": "string",
                     "format": "binary"
                   }
@@ -16956,6 +17047,7 @@
         "parameters": [
           {
             "name": "search",
+            "description": "nome do produto",
             "required": true,
             "in": "query",
             "schema": {
@@ -17187,6 +17279,7 @@
         "parameters": [
           {
             "name": "id",
+            "description": "Identificar unico do produto",
             "required": true,
             "in": "path",
             "schema": {
@@ -17463,11 +17556,13 @@
                 "type": "object",
                 "properties": {
                   "name": {
+                    "description":"nome do produto",
                     "type": "string",
                     "maxLength": 255
                   },
                   "value": {
                     "type": "integer",
+                    "description":"valor do produto",
                     "minimum": 200,
                     "maximum": 1500000
                   }
@@ -17483,6 +17578,7 @@
         "parameters": [
           {
             "name": "id",
+            "description": "Identificar unico do produto",
             "required": true,
             "in": "path",
             "schema": {
