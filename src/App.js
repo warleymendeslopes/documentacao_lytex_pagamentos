@@ -10,6 +10,7 @@ import HomePage from './blocks/home-page'
 import EsseciaLytex from './blocks/essencia_lytex'
 import Produtos from './blocks/produtos'
 import Solution from './blocks/sulutions'
+import Footer from './components/footer'
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ function Layout() {
     <div>
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 }
