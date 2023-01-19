@@ -488,7 +488,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "Dara Inicial"
+            "description": "Data Inicial"
           },
           {
             "name": "endDate",
@@ -497,7 +497,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "Dara Final"
+            "description": "Data Final"
           },
           {
             "name": "page",
@@ -2480,7 +2480,7 @@
                             "format": "float",
                             "minimum": 1,
                             "maximum": 28,
-                            "description": "Dia que sera gerada a proxima fatura"
+                            "description": "Dia que sera gerada a próxima fatura"
                           },
                           "dueDateDays": {
                             "type": "number",
@@ -2529,7 +2529,7 @@
                         ]
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -2850,7 +2850,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -3018,7 +3018,7 @@
                             "format": "float",
                             "minimum": 1,
                             "maximum": 28,
-                            "description": "Dia que sera gerada a proxima fatura"
+                            "description": "Dia que sera gerada a próxima fatura"
                           },
                           "dueDateDays": {
                             "type": "number",
@@ -3067,7 +3067,7 @@
                         ]
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -3388,7 +3388,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -3928,7 +3928,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "Dara Inicial"
+            "description": "Data Inicial"
           },
           {
             "name": "endDate",
@@ -3937,7 +3937,7 @@
               "type": "string",
               "format": "date-time"
             },
-            "description": "Dara Final"
+            "description": "Data Final"
           },
           {
             "name": "page",
@@ -4932,7 +4932,7 @@
                         "format": "float",
                         "minimum": 1,
                         "maximum": 28,
-                        "description": "Dia que sera gerada a proxima fatura"
+                        "description": "Dia que sera gerada a próxima fatura"
                       },
                       "dueDateDays": {
                         "type": "number",
@@ -4981,7 +4981,7 @@
                     ]
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -5302,7 +5302,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -6385,7 +6385,7 @@
                         "description":"Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -6790,7 +6790,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -6946,7 +6946,7 @@
                         "description":"Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -7351,7 +7351,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -8089,7 +8089,7 @@
           },
           {
             "name": "startDate",
-            "description": "Dara Inicial",
+            "description": "Data Inicial",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8098,7 +8098,7 @@
           },
           {
             "name": "endDate",
-            "description": "Dara final",
+            "description": "Data final",
             "in": "query",
             "schema": {
               "type": "string",
@@ -9839,7 +9839,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   },
@@ -12641,7 +12641,7 @@
                     "minimum": 1
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -12960,7 +12960,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -13398,7 +13398,7 @@
           },
           {
             "name": "startDate",
-            "description": "Dara Inicial",
+            "description": "Data Inicial",
             "in": "query",
             "schema": {
               "type": "string",
@@ -13407,7 +13407,7 @@
           },
           {
             "name": "endDate",
-            "description": "Dara final",
+            "description": "Data final",
             "in": "query",
             "schema": {
               "type": "string",
@@ -14256,7 +14256,7 @@
                     "minimum": 1
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de credito,boleto,pix . Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -14575,7 +14575,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"voce pode inserir também uma observação, com ate 300 caracteres ",
+                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
