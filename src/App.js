@@ -38,8 +38,8 @@ function Home() {
   return (
     <div>
       <HomePage />
-      <EsseciaLytex />
       <Produtos />
+      <EsseciaLytex />
     </div>
   );
 }

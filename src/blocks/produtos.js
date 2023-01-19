@@ -2,16 +2,15 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
 export default function SimpleSlider() {
     var settings = {
         dots: true,
         arrows: true,
         infinite: true,
         autoplay: true,
-        speed: 200,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 3,
         responsive: [
             {
                 breakpoint: 600,
@@ -26,65 +25,105 @@ export default function SimpleSlider() {
             <section className='produtos'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4">
+                        <div className="col-lg-3">
                             <div className='title-blocks'>
-                                <h1>Conheça nossas solucões e recursos</h1>
+                                <div className="sublinhado-title"></div>
+                                <h1>Segurança e comodidade de quem sabe o que faz</h1>
                             </div>
                             <div className='content-text'>
                                 <p>
-                                    Os melhores Meios de Pagamento para sua empresa dentro de um único sistema
+                                Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics 
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-8">
+                        <div className="col-lg-9">
                             <Slider {...settings}>
+
+
+
+
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">PIX</h5>
-                                            <p className="card-text">Receba de seus clientes em segundos com baixa e identificação automática. Tudo sem mensalidade ou taxa de emissão</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Faturas">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/disponibilidade-garantida.svg" alt="Disponibilidade garantida" />
+                                            <h4 className="card-title-header">Disponibilidade garantida</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
 
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Boleto</h5>
-                                            <p className="card-text">Ofereça mais possibilidades de pagamento em compras parceladas, conquiste clientes e escale seu negócio</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Faturas">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/acesso-ao-sandbox.svg" alt="Acesso ao sandbox" />
+                                            <h4 className="card-title-header">Acesso ao <br/>Sandbox</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
 
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Cobrança Inteligente</h5>
-                                            <p className="card-text">A automatização de cobranças da LyTex é ideal para gerenciar seus recebimentos de maneira fácil e personalizada</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Links-de-Pagamento">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/disponibilidade-garantida.svg" alt="segurança garantida" />
+                                            <h4 className="card-title-header">Segurança</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
 
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Checkout</h5>
-                                            <p className="card-text">Aproveite nossos benefícios exclusivos e ofereça as formas de pagamento que seus clientes mais utilizam</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Links-de-Pagamento">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/acesso-ao-sandbox.svg" alt="Criptografia de dados " />
+                                            <h4 className="card-title-header">Criptografia dos dados</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
 
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Split de pagamentos</h5>
-                                            <p className="card-text">Evite a incidência de tributos duplicados e divida seus recebimentos de forma automática</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Links-de-Pagamento">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/disponibilidade-garantida.svg" alt="Disponibilidade garantida" />
+                                            <h4 className="card-title-header">Disponibilidade garantida</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
 
                                 <div className="container-slide">
-                                        <div className="card-body">
-                                            <h5 className="card-title">Link de pagamentos</h5>
-                                            <p className="card-text">Descomplique suas vendas com os links de pagamento e venda diretamente pelas redes sociais, sem loja online</p>
-                                            <Link className="btn btn-primary documentation" to="/documentacao#tag/Links-de-Pagamento">ver documentação</Link>
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/acesso-ao-sandbox.svg" alt="Disponibilidade garantida" />
+                                            <h4 className="card-title-header">Disponibilidade garantida</h4>
                                         </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
                                 </div>
+
+                                <div className="container-slide">
+                                    <div className="card-slide">
+                                        <div className="card-header">
+                                            <img src="/icones/disponibilidade-garantida.svg" alt="Disponibilidade garantida" />
+                                            <h4 className="card-title-header">Disponibilidade garantida</h4>
+                                        </div>
+                                        <div className="sublinhado-title-card"></div>
+                                        <p className="card-text">The gradual accumulation of information about </p>
+                                    </div>
+                                </div>
+
+
+
+
+
+
 
                             </Slider>
                         </div>
@@ -96,30 +135,56 @@ export default function SimpleSlider() {
 
 
             <style jsx>{`
-            .container-slide {
+            section.produtos {
+                padding-top: 40px;
+            }
+            .sublinhado-title-card {
+                width: 50px;
+                height: 2px;
+                background: #868AA5;
+            }
+            .sublinhado-title {
+                width: 94px;
+                height: 7px;
+                background: #868AA5;
+                top: 12px;
                 position: relative;
-                padding: 6px;
             }
-            h5.card-title {
-                color: #150067;
-                font-size: 1.2rem;
+            
+            .container-slide {
+                padding: 10px;
             }
-            .card-body {
+            .card-slide {
                 background: #FFFFFF;
-                box-shadow: 0px 0px 33px 4px rgb(0 0 0 / 9%);
-                padding: 24px;
-                border-radius: 11px;
+                box-shadow: 0px 13px 19px rgb(0 0 0 / 7%);
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+                padding: 30px 15px 15px 30px;
             }
-            p.card-text {
-                font-size: 1rem;
-                color: #7d7474;
+            .card-title-header {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.1px;
+                color: #252B42;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
             }
-            a.btn.btn-primary.documentation {
-                background: transparent;
-                color: #150067;
-                border: 2px solid #004cff;
-                font-size: 1rem;
-                font-weight: 600;
+            .card-text {/* paragraph */
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                color: #737373;
+                flex: none;
+                order: 3;
+                flex-grow: 0;
             }
 
 
