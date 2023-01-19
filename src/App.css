@@ -25,6 +25,9 @@ section.blocks{
 .App-link {
   color: #61dafb;
 }
+h1.title-color-white {
+  color: white;
+}
 .title-blocks h1 {
   font-size: 2.3rem;
   color: #150067;
