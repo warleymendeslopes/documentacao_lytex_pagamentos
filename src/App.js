@@ -9,6 +9,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import HomePage from './blocks/home-page'
 import EsseciaLytex from './blocks/essencia_lytex'
 import Produtos from './blocks/produtos'
+import Solution from './blocks/sulutions'
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ function Home() {
       <HomePage />
       <Produtos />
       <EsseciaLytex />
+      <Solution />
     </div>
   );
 }
