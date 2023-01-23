@@ -2789,13 +2789,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -2824,13 +2824,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -3327,13 +3327,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -3362,13 +3362,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -5241,13 +5241,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -5276,13 +5276,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -6729,13 +6729,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -6764,13 +6764,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -7290,13 +7290,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -7325,13 +7325,13 @@
                               "value": {
                                 "oneOf": [
                                   {
-                                    "type": "Fixo",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 1",
                                     "minimum": 1,
                                     "x-required": true
                                   },
                                   {
-                                    "type": "Porcentagem",
+                                    "type": "object",
                                     "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                     "format": "float",
                                     "minimum": 0.01,
@@ -9885,13 +9885,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -9920,13 +9920,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -12899,13 +12899,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -12934,13 +12934,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -14514,13 +14514,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
@@ -14549,13 +14549,13 @@
                           "value": {
                             "oneOf": [
                               {
-                                "type": "Fixo",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 1",
                                 "minimum": 1,
                                 "x-required": true
                               },
                               {
-                                "type": "Porcentagem",
+                                "type": "object",
                                 "description": "Deve-se inserir um valor maior que 0.01 e menor que 99.99",
                                 "format": "float",
                                 "minimum": 0.01,
