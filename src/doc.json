@@ -5449,6 +5449,7 @@
                             }
                           }
                         },
+                        
                         "boleto": {
                           "type": "object",
                           "properties": {
