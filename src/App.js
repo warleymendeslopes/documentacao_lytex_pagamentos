@@ -69,6 +69,7 @@ function Documentacao() {
           .sc-eDvSVe {
             background: #fafafa;
             width: 100%;
+            padding: 10px 40px;
           }
           .menu-content {
             top: 86px !important;
@@ -148,6 +149,7 @@ function IntroducaoSistema() {
           .sc-eDvSVe {
             background: #fafafa;
             width: 100%;
+            padding: 10px 40px;
           }
           .menu-content {
             top: 86px !important;
