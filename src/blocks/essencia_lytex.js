@@ -128,7 +128,7 @@ function Home() {
                 box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
             }
             .icons {
-                border-radius: none; 
+                border-radius: 0; 
                 box-shadow: none;
                 margin: 0;
             }
