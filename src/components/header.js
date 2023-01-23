@@ -1,12 +1,9 @@
 
 import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
-import React, { useEffect } from 'react';
-
 
 function Header() {
-  //const [count, setCount] = useState(0);
-  useEffect(() => {
+
     window.onload = function(e) {
   
       var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
@@ -20,7 +17,7 @@ function Header() {
           }
       });
     }
-});
+
 
 
   return (
