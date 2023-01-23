@@ -127,6 +127,11 @@ function Home() {
                 padding: 20px 40px 20px 40px;
                 box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
             }
+            .icons {
+                border-radius: none; 
+                box-shadow: none;
+                margin: 0;
+            }
             .flex-grow-1.ms-3.text-icons {
                 color: white;
             }
