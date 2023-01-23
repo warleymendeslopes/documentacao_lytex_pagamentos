@@ -189,7 +189,12 @@ function IntroducaoSistema() {
         .sc-eDvSVe:nth-child(5) div{
             width: 100%;
         }
-
+        img,
+        video{
+          border-radius: 12px; 
+          box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
+          margin: 15px 0px;
+        } 
     
       
       `}</style>
