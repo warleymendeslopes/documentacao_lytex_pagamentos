@@ -52,7 +52,6 @@ function Documentacao() {
   return (
     <div>
       <RedocStandalone
-        hide-download-button
         specUrl= {Doc}
         options={{
           nativeScrollbars: true,
@@ -118,7 +117,6 @@ function IntroducaoSistema() {
   return (
     <div>
       <RedocStandalone
-        hide-download-button
         specUrl= {Plataforma}
         options={{
           nativeScrollbars: true,

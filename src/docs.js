@@ -15,7 +15,6 @@ function Docs() {
     <>
     < Header />
       <RedocStandalone
-        hide-download-button
         specUrl="https://api-pay.lytex.com.br/v1/open-api-v3-spec.json"
         options={{
           nativeScrollbars: true,
