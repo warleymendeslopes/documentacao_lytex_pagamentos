@@ -148,7 +148,6 @@ function IntroducaoSistema() {
           .sc-eDvSVe {
             background: #fafafa;
             width: 100%;
-            padding: 77px 0;
           }
           .menu-content {
             top: 86px !important;
