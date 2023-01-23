@@ -106,6 +106,21 @@ function Documentacao() {
             padding-top: 54px;
             padding-bottom: 50px;
         }
+        p {
+          line-height: 1.8;
+          font-family: 'Ubuntu';
+          color: #707070;
+        }
+        h1 {
+          color: #004cff !important;
+          font-weight: 600 !important;
+        }
+        h2 {
+          color: #707070 !important;
+          font-family: Ubuntu !important;
+          font-weight: 600 !important;
+          line-height: 1.8 !important;
+        }
       
       `}</style>
 
