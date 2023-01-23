@@ -40,3 +40,7 @@ video{
 .api-content .api-info > p {
   display: none !important;
 }
+
+a[href="https://redocly.com/redoc/"] {
+  opacity: 0;
+}
