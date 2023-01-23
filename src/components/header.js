@@ -3,13 +3,30 @@ import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
 
 
+
 function Header() {
+
+
+  window.onload = function(e) {
+    var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
+    var menu = document.getElementsByClassName('header-doc-lytex')[0];
+  
+    document.addEventListener('scroll', function() {
+        if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+            menu.style.position = 'fixed';
+        } else {
+            menu.style.position = 'initial';
+        }
+    });
+  }
+
+
   return (
       <div className='header-doc-lytex'>
         <div className='container content-nav-menu'>
-          <div className='row'>
-                <div className='col-lg-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
-                <div className='col-lg-6 nav-menu-lytex'>
+          <div className='row row-nav-menu'>
+                <div className='col-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
+                <div className='col-7 nav-menu-lytex'>
                   <ul>
                     <li><Link to="/">Conheça a LyTex Pagamentos</Link></li>
                     <li><Link to="/documentacao">Documentação</Link></li>
@@ -17,7 +34,7 @@ function Header() {
                     <li><Link to="/documentacao">Integrações</Link></li>
                   </ul>
                 </div>
-                <div className='col-lg-4 cta-login'>
+                <div className='col-3 cta-login'>
                   <a className='cta-login-doc fundo-white' href="https://pay.lytex.com.br/auth/login">Login de sistema</a>
                   <a className='cta-login-doc' href="https://pay.lytex.com.br/auth/login">Login Sandbox</a>
                 </div>
@@ -33,7 +50,6 @@ function Header() {
           }
           .header-doc-lytex {
             background: #004CFF;
-            position: fixed;
             top: 0;
             width: 100%;
             z-index: 9999999;
@@ -42,21 +58,22 @@ function Header() {
           .nav-menu-lytex ul {
             padding-inline-start: 0px;
             display: flex;
-            justify-content: space-between;
           }
           .nav-menu-lytex ul li{
             list-style-type: none;
+            padding-left: 19px;
           }
           .nav-menu-lytex ul li a {
             font-family: 'Ubuntu';
             font-style: normal;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 30px;
             display: flex;
             align-items: center;
             color: #FFFFFF;
             text-decoration: none;
+            
           }
           .cta-login-doc {
             padding: 9px 10px;
@@ -65,7 +82,7 @@ function Header() {
             font-family: 'Ubuntu';
             font-style: normal;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 13px;
             line-height: 150%;
             color: #FFFFFF;
             text-decoration: none;
@@ -86,13 +103,25 @@ function Header() {
           }
       
           @media only screen and (max-width: 960px) {
+            .col-7.nav-menu-lytex{
+              display:none;
+            }
+            .row.row-nav-menu {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .col-3.cta-login {
+              width: 406px;
+            }
                   
           }
       
           @media (max-width: 600px){
-          .header-doc-lytex{
-            display:none;
-          }
+              .col-3.cta-login {
+                display:none;
+              }
+
           }
 
         `}</style>

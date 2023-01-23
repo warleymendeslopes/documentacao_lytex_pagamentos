@@ -1,25 +1,23 @@
-
-
 import './block.css';
-  
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
 
-    <section className="blocks-home-page ">
-        <div className="container">
-        </div>
-
-    </section>
+    <Link to="/documentacao">
+      <section className="blocks-home-page ">
+          <div className="container link-documentatio">
+          </div>
+      </section>
+    </Link>
     <style jsx>{`
 
     .blocks-home-page {
-        
+        cursor: pointer;
         background: #004CFF;
         background-image: url(/back.png);
-        height: 71vh;
+        height: 60vh;
         background-repeat: no-repeat;
         background-position: bottom, center;
         background-size: contain;
@@ -41,6 +39,9 @@ function Home() {
     }
 
     @media only screen and (max-width: 960px) {
+      .blocks-home-page {
+        height: 41vh ;
+      }
             
     }
 
@@ -54,6 +55,7 @@ function Home() {
           background-position: bottom, center;
           background-size: contain;
       }
+
 
 
     }

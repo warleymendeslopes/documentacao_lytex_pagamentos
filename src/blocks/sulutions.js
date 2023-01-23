@@ -29,12 +29,17 @@ function Solutions() {
           ),
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         responsive: [
             {
                 breakpoint: 600,
                 settings: {
-                  slidesToShow: 4,
+                  slidesToShow: 1,
+                  dots: false,
+                  vertical: false,
+                  verticalSwiping: false,
+                  autoplay: false,
+                  arrows: false,
                 }
               }
         ]
@@ -234,7 +239,15 @@ function Solutions() {
     }
 
     @media (max-width: 600px){
-    s
+        .solutions-card {
+            display: flex;
+            flex-direction: column;
+            padding: 17px 12px 26px 12px;
+        }
+        
+        .name-solution {
+            line-height: 3;
+        }
     }
     `}</style>
     </>

@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function SimpleSlider() {
     var settings = {
         dots: true,
-        arrows: true,
+        arrows: false,
         infinite: true,
         autoplay: true,
         speed: 500,
@@ -13,11 +13,17 @@ export default function SimpleSlider() {
         slidesToScroll: 3,
         responsive: [
             {
+                breakpoint: 960,
+                settings: {
+                  slidesToShow: 3,
+                }
+            },
+            {
                 breakpoint: 600,
                 settings: {
                   slidesToShow: 1,
                 }
-              }
+            }
         ]
     };
     return (
