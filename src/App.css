@@ -7,6 +7,9 @@ img {
 .lytex-logo {
   height: 50px;
   pointer-events: none;
+  box-shadow: none;
+  margin : 0px;
+  border-radius: 0px;
 }
 
 .App-header {
