@@ -52,15 +52,15 @@ function Documentacao() {
   return (
     <div>
       <RedocStandalone
-        specUrl= {Doc}
+        specUrl={Doc}
         options={{
           nativeScrollbars: true,
-          theme: { 
-            colors: { 
-              primary: { 
-                main: '#004cff' 
-              } 
-            } 
+          theme: {
+            colors: {
+              primary: {
+                main: '#004cff'
+              }
+            }
           },
         }}
       />
@@ -94,6 +94,8 @@ function Documentacao() {
         }
         .sc-eDvSVe:nth-child(3) div{
             width: 100%;
+            border-radius: 12px 0px 0px 12px;
+            box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
         }
         .sc-eDvSVe:nth-child(4){
             background:#fafafa;
@@ -132,15 +134,15 @@ function IntroducaoSistema() {
   return (
     <div>
       <RedocStandalone
-        specUrl= {Plataforma}
+        specUrl={Plataforma}
         options={{
           nativeScrollbars: true,
-          theme: { 
-            colors: { 
-              primary: { 
-                main: '#004cff' 
-              } 
-            } 
+          theme: {
+            colors: {
+              primary: {
+                main: '#004cff'
+              }
+            }
           },
         }}
       />
@@ -174,6 +176,8 @@ function IntroducaoSistema() {
         }
         .sc-eDvSVe:nth-child(3) div{
             width: 100%;
+            border-radius: 12px 0px 0px 12px;
+            box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
         }
         .sc-eDvSVe:nth-child(4){
             background:#fafafa;
