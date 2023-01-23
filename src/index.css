@@ -20,8 +20,8 @@ p {
 }
 
 h1 {
-  color: #004cff;
-  font-weight: 600;
+  color: #004cff !important;
+  font-weight: 600 !important;
 }
 
 img,
