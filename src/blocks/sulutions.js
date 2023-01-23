@@ -44,7 +44,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
 
@@ -54,7 +54,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
@@ -73,7 +73,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
@@ -82,7 +82,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
@@ -91,7 +91,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
@@ -100,7 +100,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
@@ -109,7 +109,7 @@ function Solutions() {
                                     <img src='/icones/boleto.svg' alt='' />
                                 </div>
                                 <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
+                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">Acessar Documentação</Link></div>
                             </div>
                         </div>
 
