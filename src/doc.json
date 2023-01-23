@@ -1,7 +1,5 @@
 {
   "openapi": "3.0.0",
-
-  
   "tags": [
     {
       "name": "Clientes",
@@ -32,7 +30,6 @@
       "description": "teste carteira"
     }
   ],
- 
   "paths": {
     "/v1/clients": {
       "post": {
@@ -1687,7 +1684,6 @@
                       "pj"
                     ]
                   },
-                  
                   "name": {
                     "type": "string",
                     "maxLength": 255,
@@ -2431,7 +2427,7 @@
                     "properties": {
                       "_clientId": {
                         "type": "string",
-                        "description" : "Identificador unico ID"
+                        "description": "Identificador unico ID"
                       },
                       "items": {
                         "description": "Informações do produto",
@@ -2473,7 +2469,6 @@
                               "monthly"
                             ],
                             "description": "Tipo de Cobrança mensal ou anual"
-
                           },
                           "day": {
                             "type": "number",
@@ -2493,7 +2488,6 @@
                             "type": "string",
                             "format": "date-time",
                             "description": "Data da próxima fatura a ser gerada"
-                  
                           }
                         },
                         "required": [
@@ -2597,91 +2591,89 @@
                         "properties": {
                           "enable": {
                             "type": "boolean",
-                            "description": "True para habilitar False para desabilitar" 
+                            "description": "True para habilitar False para desabilitar"
                           },
                           "channels": {
                             "description": "Canais de notificação ",
-                                "type": "object",
-                                "properties": {
-                                  "sms": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de SMS"
-                                  },
-                                  "email": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de e-mail"
-                                  },
-                                  "whatsApp": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de whatsApp"
-                                  }
-                                },
-                                "required": [
-                                  "sms",
-                                  "email",
-                                  "whatsApp"
+                            "type": "object",
+                            "properties": {
+                              "sms": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Canail de SMS"
+                              },
+                              "email": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
+                              },
+                              "whatsApp": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
+                              }
+                            },
+                            "required": [
+                              "sms",
+                              "email",
+                              "whatsApp"
+                            ],
+                            "x-required": true
                           },
                           "types": {
                             "description": "Configurações de disparo da notificação",
-                                "type": "object",
-                                "properties": {
-                                  "invoiceCreate": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for criada"
-                                  },
-                                  "daysBeforeExpiration3": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação 3 dias antes da fatura vencer"
-                                  },
-                                  "expirationDay": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação no dia de expiração"
-                                  },
-                                  "invoicePaid": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for paga "
-                                
-                                  }
-                                },
-                                "required": [
-                                  "invoiceCreate",
-                                  "daysBeforeExpiration3",
-                                  "expirationDay",
-                                  "invoicePaid"
+                            "type": "object",
+                            "properties": {
+                              "invoiceCreate": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
+                              },
+                              "daysBeforeExpiration3": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
+                              },
+                              "expirationDay": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
+                              },
+                              "invoicePaid": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
                               }
-
+                            },
+                            "required": [
+                              "invoiceCreate",
+                              "daysBeforeExpiration3",
+                              "expirationDay",
+                              "invoicePaid"
+                            ],
+                            "x-required": true
+                          }
                         },
                         "required": [
                           "enable"
@@ -2850,7 +2842,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -2867,7 +2859,7 @@
                     "type": "object",
                     "properties": {
                       "client": {
-                        "description":"Criar um cliente juntamente com a fatura",
+                        "description": "Criar um cliente juntamente com a fatura",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -3011,7 +3003,6 @@
                               "monthly"
                             ],
                             "description": "Tipo de Cobrança mensal ou anual"
-
                           },
                           "day": {
                             "type": "number",
@@ -3031,7 +3022,6 @@
                             "type": "string",
                             "format": "date-time",
                             "description": "Data da próxima fatura a ser gerada"
-                  
                           }
                         },
                         "required": [
@@ -3135,91 +3125,89 @@
                         "properties": {
                           "enable": {
                             "type": "boolean",
-                            "description": "True para habilitar False para desabilitar" 
+                            "description": "True para habilitar False para desabilitar"
                           },
                           "channels": {
                             "description": "Canais de notificação ",
-                                "type": "object",
-                                "properties": {
-                                  "sms": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de SMS"
-                                  },
-                                  "email": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de e-mail"
-                                  },
-                                  "whatsApp": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de whatsApp"
-                                  }
-                                },
-                                "required": [
-                                  "sms",
-                                  "email",
-                                  "whatsApp"
+                            "type": "object",
+                            "properties": {
+                              "sms": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Canail de SMS"
+                              },
+                              "email": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
+                              },
+                              "whatsApp": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
+                              }
+                            },
+                            "required": [
+                              "sms",
+                              "email",
+                              "whatsApp"
+                            ],
+                            "x-required": true
                           },
                           "types": {
                             "description": "Configurações de disparo da notificação",
-                                "type": "object",
-                                "properties": {
-                                  "invoiceCreate": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for criada"
-                                  },
-                                  "daysBeforeExpiration3": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação 3 dias antes da fatura vencer"
-                                  },
-                                  "expirationDay": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação no dia de expiração"
-                                  },
-                                  "invoicePaid": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for paga "
-                                
-                                  }
-                                },
-                                "required": [
-                                  "invoiceCreate",
-                                  "daysBeforeExpiration3",
-                                  "expirationDay",
-                                  "invoicePaid"
+                            "type": "object",
+                            "properties": {
+                              "invoiceCreate": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
+                              },
+                              "daysBeforeExpiration3": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
+                              },
+                              "expirationDay": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
+                              },
+                              "invoicePaid": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
                               }
-
+                            },
+                            "required": [
+                              "invoiceCreate",
+                              "daysBeforeExpiration3",
+                              "expirationDay",
+                              "invoicePaid"
+                            ],
+                            "x-required": true
+                          }
                         },
                         "required": [
                           "enable"
@@ -3388,7 +3376,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -3903,7 +3891,7 @@
         "parameters": [
           {
             "name": "search",
-            "description":"Nome que deseja pesquisar ",
+            "description": "Nome que deseja pesquisar ",
             "in": "query",
             "schema": {
               "type": "string"
@@ -4884,7 +4872,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-
                   "items": {
                     "description": "Informações do produto",
                     "type": "array",
@@ -4925,7 +4912,6 @@
                           "monthly"
                         ],
                         "description": "Tipo de Cobrança mensal ou anual"
-
                       },
                       "day": {
                         "type": "number",
@@ -4945,7 +4931,6 @@
                         "type": "string",
                         "format": "date-time",
                         "description": "Data da próxima fatura a ser gerada"
-              
                       }
                     },
                     "required": [
@@ -5049,91 +5034,89 @@
                     "properties": {
                       "enable": {
                         "type": "boolean",
-                        "description": "True para habilitar False para desabilitar" 
+                        "description": "True para habilitar False para desabilitar"
                       },
                       "channels": {
                         "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
+                        "type": "object",
+                        "properties": {
+                          "sms": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Canail de SMS"
+                          },
+                          "email": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de e-mail"
+                          },
+                          "whatsApp": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de whatsApp"
+                          }
+                        },
+                        "required": [
+                          "sms",
+                          "email",
+                          "whatsApp"
+                        ],
+                        "x-required": true
                       },
                       "types": {
                         "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                            
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
+                        "type": "object",
+                        "properties": {
+                          "invoiceCreate": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for criada"
+                          },
+                          "daysBeforeExpiration3": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação 3 dias antes da fatura vencer"
+                          },
+                          "expirationDay": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação no dia de expiração"
+                          },
+                          "invoicePaid": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for paga "
                           }
-
+                        },
+                        "required": [
+                          "invoiceCreate",
+                          "daysBeforeExpiration3",
+                          "expirationDay",
+                          "invoicePaid"
+                        ],
+                        "x-required": true
+                      }
                     },
                     "required": [
                       "enable"
@@ -5302,7 +5285,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -5449,7 +5432,6 @@
                             }
                           }
                         },
-                        
                         "boleto": {
                           "type": "object",
                           "properties": {
@@ -6383,7 +6365,7 @@
                       "dueDate": {
                         "type": "string",
                         "format": "date-time",
-                        "description":"Dia de vencimento  da cobrança "
+                        "description": "Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
                         "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
@@ -6509,7 +6491,7 @@
                         ]
                       },
                       "discount": {
-                        "description":"Configurar descontos no pagamento da fatura",
+                        "description": "Configurar descontos no pagamento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -6521,7 +6503,7 @@
                             ]
                           },
                           "discounts": {
-                            "description":"Objetos de configurações, podendo inserir ate 3 objetos de configurações ",
+                            "description": "Objetos de configurações, podendo inserir ate 3 objetos de configurações ",
                             "oneOf": [
                               {
                                 "type": "array",
@@ -6533,12 +6515,12 @@
                                       "format": "float",
                                       "minimum": 1,
                                       "maximum": 99,
-                                      "description":"Valor do desconto em porcentagem deve ser maior que 1 e menor que 99"
+                                      "description": "Valor do desconto em porcentagem deve ser maior que 1 e menor que 99"
                                     },
                                     "validUntil": {
                                       "type": "string",
                                       "format": "date-time",
-                                      "description":"Data de validade do desconto"
+                                      "description": "Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -6559,12 +6541,12 @@
                                       "type": "number",
                                       "format": "float",
                                       "minimum": 1,
-                                      "description":"Valor do desconto fixo deve ser maior que 1"
+                                      "description": "Valor do desconto fixo deve ser maior que 1"
                                     },
                                     "validUntil": {
                                       "type": "string",
                                       "format": "date-time",
-                                      "description":"Data de validade do desconto"
+                                      "description": "Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -6584,7 +6566,7 @@
                         ]
                       },
                       "_paymentLinkId": {
-                        "description":"identificador único do link de pagamento, caso ja esteja criado o link",
+                        "description": "identificador único do link de pagamento, caso ja esteja criado o link",
                         "type": "string"
                       },
                       "notifications": {
@@ -6593,98 +6575,96 @@
                         "properties": {
                           "enable": {
                             "type": "boolean",
-                            "description": "True para habilitar False para desabilitar" 
+                            "description": "True para habilitar False para desabilitar"
                           },
                           "channels": {
                             "description": "Canais de notificação ",
-                                "type": "object",
-                                "properties": {
-                                  "sms": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de SMS"
-                                  },
-                                  "email": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de e-mail"
-                                  },
-                                  "whatsApp": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de whatsApp"
-                                  }
-                                },
-                                "required": [
-                                  "sms",
-                                  "email",
-                                  "whatsApp"
+                            "type": "object",
+                            "properties": {
+                              "sms": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Canail de SMS"
+                              },
+                              "email": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
+                              },
+                              "whatsApp": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
+                              }
+                            },
+                            "required": [
+                              "sms",
+                              "email",
+                              "whatsApp"
+                            ],
+                            "x-required": true
                           },
                           "types": {
                             "description": "Configurações de disparo da notificação",
-                                "type": "object",
-                                "properties": {
-                                  "invoiceCreate": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for criada"
-                                  },
-                                  "daysBeforeExpiration3": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação 3 dias antes da fatura vencer"
-                                  },
-                                  "expirationDay": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação no dia de expiração"
-                                  },
-                                  "invoicePaid": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for paga "
-                                
-                                  }
-                                },
-                                "required": [
-                                  "invoiceCreate",
-                                  "daysBeforeExpiration3",
-                                  "expirationDay",
-                                  "invoicePaid"
+                            "type": "object",
+                            "properties": {
+                              "invoiceCreate": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
+                              },
+                              "daysBeforeExpiration3": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
+                              },
+                              "expirationDay": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
+                              },
+                              "invoicePaid": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
                               }
-
+                            },
+                            "required": [
+                              "invoiceCreate",
+                              "daysBeforeExpiration3",
+                              "expirationDay",
+                              "invoicePaid"
+                            ],
+                            "x-required": true
+                          }
                         },
                         "required": [
                           "enable"
                         ]
                       },
                       "referenceId": {
-                        "description":"Pode-se inserir um identificador de referencia",
+                        "description": "Pode-se inserir um identificador de referencia",
                         "type": "string",
                         "maxLength": 150
                       },
@@ -6791,7 +6771,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -6807,7 +6787,7 @@
                     "type": "object",
                     "properties": {
                       "client": {
-                        "description":"Criar um cliente juntamente com a fatura",
+                        "description": "Criar um cliente juntamente com a fatura",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -6944,7 +6924,7 @@
                       "dueDate": {
                         "type": "string",
                         "format": "date-time",
-                        "description":"Dia de vencimento  da cobrança "
+                        "description": "Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
                         "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
@@ -7070,7 +7050,7 @@
                         ]
                       },
                       "discount": {
-                        "description":"Configurar descontos no pagamento da fatura",
+                        "description": "Configurar descontos no pagamento da fatura",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -7082,7 +7062,7 @@
                             ]
                           },
                           "discounts": {
-                            "description":"Objetos de configurações, podendo inserir ate 3 objetos de configurações ",
+                            "description": "Objetos de configurações, podendo inserir ate 3 objetos de configurações ",
                             "oneOf": [
                               {
                                 "type": "array",
@@ -7094,12 +7074,12 @@
                                       "format": "float",
                                       "minimum": 1,
                                       "maximum": 99,
-                                      "description":"Valor do desconto em porcentagem deve ser maior que 1 e menor que 99"
+                                      "description": "Valor do desconto em porcentagem deve ser maior que 1 e menor que 99"
                                     },
                                     "validUntil": {
                                       "type": "string",
                                       "format": "date-time",
-                                      "description":"Data de validade do desconto"
+                                      "description": "Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -7120,12 +7100,12 @@
                                       "type": "number",
                                       "format": "float",
                                       "minimum": 1,
-                                      "description":"Valor do desconto fixo deve ser maior que 1"
+                                      "description": "Valor do desconto fixo deve ser maior que 1"
                                     },
                                     "validUntil": {
                                       "type": "string",
                                       "format": "date-time",
-                                      "description":"Data de validade do desconto"
+                                      "description": "Data de validade do desconto"
                                     }
                                   },
                                   "required": [
@@ -7145,7 +7125,7 @@
                         ]
                       },
                       "_paymentLinkId": {
-                        "description":"identificador único do link de pagamento, caso ja esteja criado o link",
+                        "description": "identificador único do link de pagamento, caso ja esteja criado o link",
                         "type": "string"
                       },
                       "notifications": {
@@ -7154,98 +7134,96 @@
                         "properties": {
                           "enable": {
                             "type": "boolean",
-                            "description": "True para habilitar False para desabilitar" 
+                            "description": "True para habilitar False para desabilitar"
                           },
                           "channels": {
                             "description": "Canais de notificação ",
-                                "type": "object",
-                                "properties": {
-                                  "sms": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de SMS"
-                                  },
-                                  "email": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de e-mail"
-                                  },
-                                  "whatsApp": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Canail de whatsApp"
-                                  }
-                                },
-                                "required": [
-                                  "sms",
-                                  "email",
-                                  "whatsApp"
+                            "type": "object",
+                            "properties": {
+                              "sms": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Canail de SMS"
+                              },
+                              "email": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de e-mail"
+                              },
+                              "whatsApp": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Canail de whatsApp"
+                              }
+                            },
+                            "required": [
+                              "sms",
+                              "email",
+                              "whatsApp"
+                            ],
+                            "x-required": true
                           },
                           "types": {
                             "description": "Configurações de disparo da notificação",
-                                "type": "object",
-                                "properties": {
-                                  "invoiceCreate": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for criada"
-                                  },
-                                  "daysBeforeExpiration3": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação 3 dias antes da fatura vencer"
-                                  },
-                                  "expirationDay": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação no dia de expiração"
-                                  },
-                                  "invoicePaid": {
-                                    "enum": [
-                                      "true",
-                                      "false"
-                                    ],
-                                    "type": "boolean",
-                                    "description": "Enviar notificação quando a fatura for paga "
-                                
-                                  }
-                                },
-                                "required": [
-                                  "invoiceCreate",
-                                  "daysBeforeExpiration3",
-                                  "expirationDay",
-                                  "invoicePaid"
+                            "type": "object",
+                            "properties": {
+                              "invoiceCreate": {
+                                "enum": [
+                                  "true",
+                                  "false"
                                 ],
-                                "x-required": true
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for criada"
+                              },
+                              "daysBeforeExpiration3": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação 3 dias antes da fatura vencer"
+                              },
+                              "expirationDay": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação no dia de expiração"
+                              },
+                              "invoicePaid": {
+                                "enum": [
+                                  "true",
+                                  "false"
+                                ],
+                                "type": "boolean",
+                                "description": "Enviar notificação quando a fatura for paga "
                               }
-
+                            },
+                            "required": [
+                              "invoiceCreate",
+                              "daysBeforeExpiration3",
+                              "expirationDay",
+                              "invoicePaid"
+                            ],
+                            "x-required": true
+                          }
                         },
                         "required": [
                           "enable"
                         ]
                       },
                       "referenceId": {
-                        "description":"Pode-se inserir um identificador de referencia",
+                        "description": "Pode-se inserir um identificador de referencia",
                         "type": "string",
                         "maxLength": 150
                       },
@@ -7352,7 +7330,7 @@
                         ]
                       },
                       "observation": {
-                        "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -8116,7 +8094,7 @@
           },
           {
             "name": "payedStartDate",
-            "description":"data de início paga",
+            "description": "data de início paga",
             "in": "query",
             "schema": {
               "type": "string",
@@ -8165,7 +8143,7 @@
           },
           {
             "name": "_paymentLinkId",
-            "description":"identificador único do link de pagamento",
+            "description": "identificador único do link de pagamento",
             "in": "query",
             "schema": {
               "type": "string"
@@ -8566,13 +8544,13 @@
                 "type": "object",
                 "properties": {
                   "totalValue": {
-                    "description":"valor total, maior que 200",
+                    "description": "valor total, maior que 200",
                     "type": "number",
                     "format": "float",
                     "minimum": 200
                   },
                   "taxationMode": {
-                    "description":"modo de tributação",
+                    "description": "modo de tributação",
                     "type": "string",
                     "enum": [
                       "onlyPrimary"
@@ -8805,7 +8783,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador  unico da fatura",
+            "description": "Identificador  unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -9749,98 +9727,96 @@
                     "properties": {
                       "enable": {
                         "type": "boolean",
-                        "description": "True para habilitar False para desabilitar" 
+                        "description": "True para habilitar False para desabilitar"
                       },
                       "channels": {
                         "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
+                        "type": "object",
+                        "properties": {
+                          "sms": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Canail de SMS"
+                          },
+                          "email": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de e-mail"
+                          },
+                          "whatsApp": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de whatsApp"
+                          }
+                        },
+                        "required": [
+                          "sms",
+                          "email",
+                          "whatsApp"
+                        ],
+                        "x-required": true
                       },
                       "types": {
                         "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                            
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
+                        "type": "object",
+                        "properties": {
+                          "invoiceCreate": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for criada"
+                          },
+                          "daysBeforeExpiration3": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação 3 dias antes da fatura vencer"
+                          },
+                          "expirationDay": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação no dia de expiração"
+                          },
+                          "invoicePaid": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for paga "
                           }
-
+                        },
+                        "required": [
+                          "invoiceCreate",
+                          "daysBeforeExpiration3",
+                          "expirationDay",
+                          "invoicePaid"
+                        ],
+                        "x-required": true
+                      }
                     },
                     "required": [
                       "enable"
                     ]
                   },
                   "observation": {
-                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   },
@@ -9957,7 +9933,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico da fatura",
+            "description": "Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10668,7 +10644,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico da fatura",
+            "description": "Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10889,7 +10865,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico da fatura",
+            "description": "Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -11619,7 +11595,7 @@
                     ]
                   },
                   "parcels": {
-                    "description":"parcelas a pagar",
+                    "description": "parcelas a pagar",
                     "oneOf": [
                       {
                         "type": "integer",
@@ -11630,7 +11606,7 @@
                     ]
                   },
                   "paidValue": {
-                    "description":"valor pago",
+                    "description": "valor pago",
                     "oneOf": [
                       {
                         "type": "integer",
@@ -11641,7 +11617,7 @@
                     ]
                   },
                   "paidDate": {
-                    "description":"data do pagamento",
+                    "description": "data do pagamento",
                     "oneOf": [
                       {
                         "type": "string",
@@ -11661,7 +11637,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico da fatura",
+            "description": "Identificador unico da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -12377,7 +12353,7 @@
         "parameters": [
           {
             "name": "transactionId",
-            "description":"Identificador unico da transação",
+            "description": "Identificador unico da transação",
             "required": true,
             "in": "path",
             "schema": {
@@ -12596,7 +12572,7 @@
                 "type": "object",
                 "properties": {
                   "description": {
-                    "description":"descricao do link de pagamento",
+                    "description": "descricao do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
@@ -12710,91 +12686,89 @@
                     "properties": {
                       "enable": {
                         "type": "boolean",
-                        "description": "True para habilitar False para desabilitar" 
+                        "description": "True para habilitar False para desabilitar"
                       },
                       "channels": {
                         "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
+                        "type": "object",
+                        "properties": {
+                          "sms": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Canail de SMS"
+                          },
+                          "email": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de e-mail"
+                          },
+                          "whatsApp": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de whatsApp"
+                          }
+                        },
+                        "required": [
+                          "sms",
+                          "email",
+                          "whatsApp"
+                        ],
+                        "x-required": true
                       },
                       "types": {
                         "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                            
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
+                        "type": "object",
+                        "properties": {
+                          "invoiceCreate": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for criada"
+                          },
+                          "daysBeforeExpiration3": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação 3 dias antes da fatura vencer"
+                          },
+                          "expirationDay": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação no dia de expiração"
+                          },
+                          "invoicePaid": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for paga "
                           }
-
+                        },
+                        "required": [
+                          "invoiceCreate",
+                          "daysBeforeExpiration3",
+                          "expirationDay",
+                          "invoicePaid"
+                        ],
+                        "x-required": true
+                      }
                     },
                     "required": [
                       "enable"
@@ -12961,7 +12935,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -13420,7 +13394,7 @@
             "description": "buscar por link ativos",
             "in": "query",
             "schema": {
-              "enum":[
+              "enum": [
                 true,
                 false
               ],
@@ -13756,7 +13730,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico do link de pagamento",
+            "description": "Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -14211,7 +14185,7 @@
                 "type": "object",
                 "properties": {
                   "description": {
-                    "description":"descricao do link de pagamento",
+                    "description": "descricao do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
@@ -14325,91 +14299,89 @@
                     "properties": {
                       "enable": {
                         "type": "boolean",
-                        "description": "True para habilitar False para desabilitar" 
+                        "description": "True para habilitar False para desabilitar"
                       },
                       "channels": {
                         "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
+                        "type": "object",
+                        "properties": {
+                          "sms": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Canail de SMS"
+                          },
+                          "email": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de e-mail"
+                          },
+                          "whatsApp": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Canail de whatsApp"
+                          }
+                        },
+                        "required": [
+                          "sms",
+                          "email",
+                          "whatsApp"
+                        ],
+                        "x-required": true
                       },
                       "types": {
                         "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                            
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
+                        "type": "object",
+                        "properties": {
+                          "invoiceCreate": {
+                            "enum": [
+                              "true",
+                              "false"
                             ],
-                            "x-required": true
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for criada"
+                          },
+                          "daysBeforeExpiration3": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação 3 dias antes da fatura vencer"
+                          },
+                          "expirationDay": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação no dia de expiração"
+                          },
+                          "invoicePaid": {
+                            "enum": [
+                              "true",
+                              "false"
+                            ],
+                            "type": "boolean",
+                            "description": "Enviar notificação quando a fatura for paga "
                           }
-
+                        },
+                        "required": [
+                          "invoiceCreate",
+                          "daysBeforeExpiration3",
+                          "expirationDay",
+                          "invoicePaid"
+                        ],
+                        "x-required": true
+                      }
                     },
                     "required": [
                       "enable"
@@ -14576,7 +14548,7 @@
                     ]
                   },
                   "observation": {
-                    "description":"Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -14593,7 +14565,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico do link de pagamento",
+            "description": "Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15019,7 +14991,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico do link de pagamento",
+            "description": "Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15445,7 +15417,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico do link de pagamento",
+            "description": "Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15871,7 +15843,7 @@
         "parameters": [
           {
             "name": "id",
-            "description":"Identificador unico do link de pagamento",
+            "description": "Identificador unico do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -16137,9 +16109,6 @@
         ]
       }
     },
-
-
-
     "/v1/products": {
       "post": {
         "operationId": "ProductsController_createProduct",
@@ -17557,13 +17526,13 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "description":"nome do produto",
+                    "description": "nome do produto",
                     "type": "string",
                     "maxLength": 255
                   },
                   "value": {
                     "type": "integer",
-                    "description":"valor do produto",
+                    "description": "valor do produto",
                     "minimum": 200,
                     "maximum": 1500000
                   }
