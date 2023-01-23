@@ -157,8 +157,7 @@ function Solutions() {
         font-size: 25px;
         color: #000000;
     }
-    .icon-solution,
-    .cta-solution {
+    .icon-solution > img {
         border-radius: 0;
         box-shadow: none;
         margin: 0;
