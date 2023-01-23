@@ -41,6 +41,6 @@ video{
   display: none !important;
 }
 
-a[href="https://redocly.com/redoc/"] {
+a[href="https://github.com/Redocly/redoc"] {
   opacity: 0;
 }
