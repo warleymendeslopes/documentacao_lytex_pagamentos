@@ -157,6 +157,12 @@ function Solutions() {
         font-size: 25px;
         color: #000000;
     }
+    .icon-solution,
+    .cta-solution {
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
     .stylecta-fake {
         background: #ffffffc4;
         border-radius: 37.7902px;
