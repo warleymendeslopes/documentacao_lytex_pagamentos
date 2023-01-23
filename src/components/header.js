@@ -1,24 +1,26 @@
 
 import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
-
+import React, { useEffect } from 'react';
 
 
 function Header() {
-
-
-  window.onload = function(e) {
-    var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
-    var menu = document.getElementsByClassName('header-doc-lytex')[0];
+  //const [count, setCount] = useState(0);
+  useEffect(() => {
+    window.onload = function(e) {
   
-    document.addEventListener('scroll', function() {
-        if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
-            menu.style.position = 'fixed';
-        } else {
-            menu.style.position = 'initial';
-        }
-    });
-  }
+      var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
+      var menu = document.getElementsByClassName('header-doc-lytex')[0];
+    
+      document.addEventListener('scroll', function() {
+          if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+              menu.style.position = 'fixed';
+          } else {
+              menu.style.position = 'initial';
+          }
+      });
+    }
+});
 
 
   return (
@@ -42,7 +44,9 @@ function Header() {
 
 
         </div>
-            
+        {
+        //teste() 
+        }
 
         <style jsx>{`
           .container.content-nav-menu {
@@ -121,7 +125,22 @@ function Header() {
               .col-3.cta-login {
                 display:none;
               }
-
+              .col-7.nav-menu-lytex {
+                display: none;
+                position: absolute;
+                background: #0031a5;
+                width: 70%;
+                height: 100vh;
+                z-index: 9999999999;
+                top: 0;
+                left: 0;
+            }
+            .nav-menu-lytex ul {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin-top: 117px;
+            }
           }
 
         `}</style>
