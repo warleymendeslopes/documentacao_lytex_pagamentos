@@ -81,6 +81,20 @@ function Header() {
             justify-content: flex-end;
           }
 
+          @media only screen and (max-width: 1401px) {
+
+          }
+      
+          @media only screen and (max-width: 960px) {
+                  
+          }
+      
+          @media (max-width: 600px){
+          .header-doc-lytex{
+            display:none;
+          }
+          }
+
         `}</style>
       </div>
   );

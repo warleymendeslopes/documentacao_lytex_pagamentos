@@ -12,6 +12,21 @@ function Solutions() {
         autoplay: true,
         vertical: true,
         verticalSwiping: true,
+        appendDots: dots => (
+            <div
+              style={{
+                position: "absolute",
+                top: "0px",
+                display: "flex",
+                alignItems: "center",
+                width: "30px",
+                left: "-39px"
+
+              }}
+            >
+              <ul className='list-dots-api'> {dots} </ul>
+            </div>
+          ),
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -25,6 +40,8 @@ function Solutions() {
         ]
     };
   return (
+
+
     <>
     <section className="blocks-solutions">
         <div className="container">
@@ -37,7 +54,6 @@ function Solutions() {
                 <div className='col-lg-6'>
                     <div className='slid-sulutions'>
                     <Slider {...settings}>
-
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
@@ -112,13 +128,6 @@ function Solutions() {
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
-
-
-
-
-
-
-
                     </Slider>
 
                     </div>
@@ -128,6 +137,43 @@ function Solutions() {
 
     </section>
     <style jsx>{`
+    ul.list-dots-api {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ul.list-dots-api li {
+        padding: 0;
+        margin: 0;
+    }
+    
+    ul.list-dots-api li button::before {
+        content: ' ';
+        font-size: 25px;
+        font-weight: 700;
+        color: #dbdbdb !important;
+        letter-spacing: 0 !important;
+        background: #f8f8f880;
+        border-radius: 50px;
+        width: 7px;
+        height: 7px;
+        opacity: inherit !important;
+    }
+    ul.list-dots-api li.slick-active button::before {
+        content: ' ';
+        font-size: 25px;
+        font-weight: 700;
+        color: #dbdbdb !important;
+        letter-spacing: 0 !important;
+        background: white;
+        border-radius: 50px;
+        width: 7px;
+        height: 21px;
+        opacity: inherit !important;
+        top: -7px;
+    }
 
     .blocks-solutions{
         background: #004CFF;

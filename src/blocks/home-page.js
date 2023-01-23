@@ -1,11 +1,14 @@
 
 
 import './block.css';
+  
+
 
 function Home() {
   return (
     <>
-    <section className="blocks-home-page">
+
+    <section className="blocks-home-page ">
         <div className="container">
         </div>
 
@@ -15,7 +18,6 @@ function Home() {
     .blocks-home-page {
         
         background: #004CFF;
-        padding-top: 100px;
         background-image: url(/back.png);
         height: 71vh;
         background-repeat: no-repeat;
@@ -43,7 +45,17 @@ function Home() {
     }
 
     @media (max-width: 600px){
-    s
+        .blocks-home-page {
+          background: #004CFF;
+          padding-top: 100px;
+          background-image: url(/back_mobile.png);
+          height: 100vh;
+          background-repeat: no-repeat;
+          background-position: bottom, center;
+          background-size: contain;
+      }
+
+
     }
     `}</style>
     </>
