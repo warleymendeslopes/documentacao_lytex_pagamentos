@@ -37,6 +37,12 @@ video{
   margin: 15px 0px;
 }
 
+.icons {
+  border-radius: none; 
+  box-shadow: none;
+  margin: 0;
+}
+
 .api-content .api-info > p {
   display: none !important;
 }
