@@ -5,13 +5,9 @@ import Header from './components/header'
 import Doc from './doc.json';
 import Plataforma from './plataforma.yaml';
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-import HomePage from './blocks/home-page'
-import EsseciaLytex from './blocks/essencia_lytex'
-import Produtos from './blocks/produtos'
-import Solution from './blocks/sulutions'
+import { Routes, Route, Outlet } from "react-router-dom";
 import Footer from './components/footer'
-
+import {PageNotFound, Home} from './routes'
 export default function App() {
   return (
     <>
@@ -20,7 +16,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="documentacao" element={<Documentacao />} />
           <Route path="introducao-ao-sistema" element={<IntroducaoSistema />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </>
@@ -33,17 +29,6 @@ function Layout() {
       <Header />
       <Outlet />
       <Footer />
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <HomePage />
-      <Produtos />
-      <EsseciaLytex />
-      <Solution />
     </div>
   );
 }
@@ -144,6 +129,7 @@ function Documentacao() {
           line-height: 1.8;
           font-family: 'Ubuntu';
           color: #707070;
+          font-size: 18px;
         }
         h1 {
           color: #004cff !important;
@@ -190,7 +176,7 @@ function IntroducaoSistema() {
             height: calc(80vh - 0px) !important;
           }
           .api-content {
-            top: 66px !important;
+            // top: 66px !important;
           }
           .api-info {
             width: 100%;
@@ -227,6 +213,7 @@ function IntroducaoSistema() {
           line-height: 1.8;
           font-family: 'Ubuntu';
           color: #707070;
+          font-size: 18px;
         }
         h1 {
           color: #004cff !important;
@@ -251,15 +238,3 @@ function IntroducaoSistema() {
     </div>
   );
 }
-
-function NoMatch() {
-  return (
-    <div>
-      <h2>Faq</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
-}
-
