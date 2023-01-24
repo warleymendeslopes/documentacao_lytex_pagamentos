@@ -28,7 +28,7 @@ function Solutions() {
             </div>
           ),
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 2,
         responsive: [
             {
@@ -52,11 +52,19 @@ function Solutions() {
         <div className="container">
             <div className='row'>
                 <div className='col-lg-6 d-flex align-items-center justify-content-center'>
-                        <div className='stylecta-fake'>
-                            <span>Pega o código copia  e cola!</span>
-                        </div>
+                        
+                           {
+                            //div className='stylecta-fake'>
+                            //  <span>Pega o código copia  e cola!</span>
+                            //</div>
+                           }
                 </div>
-                <div className='col-lg-6'>
+                <div className='col-lg-1'></div>
+                <div className='col-lg-5'>
+                        <div className='title-blocks white'>
+                            <h1 className='title-color-white'>Segurança e comodidade de quem sabe o que faz</h1>
+                         </div>
+
                     <div className='slid-sulutions'>
                     <Slider {...settings}>
                         <div className='container-solutions-card'>
@@ -187,7 +195,7 @@ function Solutions() {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center,center;
-        padding: 80px 0px 80px 0px;
+        padding: 15px 0px 53px 0px;
     }
     .cta-login-doc.fundo-blue {
         background: #004CFF;
@@ -200,6 +208,7 @@ function Solutions() {
         grid-template-columns: 12% 58% 30%;
         align-items: center;
         padding: 4px 19px 4px 10px;
+        border-radius: 20px;
     }
     .name-solution span {
         font-family: 'Ubuntu';

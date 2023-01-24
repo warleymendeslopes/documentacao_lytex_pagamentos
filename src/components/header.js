@@ -27,7 +27,7 @@ function Header() {
                 <div className='col-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
                 <div className='col-7 nav-menu-lytex'>
                   <ul>
-                    <li><Link to="/">Conheça a LyTex Pagamentos</Link></li>
+                    <li><Link to="/">Home </Link></li>
                     <li><Link to="/documentacao">Documentação</Link></li>
                     <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</Link></li>
                     <li><Link to="/documentacao">Integrações</Link></li>
