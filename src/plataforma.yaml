@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Passos Iniciais para cadastro e Integração da plataforma
+  # title: Passos Iniciais para cadastro e Integração da plataforma
   description: |-
     # Cadastro
 
