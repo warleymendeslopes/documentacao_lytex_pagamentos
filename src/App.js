@@ -227,6 +227,7 @@ function IntroducaoSistema() {
           line-height: 1.8;
           font-family: 'Ubuntu';
           color: #707070;
+          font-size: 18px;
         }
         h1 {
           color: #004cff !important;
