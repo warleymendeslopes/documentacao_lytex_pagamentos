@@ -2,24 +2,10 @@
 import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
 
+import React from 'react';
+
+
 function Header() {
-
-    window.onload = function(e) {
-  
-      var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
-      var menu = document.getElementsByClassName('header-doc-lytex')[0];
-    
-      document.addEventListener('scroll', function() {
-          if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
-              menu.style.position = 'fixed';
-          } else {
-              menu.style.position = 'initial';
-          }
-      });
-    }
-
-
-
   return (
       <div className='header-doc-lytex'>
         <div className='container content-nav-menu'>
@@ -38,18 +24,14 @@ function Header() {
                   <a className='cta-login-doc' href="https://pay.lytex.com.br/auth/login">Login Sandbox</a>
                 </div>
           </div>
-
-
         </div>
-        {
-        //teste() 
-        }
 
         <style jsx>{`
           .container.content-nav-menu {
             padding: 12px 0px 12px 0px;
           }
           .header-doc-lytex {
+            position: sticky;
             background: #004CFF;
             top: 0;
             width: 100%;
