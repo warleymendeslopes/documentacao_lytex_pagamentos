@@ -7,10 +7,10 @@ export default function SimpleSlider() {
         dots: true,
         arrows: false,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
         responsive: [
             {
                 breakpoint: 960,
@@ -24,7 +24,12 @@ export default function SimpleSlider() {
                   slidesToShow: 1,
                 }
             }
-        ]
+        ],
+        appendDots: dots => (
+            <div style={{bottom: "-49px"}}>
+              <ul className='slide-solutions'> {dots} </ul>
+            </div>
+          ),
     };
     return (
         <>
@@ -141,6 +146,42 @@ export default function SimpleSlider() {
 
 
             <style jsx>{`
+
+            ul.slide-solutions li button::before {
+                content: ' ';
+                font-size: 25px;
+                font-weight: 700;
+                color: #004cff !important;
+                letter-spacing: 0 !important;
+                background: #004cffa3;
+                border-radius: 50px;
+                width: 7px;
+                height: 7px;
+                opacity: inherit !important;
+            }
+            ul.slide-solutions li.slick-active button::before {
+                content: ' ';
+                font-size: 34px;
+                font-weight: 700;
+                color: #004cff !important;
+                letter-spacing: 0 !important;
+                background: #004cff;
+                border-radius: 50px;
+                width: 30px;
+                height: 7px;
+                opacity: inherit !important;
+                top: 1px;
+                left: -9px;
+            }
+            ul.slide-solutions li {
+                position: relative;
+                display: inline-block;
+                width: 13px;
+                height: 0px;
+                margin: 0 5px;
+                padding: 0;
+                cursor: pointer;
+            }
             section.produtos {
                 padding-top: 40px;
             }
