@@ -10,10 +10,14 @@ function Header() {
     window.onload = function(e) {
   
       var offset = document.getElementsByClassName('header-doc-lytex')[0].offsetTop;
+      console.log("🚀 ~ file: header.js:13 ~ useEffect ~ offset", offset)
       var menu = document.getElementsByClassName('header-doc-lytex')[0];
+      console.log("🚀 ~ file: header.js:15 ~ useEffect ~ menu", menu)
     
       document.addEventListener('scroll', function() {
           if (document.body.scrollTop > offset || document.documentElement.scrollTop > offset) {
+              console.log("🚀 ~ file: header.js:19 ~ document.addEventListener ~ document.documentElement.scrollTop", document.documentElement.scrollTop)
+              console.log("🚀 ~ file: header.js:19 ~ document.addEventListener ~ document.body.scrollTop", document.body.scrollTop)
               menu.style.position = 'fixed';
           } else {
               menu.style.position = 'initial';
@@ -53,6 +57,7 @@ function Header() {
             padding: 12px 0px 12px 0px;
           }
           .header-doc-lytex {
+            position: initial;
             background: #004CFF;
             top: 0;
             width: 100%;
