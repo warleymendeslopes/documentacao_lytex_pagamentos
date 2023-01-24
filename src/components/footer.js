@@ -61,12 +61,54 @@ function Footer() {
                     </div>
                 </div>
             </div>
+            <div className='row'>
+                <div className='col-lg-2'>
+                    <h3 className='title-menu-footer'>Endereço</h3>
+                            <div className='container-menu-footer'>
+                                <p>
+                                    Rua Doutor Moacir Byrro, 325, 1º andar, Centro, Coronel Fabriciano.
+                                </p>
+                            </div>
+                </div>
+                <div className='col-lg-10'>
+                    <div className='row'>
+                        <div className='col-lg-9 d-flex justify-content-center text-aling-center'>
+                            <p className='text-aling-center'>
+                            LyTeX Soluções LTDA. CNPJ: 34.778.583/0001-06 Copyright 2022.<br /> 
+                            Todos os direitos reservados.<br /> 
+                            <img className='img-logo-pci' src='/pci.svg' alt='pci dds complint' />
+                            </p>
+                        </div>
+                        <div className='col-lg-3 '>
+                            <span className='get-app'>BAIXE NOSSO EM BREVE APLICATIVO</span>
+                            <img className='img-get-app' src='/get-app.png' alt='Baixe nosso app' />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <style jsx>{`
+        span.get-app {
+            font-size: 11px;
+        }
+        img.img-logo-pci {
+            max-width: 100%;
+            margin-top: 15px;
+        }
+        p.text-aling-center {
+            line-height: 50px;
+        }
+        
+        img.img-get-app {
+            max-width: 100%;
+        }
         .container-menu-footer ul {
             padding: 0;
             margin: 0;
+        }
+        .text-aling-center {
+            text-align: center;
         }
           .footer-doc-lytex{
             background: #0A2640;
