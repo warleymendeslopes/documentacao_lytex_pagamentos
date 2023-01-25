@@ -1,8 +1,71 @@
 
+
+import { slide as Menu } from 'react-burger-menu'
 import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
 
 import React from 'react';
+
+
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    right: '36px',
+    top: '25px'
+  },
+  bmBurgerBars: {
+    background: 'rgb(255 255 255)',
+    BorderRadius: '2px'
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+    height: '100vh',
+    left: '0',
+    top: '-1px'
+  },
+  bmMenu: {
+    background: 'rgb(11 38 64)',
+    padding: '2.5em 25px 0px 10px',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: 'rgb(255 255 255)',
+    padding: '0.8em',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  bmItem: {
+    display: 'inline-block',
+    textDecoration: 'none',
+    color: '#ffffff',
+    fontSize: '22px',
+    fontFamily: 'Ubuntu',
+    lineHeight: '50px'
+  },
+  bmOverlay: {
+    width: 'auto',
+    background: 'rgb(0 76 255 / 35%)',
+    left: '0',
+    top: '-1px',
+    height: '100vh'
+  }
+}
+
 
 
 function Header() {
@@ -10,6 +73,14 @@ function Header() {
       <div className='header-doc-lytex'>
         <div className='container content-nav-menu'>
           <div className='row row-nav-menu'>
+              <div className='nav-menu-mobile'>
+                <Menu  styles={ styles }>
+                  <a className="menu-item" href="/">Home</a>
+                  <a className="menu-item" href="/documentacao">Documentação</a>
+                  <a className="menu-item" href="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</a>
+                  <a className="menu-item" href="/documentacao">Integrações</a>
+                </Menu>
+              </div>
                 <div className='col-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
                 <div className='col-7 nav-menu-lytex'>
                   <ul>
@@ -27,6 +98,9 @@ function Header() {
         </div>
 
         <style jsx>{`
+        .nav-menu-mobile{
+          display:none;
+        }
           .container.content-nav-menu {
             padding: 12px 0px 12px 0px;
           }
@@ -89,6 +163,9 @@ function Header() {
             .col-7.nav-menu-lytex{
               display:none;
             }
+            .nav-menu-mobile{
+              display:block;
+            }
             .row.row-nav-menu {
               display: flex;
               justify-content: space-between;
@@ -129,6 +206,21 @@ function Header() {
               margin-top: 117px;
             }
           }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
         `}</style>
       </div>
