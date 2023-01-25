@@ -101,6 +101,14 @@ function Header() {
           }
       
           @media (max-width: 600px){
+            .col-2.logo-lytex {
+              flex: 0 0 auto;
+              width: 36.666667%;
+          }
+            .container.content-nav-menu {
+              padding-right: calc(var(--bs-gutter-x) * .5);
+              padding-left: calc(var(--bs-gutter-x) * .5);
+            }
               .col-3.cta-login {
                 display:none;
               }

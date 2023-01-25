@@ -37,9 +37,24 @@ function SystemDocumentation() {
             background:#fafafa;
             width: 100%;
           }
+
+
+
+
+
           .sc-eDvSVe:nth-child(2) div{
-              width: 100%;
+             width: 100%;
           }
+          /*remover
+          .fWrHAO {
+            width: calc(100% - 0%);
+            padding: 0 40px;
+          }
+          */
+
+
+
+
           .sc-eDvSVe:nth-child(3){
               background:#fafafa;
               width: 100%;
