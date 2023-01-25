@@ -1,11 +1,7 @@
-
-
 import { slide as Menu } from 'react-burger-menu'
 import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
-
 import React from 'react';
-
 
 var styles = {
   bmBurgerButton: {
@@ -70,7 +66,7 @@ var styles = {
 
 
 
-function Header() {
+export default function Header() {
   return (
       <div className='header-doc-lytex'>
         <div className='container content-nav-menu'>
@@ -78,18 +74,16 @@ function Header() {
               <div className='nav-menu-mobile'>
                 <Menu  styles={ styles }>
                   <a className="menu-item" href="/">Home</a>
-                  <a className="menu-item" href="/documentacao">Documentação</a>
                   <a className="menu-item" href="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</a>
-                  <a className="menu-item" href="/documentacao">Integrações</a>
+                  <a className="menu-item" href="/documentacao">Documentação</a>
                 </Menu>
               </div>
                 <div className='col-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
                 <div className='col-7 nav-menu-lytex'>
                   <ul>
                     <li><Link to="/">Home </Link></li>
-                    <li><Link to="/documentacao">Documentação</Link></li>
                     <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</Link></li>
-                    <li><Link to="/documentacao">Integrações</Link></li>
+                    <li><Link to="/documentacao">Documentação</Link></li>
                   </ul>
                 </div>
                 <div className='col-3 cta-login'>
@@ -111,14 +105,9 @@ function Header() {
             width: 45% !important;
             left: calc(100% - 45%) !important;
           }
-
-
-
-
-
-        .nav-menu-mobile{
-          display:none;
-        }
+          .nav-menu-mobile{
+            display:none;
+          }
           .container.content-nav-menu {
             padding: 12px 0px 12px 0px;
           }
@@ -178,6 +167,7 @@ function Header() {
           }
       
           @media only screen and (max-width: 960px) {
+
             .col-7.nav-menu-lytex{
               display:none;
             }
@@ -196,26 +186,27 @@ function Header() {
           }
       
           @media (max-width: 600px){
+
             .col-2.logo-lytex {
               flex: 0 0 auto;
               width: 36.666667%;
-          }
+            }
             .container.content-nav-menu {
               padding-right: calc(var(--bs-gutter-x) * .5);
               padding-left: calc(var(--bs-gutter-x) * .5);
             }
-              .col-3.cta-login {
-                display:none;
-              }
-              .col-7.nav-menu-lytex {
-                display: none;
-                position: absolute;
-                background: #0031a5;
-                width: 70%;
-                height: 100vh;
-                z-index: 9999999999;
-                top: 0;
-                left: 0;
+            .col-3.cta-login {
+              display:none;
+            }
+            .col-7.nav-menu-lytex {
+              display: none;
+              position: absolute;
+              background: #0031a5;
+              width: 70%;
+              height: 100vh;
+              z-index: 9999999999;
+              top: 0;
+              left: 0;
             }
             .nav-menu-lytex ul {
               display: flex;
@@ -223,33 +214,9 @@ function Header() {
               justify-content: center;
               margin-top: 117px;
             }
+
           }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
         `}</style>
       </div>
   );
 }
-
-export default Header;
-
-
-/*
-
-<img src="https://pay.lytex.com.br/assets/media/logos/lytex_logo_white.svg" alt="description of image" />
-<img src={logo} className="App-logo" alt="logo" />
-*/
