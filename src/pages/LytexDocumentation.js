@@ -7,6 +7,7 @@ function DocumentationLytex() {
           specUrl= {DocJson}
           options={{
             nativeScrollbars: true,
+            //sideNavStyle: "path-only",
             theme: { 
               colors: { 
                 primary: { 
@@ -116,3 +117,7 @@ function DocumentationLytex() {
   }
 
   export default DocumentationLytex;
+
+
+
+  

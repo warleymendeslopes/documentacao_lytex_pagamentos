@@ -1,12 +1,19 @@
-
-
-
 import './App.css';
-import Header from './components/header'
 import * as React from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { 
+  Routes, 
+  Route, 
+  Outlet 
+} from "react-router-dom";
+import {
+  PageNotFound, 
+  Home, 
+  Documentacao, 
+  SystemIntroduction
+} from './routes'
+import Header from './components/header'
 import Footer from './components/footer'
-import {PageNotFound, Home, Documentacao, SystemIntroduction} from './routes'
+
 export default function App() {
   return (
     <>

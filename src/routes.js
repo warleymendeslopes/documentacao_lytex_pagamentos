@@ -23,7 +23,7 @@ export function Home() {
     );
   }
 
-  export function Documentacao() {
+export function Documentacao() {
     return (
       <div className='DocumentationLytex'>
         <DocumentationLytex />
@@ -31,7 +31,7 @@ export function Home() {
     );
   }
 
-  export function SystemIntroduction() {
+export function SystemIntroduction() {
     return (
       <div className='DocumentationLytex'>
         <SystemDocumentation />
