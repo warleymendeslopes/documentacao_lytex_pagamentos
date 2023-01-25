@@ -3,31 +3,31 @@
   "tags": [
     {
       "name": "Clientes",
-      "description": "Adiciona um novo cliente a base de clientes, um cliente pode ser usado para criar faturas, recorrências ou parcelmentos"
+      "description": "Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
     },
     {
       "name": "Assinaturas",
-      "description": "A recorrência é uma ótima maneira de fidelizar clientes e ter mais previsibilidade de caixa. Configurar esse tipo de cobrança do jeito que o seu negócio precisa é bem simples via API. Esse processo consiste em criar planos, nos quais são definidos os detalhes dessa cobrança, como periodicidade e produtos ou serviços atrelados a ele, e depois em criação de assinatura, em que você cria uma cobrança para os clientes, seguindo as especificações do plano."
+      "description": "As assinaturas ou a recorrência são uma ótima maneira de fidelizar clientes e ter mais previsibilidade de caixa. Configurar esse tipo de cobrança do jeito que o seu negócio precisa é bem simples via API. Esse processo consiste em criar planos, nos quais são definidos os detalhes dessa cobrança, como periodicidade e produtos ou serviços atrelados a eles. Após definir as regras, em Criação de Assinatura, você cria uma cobrança para os clientes, seguindo as especificações do plano."
     },
     {
       "name": "Faturas",
-      "description": " teste faturas "
+      "description": "Cria faturas e cobranças para clientes com a possibilidade de pagamento tanto pela linha digitável do boleto bancário quanto pelo Pix, com o Boleto Turbinado."
     },
     {
       "name": "Recebíveis",
-      "description": "teste Recebíveis"
+      "description": "Fornece acesso a todos as transações e pagamentos a receber. Apresenta o saldo atual e o saldo futuro após a compensação dos pagamentos. "
     },
     {
       "name": "Links de Pagamento",
-      "description": "teste Links de Pagamento"
+      "description": "Cria, ativa, detalha e atualiza links de pagamento para cobrança rápida por meio de boleto bancário e/ou Pix. Esses links de pagamento podem ser configurados pela periodicidade ou pela quantidade de cobranças emitidas."
     },
     {
       "name": "Produtos",
-      "description": "teste Produtos"
+      "description": "Cadastra seus produtos em um catálogo e facilita a criação de faturas, recorrências e links de pagamento."
     },
     {
       "name": "Carteira",
-      "description": "teste carteira"
+      "description": "Na carteira, o usuário tem acesso ao seu saldo detalhado, incluindo informações sobre Saldo Atual, Saldo Futuro e Saldo Bloqueado (Split). Acesse todos os dados referentes a entradas e saídas de valores do seu negócio e confira detalhadamente suas transações. Emita o extrato por período e acesse todos os dados relevantes sobre seu faturamento. Solicite o saque dos valores disponíveis no Saldo Atual e receba na conta bancária cadastrada."
     }
   ],
   "paths": {
@@ -35,7 +35,7 @@
       "post": {
         "operationId": "ClientsController_createClient",
         "summary": "Criar cliente",
-        "description": "Adiciona um novo cliente a base de clientes, um cliente pode ser usado para criar faturas, recorrências ou parcelmentos",
+        "description": "Adiciona um novo cliente à base de clientes. Os dados do cliente podem ser usados para criar faturas, recorrências ou parcelamentos",
         "requestBody": {
           "required": true,
           "content": {
@@ -456,7 +456,7 @@
       "get": {
         "operationId": "ClientsController_listClients",
         "summary": "Listar clientes",
-        "description": "Lista clientes do beneficiário, aceita filtros, ordenação e paginação.<br/><br/>\n    Use \"|\" como separador caso deseje passar vários valores nos campos: **clientTypes**",
+        "description": "Lista clientes do beneficiário. Aceita filtros, ordenação e paginação.<br/> Use \"|\" como separador, caso deseje passar vários valores nos campos: **clientTypes**",
         "parameters": [
           {
             "name": "search",
@@ -536,7 +536,7 @@
                 }
               ]
             },
-            "description": "Oredenar resposta"
+            "description": "Ordenar resposta"
           }
         ],
         "responses": {
@@ -812,7 +812,7 @@
       "post": {
         "operationId": "ClientsController_importClients",
         "summary": "Importar clientes",
-        "description": "Recebe um csv e importa para base de clientes, [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-clientes.csv)<br/><br/>\n    *Esta requisicão poderá ser movida para segundo plano caso os servidores estejam sob alta demanda, uma resposta 202 será enviada caso a requisicão seja movida para segundo plano e uma notficação será enviada ao finalizar a importação.",
+        "description": "Recebe um modelo .csv e importa para base de clientes. [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-clientes.csv)<br/>\n    Esta requisição poderá ser movida para segundo plano, caso os servidores estejam sob alta demanda. Uma resposta 202 será enviada, caso a requisição seja movida para segundo plano e uma notificação será enviada ao finalizar a importação.",
         "requestBody": {
           "required": true,
           "content": {
@@ -1099,7 +1099,7 @@
       "get": {
         "operationId": "ClientsController_autocompleteClients",
         "summary": "Autocomplete clientes",
-        "description": "Retorna dados do cliente com base em uma pesquisa",
+        "description": "Retorna dados do cliente com base em uma pesquisa.",
         "parameters": [
           {
             "name": "search",
@@ -1346,7 +1346,7 @@
       "get": {
         "operationId": "ClientsController_getClient",
         "summary": "Detalhes do cliente",
-        "description": "Retorna detalhamento de um cliente",
+        "description": "Retorna detalhamento dos dados registrados de um cliente.",
         "parameters": [
           {
             "name": "id",
@@ -2090,7 +2090,7 @@
       "delete": {
         "operationId": "ClientsController_deleteClient",
         "summary": "Remove cliente",
-        "description": "Remove um cliente",
+        "description": "Remove um cliente do banco de dados cadastrado.",
         "parameters": [
           {
             "name": "id",
@@ -2415,7 +2415,7 @@
       "post": {
         "operationId": "SubscriptionsController_createSubscription",
         "summary": "Criar Assinatura",
-        "description": "Cria uma assinatura para um usuário.",
+        "description": "Cria uma assinatura ou cobrança recorrente para um cliente cadastrado.",
         "requestBody": {
           "required": true,
           "content": {
@@ -2523,7 +2523,7 @@
                         ]
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento, cartão de crédito, boleto, pix. Repassar no cartão de crédito o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -2842,7 +2842,7 @@
                         ]
                       },
                       "observation": {
-                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com até 300 caracteres",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -3887,7 +3887,7 @@
       "get": {
         "operationId": "SubscriptionsController_listSubscriptions",
         "summary": "Listar assinaturas",
-        "description": "Lista assinaturas do beneficiário, aceita filtros, ordenação e paginação.<br/><br/>\n    Use \"|\" como separador caso deseje passar vários valores nos campos: **clientTypes**, **status**",
+        "description": "Lista assinaturas do beneficiário. Aceita filtros, ordenação e paginação<br/>\n    Use \"|\" como separador, caso deseje passar vários valores nos campos: **clientTypes**, **status**",
         "parameters": [
           {
             "name": "search",
@@ -3967,7 +3967,7 @@
                 }
               ]
             },
-            "description": "Oredenar resposta"
+            "description": "Ordenar resposta"
           }
         ],
         "responses": {
@@ -4966,7 +4966,7 @@
                     ]
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento, cartão de crédito, boleto, pix. Repassar no cartão de crédito o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -5285,7 +5285,7 @@
                     ]
                   },
                   "observation": {
-                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com até 300 caracteres",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -5806,11 +5806,11 @@
       "put": {
         "operationId": "SubscriptionsController_cancel",
         "summary": "Cancelar recorrência",
-        "description": "Cancelar uma recorrência de um determinado cliente.",
+        "description": "Cancela uma cobrança recorrente cadastrada para um cliente.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do cliente ID",
+            "description": "Identificador único do cliente ID",
             "required": true,
             "in": "path",
             "schema": {
@@ -6318,7 +6318,7 @@
       "post": {
         "operationId": "InvoicesController_createInvoice",
         "summary": "Criar fatura",
-        "description": "Cria uma fatura para um determinado cliente. [Diagrama criacão de faturas](/static/swagger/fluxogram-create-invoice.html)",
+        "description": "Cria uma fatura para efetuar cobrança de clientes.",
         "requestBody": {
           "required": true,
           "content": {
@@ -6330,7 +6330,7 @@
                     "properties": {
                       "_clientId": {
                         "type": "string",
-                        "description": "Identificar unico do cliente já cadastrado "
+                        "description": "Identificar único do cliente já cadastrado"
                       },
                       "items": {
                         "description": "Informações do produto",
@@ -6368,7 +6368,7 @@
                         "description": "Dia de vencimento  da cobrança "
                       },
                       "paymentMethods": {
-                        "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
+                        "description": "Métodos de pagamento, cartão de crédito, boleto, pix. Repassar no cartão de crédito o parâmetro maxParcels",
                         "type": "object",
                         "properties": {
                           "pix": {
@@ -6664,7 +6664,7 @@
                         ]
                       },
                       "referenceId": {
-                        "description": "Pode-se inserir um identificador de referencia",
+                        "description": "Pode-se inserir um identificador de referência",
                         "type": "string",
                         "maxLength": 150
                       },
@@ -6771,7 +6771,7 @@
                         ]
                       },
                       "observation": {
-                        "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                        "description": "Você pode inserir também uma observação, com até 300 caracteres",
                         "type": "string",
                         "maxLength": 300
                       }
@@ -8044,7 +8044,7 @@
       "get": {
         "operationId": "InvoicesController_listInvoices",
         "summary": "Listar faturas",
-        "description": "Lista faturas do beneficiário, aceita filtros, ordenação e paginação.<br/><br/>\n    Use \"|\" como separador caso deseje passar vários valores nos campos: **clientTypes**, **status**",
+        "description": "Lista faturas do beneficiário, aceita filtros, ordenação e paginação.<br/>   Use \"|\" como separador caso deseje passar vários valores nos campos: **clientTypes**, **status**",
         "parameters": [
           {
             "name": "search",
@@ -8535,7 +8535,7 @@
       "post": {
         "operationId": "InvoicesController_validateMinSplitValue",
         "summary": "Validar valor mínimo para Split",
-        "description": "Retorna com o valor mínimo para split, caso o valor seja menor que o mínimo, o split não será permitido",
+        "description": "Retorna com o valor mínimo para split. Caso o valor seja menor que o mínimo, o split não será permitido.",
         "requestBody": {
           "required": true,
           "content": {
@@ -8779,11 +8779,11 @@
       "get": {
         "operationId": "InvoicesController_getInvoice",
         "summary": "Detalhes da fatura",
-        "description": "Retorna detalhamento da fatura com histórico de transação",
+        "description": "Retorna detalhamento da fatura com histórico de transação.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador  unico da fatura",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -9816,7 +9816,7 @@
                     ]
                   },
                   "observation": {
-                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com até 300 caracteres",
                     "type": "string",
                     "maxLength": 300
                   },
@@ -9933,7 +9933,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico da fatura",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10640,11 +10640,11 @@
       "post": {
         "operationId": "InvoicesController_sendMail",
         "summary": "Reenvia Email",
-        "description": "Reenvia email para o cliente da fatura",
+        "description": "Reenvia um e-mail de cobrança com a fatura para o cliente.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico da fatura",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -10861,11 +10861,11 @@
       "put": {
         "operationId": "InvoicesController_cancel",
         "summary": "Cancelar fatura",
-        "description": "Cancelar uma fatura de um determinado cliente.",
+        "description": "Cancela uma fatura de um determinado cliente.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico da fatura",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -11577,7 +11577,7 @@
       "post": {
         "operationId": "InvoicesController_manualLiquidate",
         "summary": "Pagar fatura (sandbox)",
-        "description": "Pagar uma fatura de um determinado cliente. Esta operação é apenas para fins de testes.",
+        "description": "Paga uma fatura de um determinado cliente. Esta operação é apenas para fins de testes.",
         "requestBody": {
           "required": true,
           "content": {
@@ -11637,7 +11637,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico da fatura",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -12349,11 +12349,11 @@
       "get": {
         "operationId": "ReceivablesController_getReceivablesByTransaction",
         "summary": "Listar recebíveis de uma transação",
-        "description": "Listar todos os recebíveis gerados atravez de uma transação",
+        "description": "Listar todos os recebíveis gerados através de uma transação.",
         "parameters": [
           {
             "name": "transactionId",
-            "description": "Identificador unico da transação",
+            "description": "Identificador único da fatura",
             "required": true,
             "in": "path",
             "schema": {
@@ -12563,7 +12563,7 @@
       "post": {
         "operationId": "PaymentLinksController_createPaymentLink",
         "summary": "Criar link de pagamento",
-        "description": "Cria um link de pagamento. [Diagrama criacão de link de pagamento](/static/swagger/fluxogram-create-payment-link.html)",
+        "description": "Cria um link de pagamento para receber cobrança de cliente via boleto bancário e/ou Pix.",
         "requestBody": {
           "required": true,
           "content": {
@@ -12572,7 +12572,7 @@
                 "type": "object",
                 "properties": {
                   "description": {
-                    "description": "descricao do link de pagamento",
+                    "description": "descrição do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
@@ -12618,7 +12618,7 @@
                     "minimum": 1
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de crédito o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -12935,7 +12935,7 @@
                     ]
                   },
                   "observation": {
-                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com até 300 caracteres",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -13726,11 +13726,11 @@
       "get": {
         "operationId": "PaymentLinksController_getPaymentLink",
         "summary": "Detalhes do link de pagamento",
-        "description": "Retorna detalhamento do link de pagamento",
+        "description": "Fornece detalhes do link de pagamento para identificar a cobrança.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -14176,7 +14176,7 @@
       "put": {
         "operationId": "PaymentLinksController_updatePaymentLink",
         "summary": "Atualizar link de pagamento",
-        "description": "Atualiza os dados de um link de pagamento.",
+        "description": "Atualiza dados do link de pagamento.",
         "requestBody": {
           "required": true,
           "content": {
@@ -14185,7 +14185,7 @@
                 "type": "object",
                 "properties": {
                   "description": {
-                    "description": "descricao do link de pagamento",
+                    "description": "descrição do link de pagamento",
                     "type": "string",
                     "maxLength": 255
                   },
@@ -14225,13 +14225,13 @@
                     "format": "date-time"
                   },
                   "quantity": {
-                    "description": "Quantidade de utilização ( contabiliza as faturas pagas ) ",
+                    "description": "Quantidade de utilização (contabiliza as faturas pagas)",
                     "type": "number",
                     "format": "float",
                     "minimum": 1
                   },
                   "paymentMethods": {
-                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de créditos o parâmetro maxParcels",
+                    "description": "Métodos de pagamento,cartão de crédito, boleto, pix. Repassar no cartão de crédito o parâmetro maxParcels",
                     "type": "object",
                     "properties": {
                       "pix": {
@@ -14548,7 +14548,7 @@
                     ]
                   },
                   "observation": {
-                    "description": "Você pode inserir também uma observação, com ate 300 caracteres ",
+                    "description": "Você pode inserir também uma observação, com até 300 caracteres",
                     "type": "string",
                     "maxLength": 300
                   }
@@ -14565,7 +14565,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15413,11 +15413,11 @@
       "put": {
         "operationId": "PaymentLinksController_disablePaymentLink",
         "summary": "Desativar link de pagamento",
-        "description": "desativa um link de pagamento.",
+        "description": "Desativa um link de pagamento.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -15839,11 +15839,11 @@
       "get": {
         "operationId": "PaymentLinksController_getDetails",
         "summary": "Detalhes das faturas do link de pagamento",
-        "description": "Retorna detalhamento das faturas gerados pelo link de pagamento",
+        "description": "Exibe detalhes das faturas do link de pagamento.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -16113,7 +16113,7 @@
       "post": {
         "operationId": "ProductsController_createProduct",
         "summary": "Criar produto",
-        "description": "Adiciona um novo produto ao catálogo",
+        "description": "Adiciona um novo produto ao catálogo.",
         "requestBody": {
           "required": true,
           "content": {
@@ -16399,7 +16399,7 @@
       "get": {
         "operationId": "ProductsController_listProducts",
         "summary": "Listar produtos",
-        "description": "Lista produtos do beneficiário, aceita filtros, ordenação e paginação.",
+        "description": "Lista os produtos cadastrados no catálogo.",
         "parameters": [
           {
             "name": "x-cloud-trace-context",
@@ -16437,7 +16437,7 @@
           },
           {
             "name": "page",
-            "description": "pagina atual",
+            "description": "página atual",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -16446,7 +16446,7 @@
           },
           {
             "name": "perPage",
-            "description": "Quantidade de resultado por pagina",
+            "description": "Quantidade de resultado por página",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -16730,7 +16730,7 @@
       "post": {
         "operationId": "ProductsController_importProducts",
         "summary": "Importar produtos",
-        "description": "Recebe um csv e importa para base de produtos, [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-produtos.csv)<br/><br/>\n    *Esta requisicão poderá ser movida para segundo plano caso os servidores estejam sob alta demanda, uma resposta 202 será enviada caso a requisicão seja movida para segundo plano e uma notficação será enviada ao finalizar a importação.",
+        "description": "Recebe um csv e importa para base de produtos, [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-produtos.csv)<br/>\n    Esta requisição poderá ser movida para segundo plano caso os servidores estejam sob alta demanda, uma resposta 202 será enviada caso a requisição seja movida para segundo plano e uma notificação será enviada ao finalizar a importação.",
         "requestBody": {
           "required": true,
           "content": {
@@ -17013,7 +17013,7 @@
       "get": {
         "operationId": "ProductsController_autocompleteProducts",
         "summary": "Autocomplete produtos",
-        "description": "Retorna dados do produtos com base em uma pesquisa",
+        "description": "Retorna dados do produtos com base em uma pesquisa.",
         "parameters": [
           {
             "name": "search",
@@ -17245,11 +17245,11 @@
       "get": {
         "operationId": "ProductsController_getProduct",
         "summary": "Detalhes do produto",
-        "description": "Retorna detalhamento de um produto",
+        "description": "Exiba detalhes do produto cadastrado no catálogo.",
         "parameters": [
           {
             "name": "id",
-            "description": "Identificar unico do produto",
+            "description": "Identificar único do produto",
             "required": true,
             "in": "path",
             "schema": {
@@ -17517,7 +17517,7 @@
       "put": {
         "operationId": "ProductsController_updateProduct",
         "summary": "Atualiza produto",
-        "description": "Atualiza dados de um produto",
+        "description": "Atualiza dados de um produto cadastrado no catálogo.v",
         "requestBody": {
           "required": true,
           "content": {
@@ -17548,7 +17548,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificar unico do produto",
+            "description": "Identificar único do produto",
             "required": true,
             "in": "path",
             "schema": {
@@ -19140,7 +19140,7 @@
   },
   "info": {
     "title": "Lytex Pagamentos API",
-    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa, para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir e necessário cria uma conta em nosso sistema.\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n  <img src='https://lytex.com.br/wp-content/uploads/2023/01/2022-08-01.webp' />\n  \n  \n  \n### Pré-requisitos\n\n- Ter uma conta no sistema da Lytex. [Criar conta](https://pay.lytex.com.br/auth/registration)\n- Ter todos os documentos aprovados\n\n\n### O que fazer com a nossa API \n\nAPI de Pagamentos desenvolvida para simplificar sua vida. Com poucos cliques, você conhecerá os endpoints que farão sentido para seu negócio. A gente sabe que seu tempo é precioso! Por isso, deixamos tudo pronto para você. É só acessar clicando no botão abaixo e ver como é simples integrar com a gente.\n\n# Criar primeira cobrança\n\nAgora vamos criar uma integração no painel, ou seja vamos gerar as chaves que vai possibilitar que o nosso método de pagamento seja integrado. Primeiramente faça o login no seu painel, em seguida no menu lateral a esquerda clique em **Configurações** logo em seguida clique em **Integrações**, click em **API**, Preencha os campos com o nome e descrição de sua integração e click em **Salvar**, e em seguida vai ser carregada as chaves de sua integração, agora precisamos configurar as permissões desta integração click em Restringir Acesso e marque a caixinha Faturas, agora e só salvar e pronto, esta configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n## Criando token de acesso\n\n  Agora com a integração criada e configurada dentro do painel da lytex vamos utilizar o Postman para gerar o token de acesso e também a primeira fatura, primeiramente e necessário montar o arquivo JSON, como o arquivo abaixo você pode copiar e colar ele no seu Postman. Apos colocar seus dados da integração basta executar e recebera uma resposta de nossa API com um parâmetro chamado **accessToken**, e também receberemos como parâmetros algumas informações referente a esse token. Lembrando que esse token tem a durabilidade de 5min\n\n  Feito isso e ja tendo o **accessToken** salvo podemos passar para o próximo passo a geração de faturas\n  \n  Para gerar esse token utilizarmos a rota **/v1/oauth/obtain_token**\n  \n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim vamos criar a nossa fatura, vamos começar a montar o arquivo JSON, nele temos varias informações como dados do cliente dados do produto e endereço. Nesta demonstração usaremos somente os dados obrigatório para que a fatura seja criada\n\nPara gerar esse token utilizarmos a rota **/v1/invoices**\n\nNesta requisição vamos passar o parâmetro Authorization no header com o valor do token de acesso gerado anteriormente\n\nUsando o modo sandbox existes alguns usuário arios fictícios para ser usados, outros dados não será reconhecido pela API\n\n  ### Dados usuários fictícios\n  <table>\n  <tbody>\n  <tr>\n      <td>Valerio de Aguiar Zorzato</td>\n      <td>96050176876</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes  </td>\n      <td>88398158808</td>\n  </tr>\n      <tr>\n      <td>Valerio Alves Barros</td>\n      <td>71943984190</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes</td>\n      <td>97965940132</td>\n  </tr>\n\n</tbody></table>\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>\n",
+    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.\n\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n# Criar primeira cobrança\n\nPara gerar as chaves que possibilitam a integração com nosso método de pagamento, primeiramente, você precisa fazer login no painel. Em seguida, no menu lateral à esquerda, clique em **Configurações** e depois em **Integrações** e **API**. \n\nPreencha os campos com o nome e descrição de sua integração e clique em **Salvar**. Em seguida, vão ser carregadas as chaves de sua integração. Agora, precisamos configurar as permissões desta integração. Para isso, clique em **Restringir Acesso** e marque a caixinha **Faturas**. Agora, é só salvar e pronto! Está configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n  \n  \n  \n  \n## Criando token de acesso\n\nCom a integração criada e configurada dentro do painel da LyTex, agora nós vamos utilizar o **Postman** para gerar o token de acesso e também a primeira fatura. Primeiramente, é necessário montar o arquivo **JSON**. Você pode copiar e colar o código abaixo no seu Postman. Após colocar seus dados da integração, basta executá-la e você receberá uma resposta de nossa API com um parâmetro chamado **AccessToken**. O mesmo tem durabilidade de 5 minutos, também receberemos como parâmetros algumas informações referente a esse token.\n\nPara gerar esse token, utilizarmos a rota **/v1/oauth/obtain_token**\n\nFeito isso, e com o **AccessToken** salvo, podemos passar para o próximo passo: a geração de faturas.\n\n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim, vamos criar a nossa fatura! Primeiro, vamos começar a montar o arquivo JSON, onde constam várias informações como os dados do cliente, dados do produto e endereço. Nesta demonstração, usaremos somente os dados obrigatórios para que a fatura seja criada.\n\nPara gerar a fatura utilizarmos a rota **/v1/invoices**\n\nNesta requisição, vamos passar o parâmetro **Authorization** no header com o valor do token de acesso gerado anteriormente. Usando o modo Sandbox, existem alguns usuários fictícios que você deve utilizar, pois outros dados não serão reconhecidos pela API.\n\n\nUsando o modo sandbox existes alguns usuário arios fictícios para ser usados, outros dados não será reconhecido pela API\n\n  ### Dados usuários fictícios\n  <table>\n  <tbody>\n  <tr>\n      <td>Valerio de Aguiar Zorzato</td>\n      <td>96050176876</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes  </td>\n      <td>88398158808</td>\n  </tr>\n      <tr>\n      <td>Valerio Alves Barros</td>\n      <td>71943984190</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes</td>\n      <td>97965940132</td>\n  </tr>\n\n</tbody></table>\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>",
     "version": "1.0.0",
     "contact": {
       "name": "Lytex",

@@ -22,6 +22,9 @@ function DocumentationLytex() {
                   margin-bottom: 40px;
                   margin-top: 30px;
               }
+              .sc-hLBbgP {
+                width: 100%;
+            }
             a.botton-create-account {
                 padding: 9px 10px;
                 border: 2px solid #004cff;
