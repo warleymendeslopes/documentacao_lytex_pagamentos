@@ -11,14 +11,16 @@ var styles = {
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
-    height: '30px',
-    right: '36px',
+    height: '24px',
+    right: '10px',
     top: '25px'
   },
   bmBurgerBars: {
     background: 'rgb(255 255 255)',
-    BorderRadius: '2px'
+    BorderRadius: '2px',
+    height: '7%'
   },
+  
   bmBurgerBarsHover: {
     background: '#a90000'
   },
@@ -98,6 +100,22 @@ function Header() {
         </div>
 
         <style jsx>{`
+          span.bm-burger-bars:nth-child(1) {
+            width: 100% !important;
+          }
+          span.bm-burger-bars:nth-child(2) {
+            width: 70% !important;
+            left: calc(100% - 70%) !important;
+          }
+          span.bm-burger-bars:nth-child(3) {
+            width: 45% !important;
+            left: calc(100% - 45%) !important;
+          }
+
+
+
+
+
         .nav-menu-mobile{
           display:none;
         }

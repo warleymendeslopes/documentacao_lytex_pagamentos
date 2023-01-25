@@ -18,6 +18,11 @@ function DocumentationLytex() {
           }}
         />
         <style jsx>{`
+              @media (max-width: 600px){
+                .sc-hLBbgP {
+                  padding: 0px 10px;
+                }
+              }
             .container-cta-api {
                   margin-bottom: 40px;
                   margin-top: 30px;

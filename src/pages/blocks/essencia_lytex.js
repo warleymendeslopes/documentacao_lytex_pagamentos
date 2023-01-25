@@ -24,7 +24,7 @@ function Home() {
                         <div className='row'>
                             <div className='col-lg-6'>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/campos-personalizados.svg" alt="" />
                                     </div>
@@ -34,7 +34,7 @@ function Home() {
                                     </div>
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/webhooks.svg" alt="" />
                                     </div>
@@ -44,7 +44,7 @@ function Home() {
                                     </div>
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/documentacao-interna.svg" alt="" />
                                     </div>
@@ -58,7 +58,7 @@ function Home() {
                             <div className='col-lg-6'>
 
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/api_.svg" alt="" />
                                     </div>
@@ -68,7 +68,7 @@ function Home() {
                                     </div>
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/integracao.svg" alt="" />
                                     </div>
@@ -78,7 +78,7 @@ function Home() {
                                     </div>
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
                                         <img className="icons" src="/icones/api-de-pagamento.svg" alt="" />
                                     </div>
@@ -140,8 +140,8 @@ function Home() {
                 font-style: normal;
                 font-weight: 700;
                 font-size: 22px;
-                line-height: 0;
-                margin-block-end: 16px;
+                margin-block-end: 0em;
+                margin-block-start: 0em;
             }
             span.text-icons {
                 font-family: 'Ubuntu';
