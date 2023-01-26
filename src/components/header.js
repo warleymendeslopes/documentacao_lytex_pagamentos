@@ -118,6 +118,7 @@ export default function Header() {
             width: 100%;
             z-index: 9999999;
             filter: drop-shadow(6px 4px 1px rgba(255, 255, 255, 0.12));
+            border-bottom: 1px solid white;
           }
           .nav-menu-lytex ul {
             padding-inline-start: 0px;
