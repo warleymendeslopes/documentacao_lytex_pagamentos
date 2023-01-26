@@ -14,67 +14,84 @@ function Footer() {
                 </div>
                 <div className='col-lg-10'>
                     <div className='row'>
-                        <div className='col-lg-3'>
-                            <h3 className='title-menu-footer'>Navegação</h3>
-                            <div className='container-menu-footer'>
-                                <ul>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/#solutions">Soluções e Serviços</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/empresa/">Empresa</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/precos-e-taxas/">Preços e Taxas</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/suporte-tecnico/">Suporte</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/blog/">Blog LyTex</a></li>
-                                </ul>
+                        <div className='col-lg-6'>
+                            <div className='row'>
+
+                                <div className='col-6'>
+                                    <h3 className='title-menu-footer'>Navegação</h3>
+                                    <div className='container-menu-footer'>
+                                        <ul>
+                                            <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/#solutions">Soluções e Serviços</a></li>
+                                            <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/empresa/">Empresa</a></li>
+                                            <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/precos-e-taxas/">Preços e Taxas</a></li>
+                                            <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/suporte-tecnico/">Suporte</a></li>
+                                            <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/blog/">Blog LyTex</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className='col-6'>
+                                    <h3 className='title-menu-footer'>Contato</h3>
+                                    <div className='container-menu-footer'>
+                                        <ul class="menu-footer">
+                                            <li>
+                                                <div class="icons">
+                                                    <img loading="lazy" src="/E-mail-footer.svg" width="100%" height="25px" alt="Ícone de E-Mail" />
+                                                </div>
+                                                <div class="informations-contact"><a href="mailto:suporte@lytex.com.br">suporte@lytex.com.br</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="icons">
+                                                    <img loading="lazy" src="/icon-whatsapp-footer.svg" width="100%" height="25px" alt="Ícone Whatsapp" />
+                                                </div>
+                                                <div class="informations-contact"><a href="https://api.whatsapp.com/send?phone=5531998874108&amp;text=Ol%C3%A1,%20tudo%20bem?%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Plataforma%20LyTex" target="_blank" rel="noopener noreferrer">(31) 99887-4108</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="icons">
+                                                    <img loading="lazy" src="/telefone-footer.svg" width="100%" height="25px" alt="Ícone de Telefone" />
+                                                </div>
+                                                <div class="informations-contact"><a href="tel:08005915280">0800 591 5280</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div className='col-lg-3'>
-                            <h3 className='title-menu-footer'>Contato</h3>
-                            <div className='container-menu-footer'>
-                                <ul class="menu-footer">
-                                    <li>
-                                        <div class="icons">
-                                            <img loading="lazy" src="/E-mail-footer.svg" width="100%" height="25px" alt="Ícone de E-Mail" />
-                                        </div>
-                                        <div class="informations-contact"><a href="mailto:suporte@lytex.com.br">suporte@lytex.com.br</a></div>
-                                    </li>
-                                    <li>
-                                        <div class="icons">
-                                            <img loading="lazy" src="/icon-whatsapp-footer.svg" width="100%" height="25px" alt="Ícone Whatsapp" />
-                                        </div>
-                                        <div class="informations-contact"><a href="https://api.whatsapp.com/send?phone=5531998874108&amp;text=Ol%C3%A1,%20tudo%20bem?%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Plataforma%20LyTex" target="_blank" rel="noopener noreferrer">(31) 99887-4108</a></div>
-                                    </li>
-                                    <li>
-                                        <div class="icons">
-                                            <img loading="lazy" src="/telefone-footer.svg" width="100%" height="25px" alt="Ícone de Telefone" />
-                                        </div>
-                                        <div class="informations-contact"><a href="tel:08005915280">0800 591 5280</a></div>
-                                    </li>
-                                </ul>
+
+
+                        <div className='col-lg-6'>
+                            <div className='row'>
+
+                                <div className='col-6'>
+                                <h3 className='title-menu-footer'>Informações</h3>
+                                <div className='container-menu-footer'>
+                                    <ul>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-cookies/">Política de cookies</a></li>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-privacidade/">Política de privacidade</a></li>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="documentacao">API de integração </a></li>
+                                        <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-prevencao-a-lavagem-de-dinheiro-e-ao-financiamento-do-terrorismo/">Política de PLDFT </a></li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div className='col-5'>
+                                    <h3 className='title-menu-footer'>Endereço</h3>
+                                    <div className='container-menu-footer'>
+                                        <ul class="menu-footer">
+                                            <li>
+                                                <div class="icons">
+                                                    <img loading="lazy" src="/endereco-footer.svg" width="100%" height="25px" alt="Ícone de E-Mail" />
+                                                </div>
+                                                <div class="informations-contact information-endereco"><a href="https://www.google.com.br/maps/place/R.+Dr.+Moacir+Birro,+325+-+Centro,+Cel.+Fabriciano+-+MG,+35170-002" target="_blank" rel="noopener noreferrer">Rua Doutor Moacir Byrro, 325, 1º andar, Centro, Coronel Fabriciano.</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div className='col-lg-3'>
-                            <h3 className='title-menu-footer'>Informações</h3>
-                            <div className='container-menu-footer'>
-                                <ul>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-cookies/">Política de cookies</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-privacidade/">Política de privacidade</a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="documentacao">API de integração </a></li>
-                                    <li><a target="_blank" rel="noopener noreferrer" href="https://lytex.com.br/politica-de-prevencao-a-lavagem-de-dinheiro-e-ao-financiamento-do-terrorismo/">Política de PLDFT </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className='col-lg-3'>
-                            <h3 className='title-menu-footer'>Endereço</h3>
-                            <div className='container-menu-footer'>
-                                <ul class="menu-footer">
-                                    <li>
-                                        <div class="icons">
-                                            <img loading="lazy" src="/endereco-footer.svg" width="100%" height="25px" alt="Ícone de E-Mail" />
-                                        </div>
-                                        <div class="informations-contact information-endereco"><a href="https://www.google.com.br/maps/place/R.+Dr.+Moacir+Birro,+325+-+Centro,+Cel.+Fabriciano+-+MG,+35170-002" target="_blank" rel="noopener noreferrer">Rua Doutor Moacir Byrro, 325, 1º andar, Centro, Coronel Fabriciano.</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+                        
+
                     </div>
                 </div>
             </div>
@@ -97,7 +114,7 @@ function Footer() {
                             Todos os direitos reservados.<br /> 
                             </p>
                         </div>
-                        <div className='col-lg-3 '>
+                        <div className='col-lg-3 text-align-center'>
                              <img className='img-logo-pci' src='/pci.svg' alt='pci dds complint' />
                         </div>
                     </div>
@@ -157,6 +174,16 @@ function Footer() {
                 line-height: 31px;
                 color: #FFFFFF;
                 text-decoration: none;
+            }
+            @media (max-width: 600px){
+                .container-menu-footer ul li a {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                .col-lg-3.text-align-center {
+                    text-align: center;
+                }
             }
         `}</style>
       </div>
