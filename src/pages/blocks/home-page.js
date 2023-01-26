@@ -14,13 +14,13 @@ function Home() {
     <style jsx>{`
 
     .blocks-home-page {
-        cursor: pointer;
-        background: #004CFF;
-        background-image: url(/back.png);
-        height: 60vh;
-        background-repeat: no-repeat;
-        background-position: bottom, center;
-        background-size: contain;
+      cursor: pointer;
+      background: #004CFF;
+      background-image: url(/back.png);
+      height: 70vh;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: contain;
     }
     .title-home-page{
         font-family: 'Ubuntu';
