@@ -26,31 +26,31 @@ function Home() {
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/campos-personalizados.svg" alt="" />
+                                        <img className="icons" src="/icones/campos-personalizados.svg" alt="Campos personalizados e metadados" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
                                         <h4>Campos personalizados e metadados</h4>
-                                        <span className="text-icons">Crie através da API campos personalizados e metadados definidos por você. Inclua informações pertinentes ao seu negócio na hora de criar sua solução de pagamento.</span>
+                                        <span className="text-icons">Crie campos personalizados e metadados definidos por você com a nossa API. Inclua todas as informações pertinentes ao seu negócio na hora de configurar sua solução de pagamentos.</span>
                                     </div>
                                 </div>
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/webhooks.svg" alt="" />
+                                        <img className="icons" src="/icones/webhooks.svg" alt="Integração com Webhooks" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>Webhooks</h4>
-                                        <span className="text-icons">Além da nossa API REST, a plataforma da LyTex Pagamentos também suporta a configuração de webhooks para facilitar a comunicação quando algum evento ocorrer.</span>
+                                        <h4>Integração com Webhooks</h4>
+                                        <span className="text-icons">Além da nossa API REST, nossa plataforma também tem suporte para a configuração de Webhooks, tornando a comunicação facilitada quando algum evento ocorrer.</span>
                                     </div>
                                 </div>
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/documentacao-interna.svg" alt="" />
+                                        <img className="icons" src="/icones/api-de-pagamento.svg" alt="API para qualquer tipo de negócio" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>Documentação interativa</h4>
-                                        <span className="text-icons">Chega de sofrimento. Antes de implementar, você conseguirá mandar requisições reais para a plataforma, economizando tempo de desenvolvimento.</span>
+                                        <h4>API para qualquer tipo de negócio</h4>
+                                        <span className="text-icons">Integre nossa API para assinaturas, faturas avulsas ou transações (modo intermediadora). Construa uma solução única e com as características necessárias para seu negócio.</span>
                                     </div>
                                 </div>
 
@@ -60,31 +60,31 @@ function Home() {
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/api_.svg" alt="" />
+                                        <img className="icons" src="/icones/api_.svg" alt="Configuração para qualquer negócio" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>API para qualquer tipo de negócio</h4>
-                                        <span className="text-icons">Integre nossa API para assinaturas, faturas avulsas ou transações (modo intermediadora). Construa uma solução única e com as características para seu negócio.</span>
+                                        <h4>Configuração para qualquer negócio</h4>
+                                        <span className="text-icons">Sites de assinaturas, escolas, serviços, hospedagem, e-commerces e dezenas de segmentos com recorrência ou cobrança integram nossa API, construindo uma solução completa de pagamento.</span>
                                     </div>
                                 </div>
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/integracao.svg" alt="" />
+                                        <img className="icons" src="/icones/integracao.svg" alt="Integração única para funcionalidades" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>Integração única para funcialidades</h4>
-                                        <span className="text-icons">Absorva todos os principais funcionalidade através de uma única API, dispensando fazer dezenas de integrações distintas.</span>
+                                        <h4>Integração única para funcionalidades</h4>
+                                        <span className="text-icons">Integração trabalhosa? Esqueça! Absorva as principais funcionalidades por meio de uma única API, dispensando fazer dezenas de integrações distintas.</span>
                                     </div>
                                 </div>
 
                                 <div className="d-flex align-items-center flex-start-mobile">
                                     <div className="flex-shrink-0">
-                                        <img className="icons" src="/icones/api-de-pagamento.svg" alt="" />
+                                    <img className="icons" src="/icones/documentacao-interna.svg" alt="Confiança reconhecida" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>API de pagamento flexível</h4>
-                                        <span className="text-icons">Sites de assinaturas, escolas, serviços, hospedagem, e-commerces e dezenas de segmentos integram nossa API construindo uma solução única de pagamento.</span>
+                                        <h4>Confiança reconhecida</h4>
+                                        <span className="text-icons">Certificação internacional PCI Compliance, plataforma com sistema antifraude completo, além de criptografia, firewalls e detecção de possíveis falhas, trazendo segurança e confiança para suas transações.</span>
                                     </div>
                                 </div>
 
@@ -147,7 +147,7 @@ function Home() {
                 font-family: 'Ubuntu';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 12px;
+                font-size: 14px;
             }
             .d-flex.align-items-center {
                 margin-top: 30px;
