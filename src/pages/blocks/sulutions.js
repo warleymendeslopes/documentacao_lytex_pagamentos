@@ -28,8 +28,8 @@ function Solutions() {
             </div>
           ),
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 2,
+        slidesToShow: 5,
+        slidesToScroll: 3,
         responsive: [
             {
                 breakpoint: 600,
@@ -70,9 +70,9 @@ function Solutions() {
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img  src='/icones/solution_billet.svg' alt='Boleto Turbinado' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Boleto Turbinado</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
@@ -80,9 +80,9 @@ function Solutions() {
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/sulution_payment_link .svg' alt='Link de Pagamento' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Link de Pagamento</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
@@ -90,54 +90,45 @@ function Solutions() {
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/payment_splint.svg' alt='Split de Pagamento' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Split de Pagamento</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/checkout_tranparent.svg' alt=' Checkout Transparente' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Checkout Transparente</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/recurrence.svg' alt='Recorrência automática' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Recorrência automática</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/pix.svg' alt='Pix' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Pix</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
+                                    <img src='/icones/smart_billing.svg' alt='Cobrança Inteligente' />
                                 </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/boleto.svg' alt='' />
-                                </div>
-                                <div className='name-solution'><span>Boleto bancário</span></div>
+                                <div className='name-solution'><span>Cobrança Inteligente</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
@@ -150,6 +141,15 @@ function Solutions() {
 
     </section>
     <style jsx>{`
+    .icon-solution img {
+        width: 55px;
+        height: auto;
+    }
+    .icon-solution {
+        padding: 10px;
+    }
+    
+
     ul.list-dots-api {
         margin: 0;
         padding: 0;
@@ -203,6 +203,7 @@ function Solutions() {
         border-radius: 14px;
     }
     .solutions-card {
+        margin-top: 8px;
         background: white;
         display: grid;
         grid-template-columns: 12% 58% 30%;

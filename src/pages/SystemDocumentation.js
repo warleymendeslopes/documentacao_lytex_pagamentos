@@ -1,9 +1,17 @@
 import { RedocStandalone } from 'redoc';
 import Plataforma from '../documents/plataforma.yaml';
+
+
+
+
+//document.querySelector('.search-input').placeholder= "Pesquisar";
+
 function SystemDocumentation() {
+
+  
     return (
       <div>
-        <RedocStandalone
+        <RedocStandalone 
           specUrl= {Plataforma}
           options={{
             nativeScrollbars: true,
