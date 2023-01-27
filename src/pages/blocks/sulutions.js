@@ -28,21 +28,21 @@ function Solutions() {
             </div>
           ),
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 1,
-                  dots: false,
-                  vertical: false,
-                  verticalSwiping: false,
-                  autoplay: false,
-                  arrows: false,
-                }
-              }
-        ]
+        // responsive: [
+        //     {
+        //         breakpoint: 600,
+        //         settings: {
+        //           slidesToShow: 1,
+        //           dots: false,
+        //           vertical: false,
+        //           verticalSwiping: false,
+        //           autoplay: false,
+        //           arrows: false,
+        //         }
+        //       }
+        // ]
     };
   return (
 
@@ -53,20 +53,22 @@ function Solutions() {
             <div className='row'>
                 <div className='col-lg-6 d-flex align-items-center justify-content-center'>
                         
-                           {
-                            //div className='stylecta-fake'>
-                            //  <span>Pega o código copia  e cola!</span>
-                            //</div>
-                           }
+                           
+                            {/* <div className='stylecta-fake'>
+                             <span>Pega o código copia  e cola!</span>
+                            </div> */}
+                           
                 </div>
                 <div className='col-lg-1'></div>
                 <div className='col-lg-5'>
                         <div className='title-blocks white'>
-                            <h1 className='title-color-white'>Segurança e comodidade de quem sabe o que faz</h1>
+                            <h1 className='title-color-white'>Acesse documentações específicas</h1>
                          </div>
 
                     <div className='slid-sulutions'>
                     <Slider {...settings}>
+                        {
+                        /*
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
@@ -96,15 +98,7 @@ function Solutions() {
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/checkout_tranparent.svg' alt=' Checkout Transparente' />
-                                </div>
-                                <div className='name-solution'><span>Checkout Transparente</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
+
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
@@ -114,6 +108,7 @@ function Solutions() {
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
+
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
@@ -123,15 +118,52 @@ function Solutions() {
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
+
                         <div className='container-solutions-card'>
                             <div className='solutions-card'>
                                 <div className='icon-solution'>
                                     <img src='/icones/smart_billing.svg' alt='Cobrança Inteligente' />
                                 </div>
-                                <div className='name-solution'><span>Cobrança Inteligente</span></div>
+                                <div className='name-solution'><span>Notificações</span></div>
                                 <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
                             </div>
                         </div>
+                        */}
+
+                        <div className='content-img-slide'>
+                                <img src='/slides/Boleto_Turbinado.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas/operation/InvoicesController_createInvoice">Acessar documento</Link>
+                        </div>
+
+                        <div className='content-img-slide'>
+                                <img src='/slides/Link_de_Pagamento.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Links-de-Pagamento">Acessar documento</Link>
+                        </div>
+
+                        <div className='content-img-slide'>
+                                <img src='/slides/Split_de_Pagamento.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                        </div>
+
+                        <div className='content-img-slide'>
+                                <img src='/slides/Recorrencia.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Assinaturas">Acessar documento</Link>
+                        </div>
+
+                        <div className='content-img-slide'>
+                                <img src='/slides/PIX.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                        </div>
+
+                        <div className='content-img-slide'>
+                            
+                                <img src='/slides/Notificacoes.png' alt='Cobrança Inteligente' />
+                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                        </div>
+
+
+
+
                     </Slider>
 
                     </div>
@@ -141,13 +173,28 @@ function Solutions() {
 
     </section>
     <style jsx>{`
-    .icon-solution img {
-        width: 55px;
-        height: auto;
+    .content-img-slide{
+        position: relative;
     }
-    .icon-solution {
-        padding: 10px;
+    .link_doc_ref{
+        position: absolute;
+        top: 13px;
+        left: calc(100% - 35%);
+        background: #004cff;
+        color: white;
+        padding: 8px 20px 9px 20px;
+        text-decoration: none;
+        font-size: 13px;
+        border-radius: 8px;
     }
+
+
+
+
+
+
+    
+
     
 
     ul.list-dots-api {
@@ -257,6 +304,17 @@ function Solutions() {
         
         .name-solution {
             line-height: 3;
+        }
+        .link_doc_ref{
+            position: absolute;
+            top: 13px;
+            left: calc(100% - 35%);
+            background: #004cff;
+            color: white;
+            padding: 8px 13px 9px 13px;
+            text-decoration: none;
+            font-size: 10px;
+            border-radius: 8px;
         }
     }
     `}</style>
