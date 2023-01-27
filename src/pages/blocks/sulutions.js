@@ -308,6 +308,11 @@ function Solutions() {
             font-size: 10px;
             border-radius: 8px;
         }
+        .stylecta-fake {
+            background: #00000000;
+            backdrop-filter: blur(0px);
+            width: 100%;
+        }
     }
     `}</style>
     </>
