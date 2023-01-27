@@ -56,9 +56,6 @@ function Home() {
           background-position: bottom, center;
           background-size: contain;
       }
-
-
-
     }
     `}</style>
     </>

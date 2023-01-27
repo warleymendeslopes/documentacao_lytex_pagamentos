@@ -54,17 +54,15 @@ function Solutions() {
                 <div className='col-lg-6 d-flex align-items-center justify-content-center'>
                         
                            
-                            {/* <div className='stylecta-fake'>
-                             <span>Pega o código copia  e cola!</span>
-                            </div> */}
+                            <div className='stylecta-fake'>
+                                <div className='title-blocks white'>
+                                    <h1 className='title-color-white'>Acesse documentações específicas</h1>
+                                </div>
+                            </div>
                            
                 </div>
                 <div className='col-lg-1'></div>
                 <div className='col-lg-5'>
-                        <div className='title-blocks white'>
-                            <h1 className='title-color-white'>Acesse documentações específicas</h1>
-                         </div>
-
                     <div className='slid-sulutions'>
                     <Slider {...settings}>
                         {
@@ -242,7 +240,7 @@ function Solutions() {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center,center;
-        padding: 15px 0px 53px 0px;
+        padding: 30px 0px 30px 0px;
     }
     .cta-login-doc.fundo-blue {
         background: #004CFF;
@@ -271,20 +269,14 @@ function Solutions() {
         margin: 0;
     }
     .stylecta-fake {
-        background: #ffffffc4;
+        background: #00000012;
         border-radius: 37.7902px;
         padding: 17px;
+        backdrop-filter: blur(5px);
+        width: 75%;
     }
     
-    .stylecta-fake span {
-        font-family: 'Ubuntu';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 27px;
-        line-height: 23px;
-        text-align: center;
-        color: #004CFF;
-    }
+
 
 
     @media only screen and (max-width: 1401px) {
