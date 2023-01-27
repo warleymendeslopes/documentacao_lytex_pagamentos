@@ -17,10 +17,11 @@ function Home() {
       cursor: pointer;
       background: #004CFF;
       background-image: url(/back1.png);
-      height: 70vh;
+      height: 60vh;
       background-repeat: no-repeat;
       background-position: bottom center;
       background-size: contain;
+      position: relative;
     }
     .title-home-page{
         font-family: 'Ubuntu';
