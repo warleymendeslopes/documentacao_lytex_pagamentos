@@ -51,7 +51,7 @@ function Home() {
           background: #004CFF;
           padding-top: 100px;
           background-image: url(/back_mobile.png);
-          height: 100vh;
+          height: 90vh;
           background-repeat: no-repeat;
           background-position: bottom, center;
           background-size: contain;
