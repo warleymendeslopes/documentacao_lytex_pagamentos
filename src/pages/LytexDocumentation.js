@@ -1,6 +1,15 @@
 import { RedocStandalone } from 'redoc';
 import DocJson from '../documents/doc.json';
+import { useEffect } from 'react';
+
 function DocumentationLytex() {
+  
+  useEffect( () => {
+    
+    window.onload = function () { 
+      document.querySelector('.search-input').placeholder= "Pesquisar";
+     } 
+  });
     return (
       <>
         <RedocStandalone

@@ -1,14 +1,15 @@
 import { RedocStandalone } from 'redoc';
 import Plataforma from '../documents/plataforma.yaml';
+import { useEffect } from 'react';
 
-
-
-
-//document.querySelector('.search-input').placeholder= "Pesquisar";
 
 function SystemDocumentation() {
+  useEffect( () => {
+    window.onload = function () { 
+      document.querySelector('.search-input').placeholder= "Pesquisar";
+     } 
+  });
 
-  
     return (
       <div>
         <RedocStandalone 
@@ -112,6 +113,6 @@ function SystemDocumentation() {
   
       </div>
     );
-  }
 
+  }
   export default SystemDocumentation;
