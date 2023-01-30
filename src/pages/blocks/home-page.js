@@ -50,8 +50,8 @@ function Home() {
         .blocks-home-page {
           background: #004CFF;
           padding-top: 100px;
-          background-image: url(/banner_mobile_home.webp);
-          height: 90vh;
+          background-image: url(/Mobile.png);
+          height: 77vh;
           background-repeat: no-repeat;
           background-position: bottom, center;
           background-size: contain;

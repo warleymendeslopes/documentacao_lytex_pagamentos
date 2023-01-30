@@ -49,8 +49,8 @@ function Home() {
                                         <img className="icons" src="/icones/api-de-pagamento.svg" alt="API para qualquer tipo de negócio" />
                                     </div>
                                     <div className="flex-grow-1 ms-3 text-icons">
-                                        <h4>API para qualquer tipo de negócio</h4>
-                                        <span className="text-icons">Integre nossa API para assinaturas, faturas avulsas ou transações (modo intermediadora). Construa uma solução única e com as características necessárias para seu negócio.</span>
+                                        <h4>API simples e aberta</h4>
+                                        <span className="text-icons">Integre com nossa API e gere faturas avulsas e recorrentes. Faça também transações bancárias (modo intermediadora) e usufrua de todas funcionalidades da melhor tecnologia de pagamentos do mercado.</span>
                                     </div>
                                 </div>
 
