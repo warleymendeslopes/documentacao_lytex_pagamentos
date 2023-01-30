@@ -16,7 +16,7 @@ function Home() {
     .blocks-home-page {
       cursor: pointer;
       background: #004CFF;
-      background-image: url(/back1.png);
+      background-image: url(/banner_desktop_home.webp);
       height: 60vh;
       background-repeat: no-repeat;
       background-position: bottom center;
@@ -50,7 +50,7 @@ function Home() {
         .blocks-home-page {
           background: #004CFF;
           padding-top: 100px;
-          background-image: url(/back_mobile.png);
+          background-image: url(/banner_mobile_home.webp);
           height: 90vh;
           background-repeat: no-repeat;
           background-position: bottom, center;
