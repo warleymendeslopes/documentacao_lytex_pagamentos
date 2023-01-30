@@ -31,9 +31,8 @@
     },
     {
       "name": "Parcelamentos",
-      "description": "Na carteira, o usuário tem acesso ao seu saldo detalhado, incluindo informações sobre Saldo Atual, Saldo Futuro e Saldo Bloqueado (Split). Acesse todos os dados referentes a entradas e saídas de valores do seu negócio e confira detalhadamente suas transações. Emita o extrato por período e acesse todos os dados relevantes sobre seu faturamento. Solicite o saque dos valores disponíveis no Saldo Atual e receba na conta bancária cadastrada."
+      "description": "Para utilizar a função de Parcelamento/Carne de faturas. Basta ir em Vendas, na aba Parcelamento. Ao criar um parcelamento, serão emitidas todas as faturas correspondentes à quantidade de parcelas selecionadas, com o vencimento mensal no dia do vencimento escolhido na primeira parcela. \n\n Poderão ser selecionadas todas as possíveis configurações de uma emissão de fatura normal, exceto a opção de parcelamento de mais de 1x no cartão de crédito. \n\n Os parcelamentos já criados terão um código próprio de geração e ficarão na aba Parcelamentos. As faturas geradas por um parcelamento são exibidas na aba Faturas, e o parcelamento que gerou aquelas faturas fica na aba Parcelamentos. Ao abrir a aba Parcelamentos, será exibida a seguinte tela, com as colunas:\n \n  - CLIENTE/PRODUTO; \n  - STATUS; \n  - CRIAÇÃO; \n  - VALOR TOTAL; \n  - PARCELAS; \n  - PAGAS; \n  - EM ABERTO; \n  - VENCIDAS; \n  - CANCELADAS. \n  \nSerá possível acompanhar o andamento de todas as faturas de um parcelamento pela grade de exibição.\n\nNos filtros da tela, será possível filtrar por nome do parcelamento, código do parcelamento, nome ou CPF/CNPJ do cliente, data de início e fim de criação, por status ativo ou cancelado"
     }
-    
   ],
   "paths": {
     "/v1/clients": {
@@ -8071,6 +8070,7 @@
             },
             "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
           },
+
           {
             "name": "startDate",
             "description": "Data Inicial",
@@ -8133,6 +8133,7 @@
               "format": "date-time"
             }
           },
+          
           {
             "name": "exportTo",
             "description": "tipo de resposta",
@@ -12366,24 +12367,29 @@
                     "type": "object",
                     "properties": {
                       "_clientId": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Identificar único do cliente já cadastrado"
                       },
                       "totalValue": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1000,
-                        "maximum": 5000000
+                        "maximum": 5000000,
+                        "description": "Valor total do parcelamento"
                       },
                       "description": {
                         "type": "string",
-                        "maxLength": 300
+                        "maxLength": 300,
+                        "description": "Descrição do parcelamento, máximo de 300 carácter"
                       },
                       "startAt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "description": " Data de inicio do parcelamento "
                       },
                       "paymentMethods": {
                         "type": "object",
+                        "description": "Metodo de pagamento do parcelamento",
                         "properties": {
                           "pix": {
                             "type": "object",
@@ -12419,6 +12425,7 @@
                       },
                       "parcels": {
                         "type": "integer",
+                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -12631,13 +12638,15 @@
                       },
                       "referenceId": {
                         "type": "string",
-                        "maxLength": 150
+                        "maxLength": 150,
+                        "description": "Pode-se inserir um identificador de referência"
                       },
                       "cancelOverdueDays": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1,
-                        "maximum": 60
+                        "maximum": 60,
+                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                       },
                       "mulctAndInterest": {
                         "type": "object",
@@ -12734,7 +12743,8 @@
                       },
                       "observation": {
                         "type": "string",
-                        "maxLength": 300
+                        "maxLength": 300,
+                        "description": "Você pode inserir também uma observação, com até 300 caracteres"
                       }
                     },
                     "required": [
@@ -12750,6 +12760,7 @@
                     "type": "object",
                     "properties": {
                       "client": {
+                        "description": "Criar um cliente juntamente com o Parcelamento",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12758,14 +12769,12 @@
                               "pf",
                               "pj"
                             ],
-                            "description": "Tipo de cliente<br/><br/>\n      **_pf_** = Pessoa Física<br/>\n      **_pj_** = Pessoa Jurídica",
-                            "example": "pj"
+                            "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
                           },
                           "name": {
                             "type": "string",
                             "maxLength": 255,
-                            "description": "Nome completo do cliente",
-                            "example": "Lytex Soluções"
+                            "description": "Nome completo do cliente"
                           },
                           "treatmentPronoun": {
                             "type": "string",
@@ -12774,28 +12783,25 @@
                               "mr",
                               "lady"
                             ],
-                            "description": "Saudação preferida<br/><br/>\n      **_you_** = Neutro<br/>\n      **_mr_** = Senhor<br/>\n      **_lady_** = Senhora"
+                            "description": "Saudação preferida<br/><br/>\n      you = Neutro<br/>\n      mr = Senhor<br/>\n      lady = Senhora"
                           },
                           "cpfCnpj": {
                             "type": "string",
                             "minLength": 11,
                             "maxLength": 14,
-                            "description": "CPF ou CNPJ do cliente, somente números",
-                            "example": "34778583000106"
+                            "description": "CPF ou CNPJ do cliente, somente números"
                           },
                           "email": {
                             "type": "string",
                             "format": "email",
                             "maxLength": 255,
-                            "description": "Email do cliente",
-                            "example": "suporte@lytex.com.br"
+                            "description": "Email do cliente"
                           },
                           "cellphone": {
                             "type": "string",
                             "minLength": 10,
                             "maxLength": 11,
-                            "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9",
-                            "example": "3198874108"
+                            "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9"
                           },
                           "address": {
                             "type": "object",
@@ -12803,75 +12809,41 @@
                               "street": {
                                 "type": "string",
                                 "maxLength": 255,
-                                "description": "Rua/logradouro",
-                                "example": "Rua Doutor Moacir Bairro"
+                                "description": "Rua/logradouro"
                               },
                               "zone": {
                                 "type": "string",
                                 "maxLength": 255,
-                                "description": "Bairro/localidade",
-                                "example": "Centro"
+                                "description": "Bairro/localidade"
                               },
                               "city": {
                                 "type": "string",
                                 "maxLength": 255,
-                                "description": "Cidade",
-                                "example": "Cel. Fabriciano"
+                                "description": "Cidade"
                               },
                               "state": {
                                 "type": "string",
                                 "minLength": 2,
                                 "maxLength": 2,
-                                "enum": [
-                                  "AC",
-                                  "AL",
-                                  "AM",
-                                  "AP",
-                                  "BA",
-                                  "CE",
-                                  "DF",
-                                  "ES",
-                                  "GO",
-                                  "MA",
-                                  "MT",
-                                  "MS",
-                                  "MG",
-                                  "PA",
-                                  "PB",
-                                  "PR",
-                                  "PE",
-                                  "PI",
-                                  "RJ",
-                                  "RN",
-                                  "RO",
-                                  "RS",
-                                  "RR",
-                                  "SC",
-                                  "SE",
-                                  "SP",
-                                  "TO"
-                                ],
-                                "description": "Sigla do estado",
-                                "example": "MG"
+                                "description": "Sigla do estado"
                               },
                               "number": {
                                 "type": "string",
                                 "maxLength": 255,
-                                "description": "Número",
-                                "example": "325"
+                                "nullable": true,
+                                "description": "Número"
                               },
                               "complement": {
                                 "type": "string",
                                 "maxLength": 255,
-                                "description": "Complemento",
-                                "example": "1º andar"
+                                "nullable": true,
+                                "description": "Complemento"
                               },
                               "zip": {
                                 "type": "string",
                                 "minLength": 8,
                                 "maxLength": 8,
-                                "description": "Cep/código postal, apenas números",
-                                "example": "35170002"
+                                "description": "Cep/código postal, apenas números"
                               }
                             },
                             "required": [
@@ -12889,26 +12861,29 @@
                           "name",
                           "cpfCnpj",
                           "email",
-                          "cellphone",
-                          "address"
+                          "cellphone"
                         ]
                       },
                       "totalValue": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1000,
-                        "maximum": 5000000
+                        "maximum": 5000000,
+                        "description": "Valor total do parcelamento"
                       },
                       "description": {
                         "type": "string",
-                        "maxLength": 300
+                        "maxLength": 300,
+                        "description": "Descrição do parcelamento, máximo de 300 carácter"
                       },
                       "startAt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "description": " Data de inicio do parcelamento "
                       },
                       "paymentMethods": {
                         "type": "object",
+                        "description": "Metodo de pagamento do parcelamento",
                         "properties": {
                           "pix": {
                             "type": "object",
@@ -12944,6 +12919,7 @@
                       },
                       "parcels": {
                         "type": "integer",
+                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -13156,13 +13132,15 @@
                       },
                       "referenceId": {
                         "type": "string",
-                        "maxLength": 150
+                        "maxLength": 150,
+                        "description": "Pode-se inserir um identificador de referência"
                       },
                       "cancelOverdueDays": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1,
-                        "maximum": 60
+                        "maximum": 60,
+                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                       },
                       "mulctAndInterest": {
                         "type": "object",
@@ -13259,7 +13237,8 @@
                       },
                       "observation": {
                         "type": "string",
-                        "maxLength": 300
+                        "maxLength": 300,
+                        "description": "Você pode inserir também uma observação, com até 300 caracteres"
                       }
                     },
                     "required": [
@@ -13950,1346 +13929,270 @@
       },
       "get": {
         "operationId": "InstallmentController_listInstallment",
-        "summary": "Lista o Parcelamentos",
-        "description": "lista todos os parcelmento de um determinado estabelecimento. [Diagrama listagem de parcelamentos](/static/swagger/fluxogram-get-installment.html)",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "oneOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "_clientId": {
-                        "type": "string"
-                      },
-                      "totalValue": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1000,
-                        "maximum": 5000000
-                      },
-                      "description": {
-                        "type": "string",
-                        "maxLength": 300
-                      },
-                      "startAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "paymentMethods": {
-                        "type": "object",
-                        "properties": {
-                          "pix": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Pix"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Pix"
-                          },
-                          "boleto": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Boleto"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Boleto"
-                          }
-                        },
-                        "required": [
-                          "pix",
-                          "boleto"
-                        ]
-                      },
-                      "parcels": {
-                        "type": "integer",
-                        "minimum": 2,
-                        "maximum": 119
-                      },
-                      "split": {
-                        "type": "object",
-                        "properties": {
-                          "taxationMode": {
-                            "type": "string",
-                            "enum": [
-                              "onlyPrimary"
-                            ],
-                            "description": "Modo de divisão de taxas. Define qual estabelecimento arcará com as taxas incidentes sobre a fatura, só serão consideradas as taxas de intermediação, anti-fraude e processamento de pagamento, outras taxas como saque e notificações sempre serão de responsabilidade do estabelecimento primário.</br></br>\n        **_onlyPrimary_** = Somente primário, o estabelecimento primário arca com as taxas</br>\n        **_onlySecondary_** = Somente os estabelecimentos secundários arcam com as taxas</br>\n        **_divided_** = As taxas serão divididas entre todos estabelecimentos</br></br>\n        Obs.: caso ocorra dizimas ou uma divisão não-inteira, o valor excedente será repassado ao estabelecimento primário"
-                          },
-                          "recipients": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "cpfCnpj": {
-                                  "type": "string",
-                                  "minLength": 11,
-                                  "maxLength": 14,
-                                  "description": "CPF ou CNPJ do estabelecimento, somente números",
-                                  "example": "34778583000106"
-                                },
-                                "commission": {
-                                  "type": "object",
-                                  "properties": {
-                                    "type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "fixedValue",
-                                        "percentage"
-                                      ],
-                                      "description": "Tipo de comissão</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                      "example": "percentage"
-                                    },
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "description": "Valor da comissão em centavos ou porcentagem",
-                                      "example": 50
-                                    }
-                                  },
-                                  "required": [
-                                    "type",
-                                    "value"
-                                  ],
-                                  "description": "Comissão do estabelecimento"
-                                }
-                              },
-                              "required": [
-                                "cpfCnpj",
-                                "commission"
-                              ]
-                            },
-                            "minItems": 2,
-                            "maxItems": 10,
-                            "description": "Participantes do Split"
-                          }
-                        },
-                        "required": [
-                          "taxationMode",
-                          "recipients"
-                        ],
-                        "description": "Configuração do Split, esta funcionalidade deve ser ativada antes da sua utilização"
-                      },
-                      "discount": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "fixedValue",
-                              "percentage"
-                            ],
-                            "description": "Tipo de desconto</br></br>\n        **_fixedValue_** = Valor fixo</br>\n        **_percentage_** = Porcentagem",
-                            "example": "percentage"
-                          },
-                          "discounts": {
-                            "oneOf": [
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "maximum": 99,
-                                      "description": "Porcentagem do desconto",
-                                      "example": 10
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              },
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "integer",
-                                      "minimum": 1,
-                                      "description": "Valor do desconto em centavos",
-                                      "example": 200
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              }
-                            ],
-                            "description": "Descontos, máximo 3 descontos por fatura"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "discounts"
-                        ],
-                        "description": "Configuração dos descontos"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
-                      },
-                      "referenceId": {
-                        "type": "string",
-                        "maxLength": 150
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60
-                      },
-                      "mulctAndInterest": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar multa e juros"
-                          },
-                          "mulct": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da multa</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem da multa, não deve ultrapassar 99.99%",
-                                    "example": 2,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da multa em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor da multa em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações da multa, será aplicado uma única vez, após a data de vencimento"
-                          },
-                          "interest": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da juros</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem do juros diário, não deve ultrapassar 99.99%",
-                                    "example": 0.033,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da juros diário em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor dos juros em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações dos juros, será multiplicado pelos dias de atraso, após a data de vencimento"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração de multa e juros"
-                      },
-                      "observation": {
-                        "type": "string",
-                        "maxLength": 300
-                      }
-                    },
-                    "required": [
-                      "_clientId",
-                      "totalValue",
-                      "description",
-                      "startAt",
-                      "paymentMethods",
-                      "parcels"
-                    ]
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "client": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "pf",
-                              "pj"
-                            ],
-                            "description": "Tipo de cliente<br/><br/>\n      **_pf_** = Pessoa Física<br/>\n      **_pj_** = Pessoa Jurídica",
-                            "example": "pj"
-                          },
-                          "name": {
-                            "type": "string",
-                            "maxLength": 255,
-                            "description": "Nome completo do cliente",
-                            "example": "Lytex Soluções"
-                          },
-                          "treatmentPronoun": {
-                            "type": "string",
-                            "enum": [
-                              "you",
-                              "mr",
-                              "lady"
-                            ],
-                            "description": "Saudação preferida<br/><br/>\n      **_you_** = Neutro<br/>\n      **_mr_** = Senhor<br/>\n      **_lady_** = Senhora"
-                          },
-                          "cpfCnpj": {
-                            "type": "string",
-                            "minLength": 11,
-                            "maxLength": 14,
-                            "description": "CPF ou CNPJ do cliente, somente números",
-                            "example": "34778583000106"
-                          },
-                          "email": {
-                            "type": "string",
-                            "format": "email",
-                            "maxLength": 255,
-                            "description": "Email do cliente",
-                            "example": "suporte@lytex.com.br"
-                          },
-                          "cellphone": {
-                            "type": "string",
-                            "minLength": 10,
-                            "maxLength": 11,
-                            "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9",
-                            "example": "3198874108"
-                          },
-                          "address": {
-                            "type": "object",
-                            "properties": {
-                              "street": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Rua/logradouro",
-                                "example": "Rua Doutor Moacir Bairro"
-                              },
-                              "zone": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Bairro/localidade",
-                                "example": "Centro"
-                              },
-                              "city": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Cidade",
-                                "example": "Cel. Fabriciano"
-                              },
-                              "state": {
-                                "type": "string",
-                                "minLength": 2,
-                                "maxLength": 2,
-                                "enum": [
-                                  "AC",
-                                  "AL",
-                                  "AM",
-                                  "AP",
-                                  "BA",
-                                  "CE",
-                                  "DF",
-                                  "ES",
-                                  "GO",
-                                  "MA",
-                                  "MT",
-                                  "MS",
-                                  "MG",
-                                  "PA",
-                                  "PB",
-                                  "PR",
-                                  "PE",
-                                  "PI",
-                                  "RJ",
-                                  "RN",
-                                  "RO",
-                                  "RS",
-                                  "RR",
-                                  "SC",
-                                  "SE",
-                                  "SP",
-                                  "TO"
-                                ],
-                                "description": "Sigla do estado",
-                                "example": "MG"
-                              },
-                              "number": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Número",
-                                "example": "325"
-                              },
-                              "complement": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Complemento",
-                                "example": "1º andar"
-                              },
-                              "zip": {
-                                "type": "string",
-                                "minLength": 8,
-                                "maxLength": 8,
-                                "description": "Cep/código postal, apenas números",
-                                "example": "35170002"
-                              }
-                            },
-                            "required": [
-                              "street",
-                              "zone",
-                              "city",
-                              "state",
-                              "zip"
-                            ],
-                            "description": "Endereço do cliente"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "name",
-                          "cpfCnpj",
-                          "email",
-                          "cellphone",
-                          "address"
-                        ]
-                      },
-                      "totalValue": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1000,
-                        "maximum": 5000000
-                      },
-                      "description": {
-                        "type": "string",
-                        "maxLength": 300
-                      },
-                      "startAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "paymentMethods": {
-                        "type": "object",
-                        "properties": {
-                          "pix": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Pix"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Pix"
-                          },
-                          "boleto": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Boleto"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Boleto"
-                          }
-                        },
-                        "required": [
-                          "pix",
-                          "boleto"
-                        ]
-                      },
-                      "parcels": {
-                        "type": "integer",
-                        "minimum": 2,
-                        "maximum": 119
-                      },
-                      "split": {
-                        "type": "object",
-                        "properties": {
-                          "taxationMode": {
-                            "type": "string",
-                            "enum": [
-                              "onlyPrimary"
-                            ],
-                            "description": "Modo de divisão de taxas. Define qual estabelecimento arcará com as taxas incidentes sobre a fatura, só serão consideradas as taxas de intermediação, anti-fraude e processamento de pagamento, outras taxas como saque e notificações sempre serão de responsabilidade do estabelecimento primário.</br></br>\n        **_onlyPrimary_** = Somente primário, o estabelecimento primário arca com as taxas</br>\n        **_onlySecondary_** = Somente os estabelecimentos secundários arcam com as taxas</br>\n        **_divided_** = As taxas serão divididas entre todos estabelecimentos</br></br>\n        Obs.: caso ocorra dizimas ou uma divisão não-inteira, o valor excedente será repassado ao estabelecimento primário"
-                          },
-                          "recipients": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "cpfCnpj": {
-                                  "type": "string",
-                                  "minLength": 11,
-                                  "maxLength": 14,
-                                  "description": "CPF ou CNPJ do estabelecimento, somente números",
-                                  "example": "34778583000106"
-                                },
-                                "commission": {
-                                  "type": "object",
-                                  "properties": {
-                                    "type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "fixedValue",
-                                        "percentage"
-                                      ],
-                                      "description": "Tipo de comissão</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                      "example": "percentage"
-                                    },
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "description": "Valor da comissão em centavos ou porcentagem",
-                                      "example": 50
-                                    }
-                                  },
-                                  "required": [
-                                    "type",
-                                    "value"
-                                  ],
-                                  "description": "Comissão do estabelecimento"
-                                }
-                              },
-                              "required": [
-                                "cpfCnpj",
-                                "commission"
-                              ]
-                            },
-                            "minItems": 2,
-                            "maxItems": 10,
-                            "description": "Participantes do Split"
-                          }
-                        },
-                        "required": [
-                          "taxationMode",
-                          "recipients"
-                        ],
-                        "description": "Configuração do Split, esta funcionalidade deve ser ativada antes da sua utilização"
-                      },
-                      "discount": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "fixedValue",
-                              "percentage"
-                            ],
-                            "description": "Tipo de desconto</br></br>\n        **_fixedValue_** = Valor fixo</br>\n        **_percentage_** = Porcentagem",
-                            "example": "percentage"
-                          },
-                          "discounts": {
-                            "oneOf": [
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "maximum": 99,
-                                      "description": "Porcentagem do desconto",
-                                      "example": 10
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              },
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "integer",
-                                      "minimum": 1,
-                                      "description": "Valor do desconto em centavos",
-                                      "example": 200
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              }
-                            ],
-                            "description": "Descontos, máximo 3 descontos por fatura"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "discounts"
-                        ],
-                        "description": "Configuração dos descontos"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
-                      },
-                      "referenceId": {
-                        "type": "string",
-                        "maxLength": 150
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60
-                      },
-                      "mulctAndInterest": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar multa e juros"
-                          },
-                          "mulct": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da multa</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem da multa, não deve ultrapassar 99.99%",
-                                    "example": 2,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da multa em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor da multa em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações da multa, será aplicado uma única vez, após a data de vencimento"
-                          },
-                          "interest": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da juros</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem do juros diário, não deve ultrapassar 99.99%",
-                                    "example": 0.033,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da juros diário em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor dos juros em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações dos juros, será multiplicado pelos dias de atraso, após a data de vencimento"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração de multa e juros"
-                      },
-                      "observation": {
-                        "type": "string",
-                        "maxLength": 300
-                      }
-                    },
-                    "required": [
-                      "client",
-                      "totalValue",
-                      "description",
-                      "startAt",
-                      "paymentMethods",
-                      "parcels"
-                    ]
-                  }
-                ]
-              }
+        "summary": "Listar parcelamentos",
+        "description": "Lista todos os parcelmento de um determinado estabelecimento.",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Nome a ser pesquisado",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "clientTypes",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "pf",
+                "pj"
+              ]
+            },
+            "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description":"Data Inicial",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Data final",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "status da parcelamento",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "payedStartDate",
+            "in": "query",
+            "description":"data de início paga",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "payedEndDate",
+            "in": "query",
+            "description": "data final paga",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "creationStartDate",
+            "in": "query",
+            "description": "data de início da criação",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "creationEndDate",
+            "in": "query",
+            "description": "data final da criação",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "página atual",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Número da página",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "description": "Quantidade de itens por página",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Número de resultados por página",
+              "default": 10
+            }
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "description": "campo de classificação",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Campo utilizado para ordenação"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "description": "Ordenar resposta",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ASC",
+                "DESC"
+              ],
+              "description": "Tipo de ordenação",
+              "default": "DESC"
             }
           }
-        },
+        ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Sucesso",
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Installment",
-                  "required": [
-                    "description",
-                    "rates",
-                    "_clientId",
-                    "client",
-                    "paymentMethods",
-                    "notifications",
-                    "invoices",
-                    "startAt",
-                    "parcels",
-                    "parcelValue",
-                    "totalValue",
-                    "_recipientId",
-                    "status"
-                  ],
+                  "type": "object",
                   "properties": {
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "rates": {
-                      "type": "object",
-                      "properties": {
-                        "antifraud": {
-                          "type": "object",
-                          "properties": {
-                            "creditCard": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "boleto": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "pix": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        },
-                        "notifications": {
-                          "type": "object",
-                          "properties": {
-                            "whatsapp": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "email": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "sms": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        },
-                        "processing": {
-                          "type": "object",
-                          "properties": {
-                            "creditCard": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "boleto": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "pix": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        },
-                        "loot": {
-                          "type": "object",
-                          "properties": {
-                            "perLoot": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "freeMonthlyLoots": {
-                              "type": "number"
-                            }
-                          }
-                        },
-                        "creditCard": {
-                          "type": "object",
-                          "properties": {
-                            "liquidation": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "emission": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "installment": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        },
-                        "boleto": {
-                          "type": "object",
-                          "properties": {
-                            "liquidation": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "emission": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        },
-                        "pix": {
-                          "type": "object",
-                          "properties": {
-                            "liquidation": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "emission": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "_clientId": {
-                      "type": "string"
-                    },
-                    "client": {
-                      "type": "object",
-                      "properties": {
-                        "address": {
-                          "type": "object",
-                          "properties": {
-                            "zip": {
-                              "type": "string"
-                            },
-                            "complement": {
-                              "type": "string"
-                            },
-                            "number": {
-                              "type": "string"
-                            },
-                            "state": {
-                              "type": "string"
-                            },
-                            "city": {
-                              "type": "string"
-                            },
-                            "zone": {
-                              "type": "string"
-                            },
-                            "street": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "cellphone": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "cpfCnpj": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string",
-                          "enum": [
-                            "pf",
-                            "pj"
-                          ]
-                        },
-                        "treatmentPronoun": {
-                          "type": "string",
-                          "enum": [
-                            "you",
-                            "mr",
-                            "lady"
-                          ]
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "paymentMethods": {
-                      "type": "object",
-                      "properties": {
-                        "creditCard": {
-                          "type": "object",
-                          "properties": {
-                            "isRatesToPayer": {
-                              "type": "boolean"
-                            },
-                            "maxParcels": {
-                              "type": "number"
-                            },
-                            "enable": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "boleto": {
-                          "type": "object",
-                          "properties": {
-                            "dueDateDays": {
-                              "type": "number"
-                            },
-                            "enable": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "pix": {
-                          "type": "object",
-                          "properties": {
-                            "enable": {
-                              "type": "boolean"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "split": {
-                      "type": "object",
-                      "properties": {
-                        "taxationMode": {
-                          "type": "string",
-                          "enum": [
-                            "onlyPrimary"
-                          ]
-                        },
-                        "recipients": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {}
-                          }
-                        }
-                      }
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
-                    },
-                    "mulctAndInterest": {
-                      "type": "object",
-                      "properties": {
-                        "interest": {
-                          "type": "object",
-                          "properties": {
-                            "value": {
-                              "type": "number"
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "fixedValue",
-                                "percentage"
-                              ]
-                            }
-                          }
-                        },
-                        "mulct": {
-                          "type": "object",
-                          "properties": {
-                            "value": {
-                              "type": "number"
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "fixedValue",
-                                "percentage"
-                              ]
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
-                    },
-                    "invoices": {
+                    "results": {
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "properties": {}
+                        "properties": {
+                          "_id": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "parcels": {
+                            "type": "number"
+                          },
+                          "client": {
+                            "type": "object",
+                            "properties": {
+                              "address": {
+                                "type": "object",
+                                "properties": {
+                                  "zip": {
+                                    "type": "string"
+                                  },
+                                  "complement": {
+                                    "type": "string"
+                                  },
+                                  "number": {
+                                    "type": "string"
+                                  },
+                                  "state": {
+                                    "type": "string"
+                                  },
+                                  "city": {
+                                    "type": "string"
+                                  },
+                                  "zone": {
+                                    "type": "string"
+                                  },
+                                  "street": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "cellphone": {
+                                "type": "string"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "cpfCnpj": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "pf",
+                                  "pj"
+                                ]
+                              },
+                              "treatmentPronoun": {
+                                "type": "string",
+                                "enum": [
+                                  "you",
+                                  "mr",
+                                  "lady"
+                                ]
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "startAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "totalValue": {
+                            "type": "number"
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        }
                       }
                     },
-                    "startAt": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "parcels": {
-                      "type": "number"
-                    },
-                    "parcelValue": {
-                      "type": "number"
-                    },
-                    "totalValue": {
-                      "type": "number"
-                    },
-                    "_recipientId": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "_id": {
-                      "type": "string"
-                    },
-                    "updatedAt": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "createdAt": {
-                      "type": "string",
-                      "format": "date-time"
+                    "paginate": {
+                      "type": "object",
+                      "description": "Dados da paginação",
+                      "required": [
+                        "perPage",
+                        "page",
+                        "pages",
+                        "total"
+                      ],
+                      "properties": {
+                        "perPage": {
+                          "type": "number",
+                          "description": "Número de resultados por página",
+                          "minimum": 1,
+                          "maximum": 100,
+                          "default": 10
+                        },
+                        "page": {
+                          "type": "number",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "Número da página"
+                        },
+                        "pages": {
+                          "type": "number",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "Número total de páginas"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "Número total de resultados"
+                        }
+                      }
                     }
                   }
                 }
@@ -15332,25 +14235,36 @@
             }
           },
           "403": {
-            "description": "Enviar Documentos Pendentes",
+            "description": "Não permitido",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
+                  "required": [
+                    "statusCode",
+                    "message",
+                    "error"
+                  ],
                   "properties": {
                     "statusCode": {
                       "type": "number",
-                      "example": 403
+                      "example": 403,
+                      "description": "Status da requisição (HTTP)"
                     },
                     "message": {
                       "type": "string",
                       "enum": [
-                        "Enviar Documentos Pendentes. Faturas com split não podem ser criadas."
-                      ]
+                        "Token revogado",
+                        "Esta integracão não tem permissão para executar essa ação",
+                        "Beneficiário desabilitado",
+                        "Beneficiário bloqueado, entre em contato para mais informações"
+                      ],
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
-                      "example": "Forbidden"
+                      "example": "Forbidden",
+                      "description": "Descrição da requisição (HTTP)"
                     }
                   }
                 }
@@ -15540,931 +14454,12 @@
     "/v1/installment/{id}": {
       "get": {
         "operationId": "InstallmentController_getInvoice",
-        "summary": "detalhes do Parcelamentos",
-        "description": "lista todos os parcelmento de um determinado estabelecimento. [Diagrama listagem de parcelamentos](/static/swagger/fluxogram-get-installment.html)",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "oneOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "_clientId": {
-                        "type": "string"
-                      },
-                      "totalValue": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1000,
-                        "maximum": 5000000
-                      },
-                      "description": {
-                        "type": "string",
-                        "maxLength": 300
-                      },
-                      "startAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "paymentMethods": {
-                        "type": "object",
-                        "properties": {
-                          "pix": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Pix"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Pix"
-                          },
-                          "boleto": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Boleto"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Boleto"
-                          }
-                        },
-                        "required": [
-                          "pix",
-                          "boleto"
-                        ]
-                      },
-                      "parcels": {
-                        "type": "integer",
-                        "minimum": 2,
-                        "maximum": 119
-                      },
-                      "split": {
-                        "type": "object",
-                        "properties": {
-                          "taxationMode": {
-                            "type": "string",
-                            "enum": [
-                              "onlyPrimary"
-                            ],
-                            "description": "Modo de divisão de taxas. Define qual estabelecimento arcará com as taxas incidentes sobre a fatura, só serão consideradas as taxas de intermediação, anti-fraude e processamento de pagamento, outras taxas como saque e notificações sempre serão de responsabilidade do estabelecimento primário.</br></br>\n        **_onlyPrimary_** = Somente primário, o estabelecimento primário arca com as taxas</br>\n        **_onlySecondary_** = Somente os estabelecimentos secundários arcam com as taxas</br>\n        **_divided_** = As taxas serão divididas entre todos estabelecimentos</br></br>\n        Obs.: caso ocorra dizimas ou uma divisão não-inteira, o valor excedente será repassado ao estabelecimento primário"
-                          },
-                          "recipients": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "cpfCnpj": {
-                                  "type": "string",
-                                  "minLength": 11,
-                                  "maxLength": 14,
-                                  "description": "CPF ou CNPJ do estabelecimento, somente números",
-                                  "example": "34778583000106"
-                                },
-                                "commission": {
-                                  "type": "object",
-                                  "properties": {
-                                    "type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "fixedValue",
-                                        "percentage"
-                                      ],
-                                      "description": "Tipo de comissão</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                      "example": "percentage"
-                                    },
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "description": "Valor da comissão em centavos ou porcentagem",
-                                      "example": 50
-                                    }
-                                  },
-                                  "required": [
-                                    "type",
-                                    "value"
-                                  ],
-                                  "description": "Comissão do estabelecimento"
-                                }
-                              },
-                              "required": [
-                                "cpfCnpj",
-                                "commission"
-                              ]
-                            },
-                            "minItems": 2,
-                            "maxItems": 10,
-                            "description": "Participantes do Split"
-                          }
-                        },
-                        "required": [
-                          "taxationMode",
-                          "recipients"
-                        ],
-                        "description": "Configuração do Split, esta funcionalidade deve ser ativada antes da sua utilização"
-                      },
-                      "discount": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "fixedValue",
-                              "percentage"
-                            ],
-                            "description": "Tipo de desconto</br></br>\n        **_fixedValue_** = Valor fixo</br>\n        **_percentage_** = Porcentagem",
-                            "example": "percentage"
-                          },
-                          "discounts": {
-                            "oneOf": [
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "maximum": 99,
-                                      "description": "Porcentagem do desconto",
-                                      "example": 10
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              },
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "integer",
-                                      "minimum": 1,
-                                      "description": "Valor do desconto em centavos",
-                                      "example": 200
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              }
-                            ],
-                            "description": "Descontos, máximo 3 descontos por fatura"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "discounts"
-                        ],
-                        "description": "Configuração dos descontos"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
-                      },
-                      "referenceId": {
-                        "type": "string",
-                        "maxLength": 150
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60
-                      },
-                      "mulctAndInterest": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar multa e juros"
-                          },
-                          "mulct": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da multa</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem da multa, não deve ultrapassar 99.99%",
-                                    "example": 2,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da multa em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor da multa em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações da multa, será aplicado uma única vez, após a data de vencimento"
-                          },
-                          "interest": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da juros</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem do juros diário, não deve ultrapassar 99.99%",
-                                    "example": 0.033,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da juros diário em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor dos juros em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações dos juros, será multiplicado pelos dias de atraso, após a data de vencimento"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração de multa e juros"
-                      },
-                      "observation": {
-                        "type": "string",
-                        "maxLength": 300
-                      }
-                    },
-                    "required": [
-                      "_clientId",
-                      "totalValue",
-                      "description",
-                      "startAt",
-                      "paymentMethods",
-                      "parcels"
-                    ]
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "client": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "pf",
-                              "pj"
-                            ],
-                            "description": "Tipo de cliente<br/><br/>\n      **_pf_** = Pessoa Física<br/>\n      **_pj_** = Pessoa Jurídica",
-                            "example": "pj"
-                          },
-                          "name": {
-                            "type": "string",
-                            "maxLength": 255,
-                            "description": "Nome completo do cliente",
-                            "example": "Lytex Soluções"
-                          },
-                          "treatmentPronoun": {
-                            "type": "string",
-                            "enum": [
-                              "you",
-                              "mr",
-                              "lady"
-                            ],
-                            "description": "Saudação preferida<br/><br/>\n      **_you_** = Neutro<br/>\n      **_mr_** = Senhor<br/>\n      **_lady_** = Senhora"
-                          },
-                          "cpfCnpj": {
-                            "type": "string",
-                            "minLength": 11,
-                            "maxLength": 14,
-                            "description": "CPF ou CNPJ do cliente, somente números",
-                            "example": "34778583000106"
-                          },
-                          "email": {
-                            "type": "string",
-                            "format": "email",
-                            "maxLength": 255,
-                            "description": "Email do cliente",
-                            "example": "suporte@lytex.com.br"
-                          },
-                          "cellphone": {
-                            "type": "string",
-                            "minLength": 10,
-                            "maxLength": 11,
-                            "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9",
-                            "example": "3198874108"
-                          },
-                          "address": {
-                            "type": "object",
-                            "properties": {
-                              "street": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Rua/logradouro",
-                                "example": "Rua Doutor Moacir Bairro"
-                              },
-                              "zone": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Bairro/localidade",
-                                "example": "Centro"
-                              },
-                              "city": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Cidade",
-                                "example": "Cel. Fabriciano"
-                              },
-                              "state": {
-                                "type": "string",
-                                "minLength": 2,
-                                "maxLength": 2,
-                                "enum": [
-                                  "AC",
-                                  "AL",
-                                  "AM",
-                                  "AP",
-                                  "BA",
-                                  "CE",
-                                  "DF",
-                                  "ES",
-                                  "GO",
-                                  "MA",
-                                  "MT",
-                                  "MS",
-                                  "MG",
-                                  "PA",
-                                  "PB",
-                                  "PR",
-                                  "PE",
-                                  "PI",
-                                  "RJ",
-                                  "RN",
-                                  "RO",
-                                  "RS",
-                                  "RR",
-                                  "SC",
-                                  "SE",
-                                  "SP",
-                                  "TO"
-                                ],
-                                "description": "Sigla do estado",
-                                "example": "MG"
-                              },
-                              "number": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Número",
-                                "example": "325"
-                              },
-                              "complement": {
-                                "type": "string",
-                                "maxLength": 255,
-                                "description": "Complemento",
-                                "example": "1º andar"
-                              },
-                              "zip": {
-                                "type": "string",
-                                "minLength": 8,
-                                "maxLength": 8,
-                                "description": "Cep/código postal, apenas números",
-                                "example": "35170002"
-                              }
-                            },
-                            "required": [
-                              "street",
-                              "zone",
-                              "city",
-                              "state",
-                              "zip"
-                            ],
-                            "description": "Endereço do cliente"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "name",
-                          "cpfCnpj",
-                          "email",
-                          "cellphone",
-                          "address"
-                        ]
-                      },
-                      "totalValue": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1000,
-                        "maximum": 5000000
-                      },
-                      "description": {
-                        "type": "string",
-                        "maxLength": 300
-                      },
-                      "startAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "paymentMethods": {
-                        "type": "object",
-                        "properties": {
-                          "pix": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Pix"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Pix"
-                          },
-                          "boleto": {
-                            "type": "object",
-                            "properties": {
-                              "enable": {
-                                "type": "boolean",
-                                "description": "Habilitar ou desabilitar o pagamento via Boleto"
-                              }
-                            },
-                            "required": [
-                              "enable"
-                            ],
-                            "description": "Configuração do Boleto"
-                          }
-                        },
-                        "required": [
-                          "pix",
-                          "boleto"
-                        ]
-                      },
-                      "parcels": {
-                        "type": "integer",
-                        "minimum": 2,
-                        "maximum": 119
-                      },
-                      "split": {
-                        "type": "object",
-                        "properties": {
-                          "taxationMode": {
-                            "type": "string",
-                            "enum": [
-                              "onlyPrimary"
-                            ],
-                            "description": "Modo de divisão de taxas. Define qual estabelecimento arcará com as taxas incidentes sobre a fatura, só serão consideradas as taxas de intermediação, anti-fraude e processamento de pagamento, outras taxas como saque e notificações sempre serão de responsabilidade do estabelecimento primário.</br></br>\n        **_onlyPrimary_** = Somente primário, o estabelecimento primário arca com as taxas</br>\n        **_onlySecondary_** = Somente os estabelecimentos secundários arcam com as taxas</br>\n        **_divided_** = As taxas serão divididas entre todos estabelecimentos</br></br>\n        Obs.: caso ocorra dizimas ou uma divisão não-inteira, o valor excedente será repassado ao estabelecimento primário"
-                          },
-                          "recipients": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "cpfCnpj": {
-                                  "type": "string",
-                                  "minLength": 11,
-                                  "maxLength": 14,
-                                  "description": "CPF ou CNPJ do estabelecimento, somente números",
-                                  "example": "34778583000106"
-                                },
-                                "commission": {
-                                  "type": "object",
-                                  "properties": {
-                                    "type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "fixedValue",
-                                        "percentage"
-                                      ],
-                                      "description": "Tipo de comissão</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                      "example": "percentage"
-                                    },
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "description": "Valor da comissão em centavos ou porcentagem",
-                                      "example": 50
-                                    }
-                                  },
-                                  "required": [
-                                    "type",
-                                    "value"
-                                  ],
-                                  "description": "Comissão do estabelecimento"
-                                }
-                              },
-                              "required": [
-                                "cpfCnpj",
-                                "commission"
-                              ]
-                            },
-                            "minItems": 2,
-                            "maxItems": 10,
-                            "description": "Participantes do Split"
-                          }
-                        },
-                        "required": [
-                          "taxationMode",
-                          "recipients"
-                        ],
-                        "description": "Configuração do Split, esta funcionalidade deve ser ativada antes da sua utilização"
-                      },
-                      "discount": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "fixedValue",
-                              "percentage"
-                            ],
-                            "description": "Tipo de desconto</br></br>\n        **_fixedValue_** = Valor fixo</br>\n        **_percentage_** = Porcentagem",
-                            "example": "percentage"
-                          },
-                          "discounts": {
-                            "oneOf": [
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "number",
-                                      "format": "float",
-                                      "minimum": 1,
-                                      "maximum": 99,
-                                      "description": "Porcentagem do desconto",
-                                      "example": 10
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              },
-                              {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "value": {
-                                      "type": "integer",
-                                      "minimum": 1,
-                                      "description": "Valor do desconto em centavos",
-                                      "example": 200
-                                    },
-                                    "validUntil": {
-                                      "type": "string",
-                                      "format": "date-time",
-                                      "description": "Data limite para o desconto"
-                                    }
-                                  },
-                                  "required": [
-                                    "value",
-                                    "validUntil"
-                                  ]
-                                },
-                                "minItems": 1,
-                                "maxItems": 3,
-                                "uniqueItems": true
-                              }
-                            ],
-                            "description": "Descontos, máximo 3 descontos por fatura"
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "discounts"
-                        ],
-                        "description": "Configuração dos descontos"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
-                      },
-                      "referenceId": {
-                        "type": "string",
-                        "maxLength": 150
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60
-                      },
-                      "mulctAndInterest": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar multa e juros"
-                          },
-                          "mulct": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da multa</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem da multa, não deve ultrapassar 99.99%",
-                                    "example": 2,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da multa em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor da multa em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações da multa, será aplicado uma única vez, após a data de vencimento"
-                          },
-                          "interest": {
-                            "type": "object",
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "fixedValue",
-                                  "percentage"
-                                ],
-                                "description": "Tipo da juros</br></br>\n                **_fixedValue_** = Valor fixo</br>\n                **_percentage_** = Porcentagem",
-                                "example": "percentage"
-                              },
-                              "value": {
-                                "oneOf": [
-                                  {
-                                    "type": "number",
-                                    "format": "float",
-                                    "minimum": 0.01,
-                                    "maximum": 99.99,
-                                    "description": "Porcentagem do juros diário, não deve ultrapassar 99.99%",
-                                    "example": 0.033,
-                                    "x-required": true
-                                  },
-                                  {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "description": "Valor da juros diário em centavos, não deve ultrapassar o valor da fatura",
-                                    "example": 200,
-                                    "x-required": true
-                                  }
-                                ],
-                                "description": "Valor dos juros em centavos ou porcentagem"
-                              }
-                            },
-                            "required": [
-                              "type",
-                              "value"
-                            ],
-                            "description": "Configurações dos juros, será multiplicado pelos dias de atraso, após a data de vencimento"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração de multa e juros"
-                      },
-                      "observation": {
-                        "type": "string",
-                        "maxLength": 300
-                      }
-                    },
-                    "required": [
-                      "client",
-                      "totalValue",
-                      "description",
-                      "startAt",
-                      "paymentMethods",
-                      "parcels"
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        },
+        "summary": "Detalhes do Parcelamento",
+        "description": "Retorna detalhamento de um parcelamento",
         "parameters": [
           {
             "name": "id",
+            "description": "Identificador único do parcelamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -17145,6 +15140,7 @@
         "parameters": [
           {
             "name": "id",
+            "description": "Identificador único do parcelamento",
             "required": true,
             "in": "path",
             "schema": {
