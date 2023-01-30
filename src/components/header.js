@@ -1,5 +1,4 @@
 import { slide as Menu } from 'react-burger-menu'
-import logo from './logo-lytex.svg';
 import { Link } from "react-router-dom";
 import React from 'react';
 
@@ -78,7 +77,7 @@ export default function Header() {
                   <a className="menu-item" href="/documentacao">Documentação</a>
                 </Menu>
               </div>
-                <div className='col-2 logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
+                <div className='col-2 logo-lytex'><img src="/logo_02.png" className="lytex-logo" alt="logo" /></div>
                 <div className='col-7 nav-menu-lytex'>
                   <ul>
                     <li><Link to="/">Home </Link></li>
