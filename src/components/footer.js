@@ -8,9 +8,19 @@ function Footer() {
       <div className='footer-doc-lytex'>
         <div className='container'>
             <div className='row'>
-                <div className='col-lg-2 d-flex align-items-center justify-content-center'>
+                <div className='col-lg-2 container-logo-footer d-flex align-items-center justify-content-center'>
                     <div className='footer-logo-lytex'><img src={logo} className="lytex-logo" alt="logo" /></div>
-                    <div className='footer-social-midia'></div>
+                    <div className='footer-social-midia'>
+                        <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/lytexoficial/?utm_medium=copy_link'>
+                            <img src="/icones/instagram_bright_blue.svg" className="lytex-social-midia" alt="logo" />
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/company/lytexpagamentos/mycompany/'>
+                            <img src="/icones/linkedin_bright_blue.svg" className="lytex-social-midia" alt="logo" />
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/lytexoficial'>
+                            <img src="/icones/facebook_bright_blue.svg" className="lytex-social-midia" alt="logo" />
+                        </a>
+                    </div>
                 </div>
                 <div className='col-lg-10'>
                     <div className='row'>
@@ -108,14 +118,25 @@ function Footer() {
                 </div>
                 <div className='col-lg-10'>
                     <div className='row'>
+
                         <div className='col-lg-9 d-flex justify-content-center text-aling-center'>
                             <p className='text-aling-center'>
                             LyTeX Soluções LTDA. CNPJ: 34.778.583/0001-06 Copyright 2022.<br /> 
                             Todos os direitos reservados.<br /> 
                             </p>
+                            
+                                <span className='desenvolvedor'>
+                                    Feito com 
+                                    <img loading="lazy" className='lytex-logo-footer' src="https://homologacao-site.lytex.com.br/wp-content/themes/lytexsolutions/assets/img/SVG/footer-lytex.svg" width="17px" height="15px" alt="amor" />
+                                    pela LyTex Soluções
+                                </span>
                         </div>
+
                         <div className='col-lg-3 text-align-center'>
                              <img className='img-logo-pci' src='/pci.svg' alt='pci dds complint' />
+                             <a target="_blank" rel="noopener noreferrer" href='https://connect.gptw.info/certified-company?s=6112b096-24b6-4cbc-a5e1-5aec7c4e316e'>
+                                <img className='img-logo-gptw' src='/icones/selo-gptw.svg' alt='pci dds complint' />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -123,6 +144,32 @@ function Footer() {
         </div>
 
         <style jsx>{`
+        .container-logo-footer {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-social-midia {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px 0;
+            flex-basis: 25%;
+        }
+        
+        img.lytex-social-midia {
+            max-width: 73%;
+        }
+        img.img-logo-gptw {
+            width: 33%;
+            position: relative;
+            top: 28px;
+            left: 12px;
+        }
+        span.desenvolvedor {
+            position: absolute;
+            bottom: 10px;
+            font-size: 13px;
+        }
         span.get-app {
             font-size: 11px;
         }
