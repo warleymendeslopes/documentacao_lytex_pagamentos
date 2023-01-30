@@ -12385,11 +12385,11 @@
                       "startAt": {
                         "type": "string",
                         "format": "date-time",
-                        "description": " Data de inicio do parcelamento "
+                        "description": " Data de início do parcelamento "
                       },
                       "paymentMethods": {
                         "type": "object",
-                        "description": "Metodo de pagamento do parcelamento",
+                        "description": "Método de pagamento do parcelamento",
                         "properties": {
                           "pix": {
                             "type": "object",
@@ -12879,11 +12879,11 @@
                       "startAt": {
                         "type": "string",
                         "format": "date-time",
-                        "description": " Data de inicio do parcelamento "
+                        "description": " Data de início do parcelamento "
                       },
                       "paymentMethods": {
                         "type": "object",
-                        "description": "Metodo de pagamento do parcelamento",
+                        "description": "Método de pagamento do parcelamento",
                         "properties": {
                           "pix": {
                             "type": "object",
