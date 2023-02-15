@@ -3,6 +3,10 @@ import DocJson from '../documents/doc.json';
 import DocJsonv2 from '../documents/docv2.json';
  function DocumentationLytex({version}) {
 
+
+
+
+
   const currentVersion = version === "v1" ? DocJson : DocJsonv2
 
     return (
