@@ -133,6 +133,3 @@ import DocJsonv2 from '../documents/docv2.json';
   }
 
   export default DocumentationLytex;
-
-
-

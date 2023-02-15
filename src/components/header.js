@@ -1,6 +1,8 @@
 import { slide as Menu } from 'react-burger-menu'
+
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import React from 'react';
+
 var styles = {
   bmBurgerButton: {
     position: 'fixed',
@@ -61,6 +63,7 @@ var styles = {
     height: '100vh'
   }
 }
+
 export default function Header() {
   const location = useLocation().pathname;
   const navigate = useNavigate();
@@ -72,9 +75,6 @@ export default function Header() {
 
   return (
       <div className='header-doc-lytex'>
-
-
-
 
         <div className='container content-nav-menu'>
           <div className='row row-nav-menu'>
@@ -90,16 +90,20 @@ export default function Header() {
                   <ul>
                     <li><Link to="/">Home </Link></li>
                     <li><Link to="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</Link></li>
+
                     <li><Link to="/documentacao/v2">Documentação</Link></li>
+
                   </ul>
                 </div>
                 <div className='col-3 cta-login'>
                   <a className='cta-login-doc fundo-white' href="https://pay.lytex.com.br/auth/login">Login de sistema</a>
                   <a className='cta-login-doc' href="https://pay.lytex.com.br/auth/login">Login Sandbox</a>
 
+
                 </div>
           </div>
         </div>
+
 
         <div className="container-version">
           {location.startsWith("/documentacao/") === true &&
@@ -128,7 +132,7 @@ export default function Header() {
           span.bm-burger-bars:nth-child(1) {
             width: 100% !important;
           }
-
+          
           span.bm-burger-bars:nth-child(2) {
             width: 70% !important;
             left: calc(100% - 70%) !important;
@@ -138,7 +142,6 @@ export default function Header() {
             width: 45% !important;
             left: calc(100% - 45%) !important;
           }
-
           .nav-menu-mobile {
             display: none;
           }
@@ -146,7 +149,7 @@ export default function Header() {
           .container.content-nav-menu {
             padding: 12px 0px 12px 0px;
           }
-
+          
           .header-doc-lytex {
             position: sticky;
             background: #004CFF;
@@ -156,7 +159,6 @@ export default function Header() {
             filter: drop-shadow(6px 4px 1px rgba(255, 255, 255, 0.12));
             border-bottom: 1px solid white;
           }
-
           .nav-menu-lytex ul {
             padding-inline-start: 0px;
             display: flex;
@@ -166,7 +168,6 @@ export default function Header() {
             list-style-type: none;
             padding-left: 19px;
           }
-
           .nav-menu-lytex ul li a {
             font-family: 'Ubuntu';
             font-style: normal;
@@ -179,6 +180,7 @@ export default function Header() {
             text-decoration: none;
 
           }
+
 
           .cta-login-doc {
             padding: 9px 10px;
@@ -194,11 +196,11 @@ export default function Header() {
           }
 
           .cta-login-doc.fundo-white {
+
             background: #FFFFFF;
             color: #004CFF;
             margin-right: 14px;
           }
-
           .cta-login {
             display: flex;
             align-items: center;
@@ -208,6 +210,7 @@ export default function Header() {
           @media only screen and (max-width: 1401px) {
 
           }
+
 
           @media only screen and (max-width: 960px) {
 
@@ -219,11 +222,13 @@ export default function Header() {
               display: block;
             }
 
+
             .row.row-nav-menu {
               display: flex;
               justify-content: space-between;
               align-items: center;
             }
+
 
             .col-3.cta-login {
               width: 406px;
@@ -233,19 +238,19 @@ export default function Header() {
 
           @media (max-width: 600px) {
 
+
             .col-2.logo-lytex {
               flex: 0 0 auto;
               width: 36.666667%;
             }
-
             .container.content-nav-menu {
               padding-right: calc(var(--bs-gutter-x) * .5);
               padding-left: calc(var(--bs-gutter-x) * .5);
             }
-
             .col-3.cta-login {
               display: none;
             }
+
 
             .col-7.nav-menu-lytex {
               display: none;
@@ -257,7 +262,6 @@ export default function Header() {
               top: 0;
               left: 0;
             }
-
             .nav-menu-lytex ul {
               display: flex;
               flex-direction: column;

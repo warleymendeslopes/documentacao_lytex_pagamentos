@@ -69,4 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # documentacao_lytex_pagamentos
+<<<<<<< HEAD
 # documentacao-pagamentos-Redoc
+=======
+>>>>>>> ef1160a1dae08d47fa57c54a2a264628a89f0fe7

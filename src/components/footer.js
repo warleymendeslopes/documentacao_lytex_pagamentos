@@ -106,7 +106,6 @@ function Footer() {
                     <h3 className='title-menu-footer'>Ajuda</h3>
                         <div className='container-menu-footer'>
                             <ul id="menu-ajuda" class="menu-footer">
-                                <li><a target="_blank" rel="noopener noreferrer" href='https://ajuda.lytex.com.br/'>Central de Ajuda</a></li>
                                 <li ><a target="_blank" rel="noopener noreferrer" href="https://homologacao-site.lytex.com.br/canal-de-denuncias/">Canal de Denúncias</a></li>
                                 <li ><a target="_blank" rel="noopener noreferrer" href="https://homologacao-site.lytex.com.br/ouvidoria/">Ouvidoria</a></li>
                                 <li ><a target="_blank" rel="noopener noreferrer" href="https://homologacao-site.lytex.com.br/lgpd/">LGPD</a></li>
@@ -233,5 +232,6 @@ function Footer() {
       </div>
   );
 }
+
 
 export default Footer;
