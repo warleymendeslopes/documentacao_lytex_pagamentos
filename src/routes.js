@@ -5,7 +5,6 @@ import Produtos from './pages/blocks/produtos'
 import Solution from './pages/blocks/sulutions'
 import DocumentationLytex from './pages/LytexDocumentation'
 import SystemDocumentation from './pages/SystemDocumentation'
-
 import { useParams } from 'react-router-dom';
 
 export function PageNotFound() {
@@ -13,7 +12,6 @@ export function PageNotFound() {
         <NotFound />
     );
   }
-
 export function Home() {
     return (
       <div>
@@ -24,9 +22,7 @@ export function Home() {
       </div>
     );
   }
-
 export function Documentacao() {
-
     let { version } = useParams();
     return (
 
@@ -35,7 +31,6 @@ export function Documentacao() {
       </div>
     );
   }
-
 export function SystemIntroduction() {
     return (
       <div className='DocumentationLytex'>
