@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Passos Iniciais para cadastro e Integração da plataforma
+  description: |-
+    A LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.
+
+    Oferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.
+    
+    # Cadastro
+
+      
+      
+
+    <div class="container-doc-sistem row">
+      <div class="col-lg-6 image-video-doc-sistem">
+        <video width="100%" height="100%" loop="" controls="">
+          <source src="https://homologacao-site.lytex.com.br/videos/Criar-conta-lytex-pagamentos.mov" type="video/mp4">
+        </video>
+      </div>
+      <div class="col-lg-6 description-doc-sistem">
+        Para acessar a plataforma LyTex Pagamentos, o usuário poderá entrar através de nosso site https://lytex.com.br/ onde deverá clicar no botão Entrar no menu superior direito e inserir suas informações na tela de login. Ele também poderá acessar o sistema diretamente pelo link https://pay.lytex.com.br/auth/login.
+      </div>
+    </div>
+
+
+
+
+
+  version: 
+

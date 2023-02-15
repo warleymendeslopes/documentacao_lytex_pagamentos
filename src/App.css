@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+.lytex-logo {
+  height: 50px;
+  pointer-events: none;
+  box-shadow: none;
+  margin : 0px;
+  border-radius: 0px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+section.blocks{
+    margin-top: 80px;
+}
+.App-link {
+  color: #61dafb;
+}
+h1.title-color-white {
+  color: white;
+}
+.title-blocks h1 {
+  font-size: 2.3rem;
+  color: #150067;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37px;
+  letter-spacing: 0.2px;
+  color: #252B42;
+}
+.content-text p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #737373;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
