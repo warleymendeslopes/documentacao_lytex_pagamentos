@@ -6,6 +6,11 @@ import Solution from './pages/blocks/sulutions'
 import DocumentationLytex from './pages/LytexDocumentation'
 import SystemDocumentation from './pages/SystemDocumentation'
 import { useParams } from 'react-router-dom';
+import VarsionAlert from './components/alert-version'
+import React from "react";
+
+
+
 
 export function PageNotFound() {
     return (
@@ -25,8 +30,11 @@ export function Home() {
 export function Documentacao() {
     let { version } = useParams();
     return (
-
       <div className='DocumentationLytex'>
+          {version === "v1" &&
+              <VarsionAlert active={true}/>
+          }
+
         <DocumentationLytex version={version}  />
       </div>
     );
