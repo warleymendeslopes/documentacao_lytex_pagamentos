@@ -93,7 +93,7 @@ function Home() {
                         </div>
                         <div className='row justify-content-md-center'>
                             <div className='col-lg-3 d-flex justify-content-center'>
-                                <Link className='cta-login-doc fundo-white' to="/documentacao">Ler Documentação</Link>
+                                <Link className='cta-login-doc fundo-white' to="/documentacao/v2">Ler Documentação</Link>
                             </div>
                         </div>
                     </div>

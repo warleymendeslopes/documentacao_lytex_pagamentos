@@ -1,6 +1,6 @@
 import { RedocStandalone } from 'redoc';
 import DocJson from '../documents/doc.json';
-import DocJsonv2 from '../documents/docv2.json';
+import DocJsonv2 from '../documents/lypagV2.json';
  function DocumentationLytex({version}) {
 
 

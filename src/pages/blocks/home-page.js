@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
 
-    <Link to="/documentacao">
+    <Link to="/documentacao/v2">
       <section className="blocks-home-page ">
           <div className="container link-documentatio">
           </div>

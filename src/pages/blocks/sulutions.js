@@ -130,33 +130,33 @@ function Solutions() {
 
                         <div className='content-img-slide'>
                                 <img src='/slides/Boleto_Turbinado.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas/operation/InvoicesController_createInvoice">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Faturas/operation/InvoicesController_createInvoice">Acessar documento</Link>
                         </div>
 
                         <div className='content-img-slide'>
                                 <img src='/slides/Link_de_Pagamento.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Links-de-Pagamento">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Links-de-Pagamento">Acessar documento</Link>
                         </div>
 
                         <div className='content-img-slide'>
                                 <img src='/slides/Split_de_Pagamento.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Faturas">Acessar documento</Link>
                         </div>
 
                         <div className='content-img-slide'>
                                 <img src='/slides/Recorrencia.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Assinaturas">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Assinaturas">Acessar documento</Link>
                         </div>
 
                         <div className='content-img-slide'>
                                 <img src='/slides/PIX.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Faturas">Acessar documento</Link>
                         </div>
 
                         <div className='content-img-slide'>
                             
                                 <img src='/slides/Notificacoes.png' alt='Cobrança Inteligente' />
-                                <Link className='link_doc_ref' to="/documentacao#tag/Faturas">Acessar documento</Link>
+                                <Link className='link_doc_ref' to="/documentacao/v2#tag/Faturas">Acessar documento</Link>
                         </div>
 
 

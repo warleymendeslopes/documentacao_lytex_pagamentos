@@ -108,8 +108,8 @@ export default function Header() {
         <div className="container-version">
           {location.startsWith("/documentacao/") === true &&
               <select name="Documentacao" onChange={onChange.bind()} id="Document">
-                <option value="/documentacao/v2">versão 2</option>
-                <option value="/documentacao/v1">versão 1</option>
+                <option value="/documentacao/v2">Versão 2</option>
+                <option value="/documentacao/v1">Versão 1</option>
               </select>
           }
         </div>
@@ -122,7 +122,7 @@ export default function Header() {
           }
 
           select#Document {
-            background: transparent;
+            background: #ffffff;
             color: #000000;
             border: none;
             font-weight: 700;

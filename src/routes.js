@@ -29,15 +29,22 @@ export function Home() {
   }
 export function Documentacao() {
     let { version } = useParams();
-    return (
-      <div className='DocumentationLytex'>
-          {version === "v1" &&
-              <VarsionAlert active={true}/>
-          }
+    const path = ['v1', 'v2'];
+    const checkPath = path.includes(version) ? true : '';
 
-        <DocumentationLytex version={version}  />
-      </div>
-    );
+    if(!checkPath)
+        return <NotFound />
+
+        return (
+            <div className='DocumentationLytex'>
+                {version === "v1" &&
+                    <VarsionAlert active={true}/>
+                }
+                <DocumentationLytex version={version}  />
+            </div>
+        );
+
+
   }
 export function SystemIntroduction() {
     return (
