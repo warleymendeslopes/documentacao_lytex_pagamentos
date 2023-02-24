@@ -11,7 +11,7 @@ function VarsionAlert({active}) {
         <div className={isActive}>
             <div className="card-aler">
                 <button id="closemodal" onClick={teste}>X</button>
-                A versão 1.0.0 esta absoluta e deixara de ter suporte partir do dia 15/08/2023.<br/> Recomendamos que use a versão 2.0.0
+                A versão 1.0 esta absoluta e deixar de ter suporte a partir do dia 24/08/2023.<br /> Recomendamos que utilize a nova versão 2.0
             </div>
             <style jsx>{`
                 .showModalAlert{
