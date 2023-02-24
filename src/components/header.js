@@ -82,7 +82,7 @@ export default function Header() {
                 <Menu  styles={ styles }>
                   <a className="menu-item" href="/">Home</a>
                   <a className="menu-item" href="/introducao-ao-sistema#section/Cadastro">Introdução ao Sistema</a>
-                  <a className="menu-item" href="/documentacao">Documentação</a>
+                  <a className="menu-item" href="/documentacao/v2">Documentação</a>
                 </Menu>
               </div>
                 <div className='col-2 logo-lytex'><img src="/logo_02.png" className="lytex-logo" alt="logo" /></div>
@@ -97,7 +97,7 @@ export default function Header() {
                 </div>
                 <div className='col-3 cta-login'>
                   <a className='cta-login-doc fundo-white' href="https://pay.lytex.com.br/auth/login">Login de sistema</a>
-                  <a className='cta-login-doc' href="https://pay.lytex.com.br/auth/login">Login Sandbox</a>
+                  <a className='cta-login-doc' href="https://sandbox-pay.lytex.com.br/">Login Sandbox</a>
 
 
                 </div>

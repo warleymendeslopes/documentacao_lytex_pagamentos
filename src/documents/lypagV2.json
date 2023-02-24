@@ -31,7 +31,11 @@
     },
     {
       "name": "Parcelamentos",
-      "description": "A função de Parcelamento/Carnê de faturas. No Sistema no menu lateral esquerdo, em Vendas, na aba Parcelamento. Ao criar um parcelamento, serão emitidas todas as faturas correspondentes à quantidade de parcelas selecionadas, com o vencimento mensal no dia escolhido na primeira parcela. \n\n Poderão ser selecionadas todas as possíveis configurações de uma emissão de fatura, exceto a opção de parcelamento com mais de 1x no cartão de crédito. \n\n Os parcelamentos criados terão um código próprio de geração e ficarão na aba Parcelamentos. As faturas geradas através de um parcelamento são exibidas na aba Faturas, e o parcelamento que gerou as faturas está na aba Parcelamentos. Será possível acompanhar o andamento de todas as faturas de um parcelamento pela grade de exibição. \n\n Os parcelamentos gerados possuem filtros, que pode-se filtrar por nome do parcelamento, código do parcelamento, nome ou CPF/CNPJ do cliente, data de início e fim de criação, por status ativo ou cancelado"
+      "description": "Disponibiliza função de Parcelamento/Carnê de faturas. No Sistema, no menu lateral esquerdo, em Vendas, acesse a aba Parcelamento. Ao criar um parcelamento, serão emitidas todas as faturas correspondentes à quantidade de parcelas selecionadas, com o vencimento mensal no dia escolhido na primeira parcela.\n\n\nPoderão ser selecionadas todas as possíveis configurações de uma emissão de fatura, exceto a opção de parcelamento com mais de 1x no cartão de crédito.\n\nOs parcelamentos criados terão um código próprio de geração. As faturas geradas através de um parcelamento são exibidas na aba Faturas, e o parcelamento que gerou as faturas está na aba Parcelamentos. Será possível acompanhar o andamento de todas as faturas de um parcelamento pela grade de exibição.\n\nOs parcelamentos gerados possuem filtros, que pode-se filtrar por nome do parcelamento, código do parcelamento, nome ou CPF/CNPJ do cliente, data de início e fim de criação, por status ativo ou cancelado.\n"
+    },
+    {
+      "name": "Recorrências",
+      "description": "Disponibiliza a cobrança automática de pagamentos recorrentes por boleto, Pix ou cartão de crédito para clientes. Com a recorrência, é possível gerenciar assinaturas e cobranças automáticas com conciliação bancária, acompanhar o controle financeiro e as métricas e relatórios de cobrança. A recorrência também permite a criação de planos específicos de assinatura para produtos e serviços."
     }
   ],
   "paths": {
@@ -85,7 +89,7 @@
                     "type": "string",
                     "minLength": 10,
                     "maxLength": 11,
-                    "description": "Número do celular do cliente, somente números, pode ser informado com ou sem digito 9"
+                    "description": "Número do celular do cliente, somente números, pode ser informado com ou sem dígito 9"
                   },
                   "address": {
                     "type": "object",
@@ -137,7 +141,7 @@
                       "state",
                       "zip"
                     ],
-                    "description": "Devese-se informar o endereço do cliente"
+                    "description": "Deve-se informar o endereço do cliente"
                   }
                 },
                 "required": [
@@ -317,7 +321,7 @@
                     },
                     "updatedAt": {
                       "type": "string",
-                      "description": "Data da ultima alteracão",
+                      "description": "Data da última alteração",
                       "format": "date-time"
                     },
                     "createdAt": {
@@ -353,7 +357,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -427,7 +431,7 @@
                     "error": {
                       "type": "string",
                       "example": "Conflict",
-                      "description": "Descriçao da requisição (HTTP)"
+                      "description": "Descrição da requisição (HTTP)"
                     }
                   }
                 }
@@ -461,7 +465,7 @@
                     "error": {
                       "type": "string",
                       "example": "Gone",
-                      "description": "Descriçao da requisição (HTTP)"
+                      "description": "Descrição da requisição (HTTP)"
                     }
                   }
                 }
@@ -633,7 +637,7 @@
             "schema": {
               "type": "string",
               "maxLength": 255,
-              "description": "Tipo de cliente, para filtrar varios tipos use o separador \"|\"<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica",
+              "description": "Tipo de cliente, para filtrar vários tipos use o separador \"|\"<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica",
               "example": "pf|pj"
             }
           },
@@ -817,7 +821,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -1050,7 +1054,7 @@
       "post": {
         "operationId": "ClientsController_importClients",
         "summary": "Importar clientes",
-        "description": "Recebe um modelo .csv e importa para base de clientes. [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-clientes.csv)<br/>\n    Esta requisição poderá ser movida para segundo plano, caso os servidores estejam sob alta demanda. Uma resposta 202 será enviada, caso a requisição seja movida para segundo plano e uma notificação será enviada ao finalizar a importação.",
+        "description": "[Recebe](https://storage.googleapis.com/lypag-static/modelo-importacao-clientes.csv) um modelo .csv e importa para base de clientes. Esta requisição poderá ser movida para segundo plano, caso os servidores estejam sob alta demanda. Uma resposta 202 será enviada, caso a requisição seja movida para segundo plano e uma notificação será enviada ao finalizar a importação.",
         "requestBody": {
           "required": true,
           "content": {
@@ -1162,7 +1166,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -1466,7 +1470,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -1849,7 +1853,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -2357,7 +2361,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -2597,7 +2601,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Identificador unico do cliente ID"
+            "description": "Identificador único do cliente ID"
           }
         ],
         "responses": {
@@ -2739,7 +2743,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -2984,7 +2988,7 @@
                     "properties": {
                       "_clientId": {
                         "type": "string",
-                        "description": "Identificador unico ID"
+                        "description": "Identificador único ID"
                       },
                       "items": {
                         "type": "array",
@@ -3017,7 +3021,7 @@
                           ]
                         },
                         "minItems": 1,
-                        "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                        "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                       },
                       "recurrence": {
                         "type": "object",
@@ -3264,13 +3268,15 @@
                         "description": "Configuração do Split, esta funcionalidade deve ser ativada antes da sua utilização"
                       },
                       "cancelOverdue": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Cancelar fatura após o vencimento"
                       },
                       "cancelOverdueDays": {
                         "type": "number",
                         "format": "float",
                         "minimum": 1,
-                        "maximum": 60
+                        "maximum": 60,
+                        "description": "Quantidade de dias que a fatura ficará disponível para pagamento após o vencimento, a contagem inicia no dia do vencimento, para não aceitar pagamento após o vencimento informe 1. A fatura será cancelada automaticamente após a contagem de dias. "
                       },
                       "mulctAndInterest": {
                         "type": "object",
@@ -3562,7 +3568,7 @@
                           ]
                         },
                         "minItems": 1,
-                        "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                        "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                       },
                       "recurrence": {
                         "type": "object",
@@ -4224,7 +4230,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -4747,7 +4753,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -4984,7 +4990,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do cliente ID",
+            "description": "Identificador único do cliente ID",
             "required": true,
             "in": "path",
             "schema": {
@@ -5300,7 +5306,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -6238,7 +6244,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -6765,7 +6771,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -7428,7 +7434,7 @@
                       },
                       "partnerId": {
                         "type": "string",
-                        "description": "ID do parceiro, somente deve ser informado caso o estabelecimento faça aprte do programa de parceria Lytex Pagamentos"
+                        "description": "ID do parceiro, somente deve ser informado caso o estabelecimento faça parte do programa de parceria Lytex Pagamentos"
                       }
                     },
                     "required": [
@@ -7617,7 +7623,7 @@
                           ]
                         },
                         "minItems": 1,
-                        "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                        "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                       },
                       "dueDate": {
                         "type": "string",
@@ -8410,7 +8416,7 @@
                     },
                     "updatedAt": {
                       "type": "string",
-                      "description": "Data da ultima alteracão",
+                      "description": "Data da última alteração",
                       "format": "date-time"
                     },
                     "createdAt": {
@@ -8665,7 +8671,7 @@
                         ]
                       },
                       "minItems": 1,
-                      "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                      "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                     },
                     "referenceId": {
                       "type": "string",
@@ -8881,7 +8887,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -9208,7 +9214,7 @@
           },
           {
             "name": "_invoiceId",
-            "description": "identificador único da fatura",
+            "description": "Identificador único da fatura",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9224,7 +9230,7 @@
           },
           {
             "name": "_subscriptionId",
-            "description": "identificador único da Recorrências",
+            "description": "identificador único de Recorrências",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9232,7 +9238,7 @@
           },
           {
             "name": "_installmentId",
-            "description": "identificador único do Parcelamentos",
+            "description": "identificador único de Parcelamentos",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9240,7 +9246,7 @@
           },
           {
             "name": "splitSelected",
-            "description": "identificador único da Split selecionada",
+            "description": "identificador único de Split selecionada",
             "in": "query",
             "schema": {
               "type": "string"
@@ -9483,7 +9489,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -9785,7 +9791,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -10753,7 +10759,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -11231,7 +11237,7 @@
                       ]
                     },
                     "minItems": 1,
-                    "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                    "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                   }
                 },
                 "required": [
@@ -11762,7 +11768,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -12035,7 +12041,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -12780,7 +12786,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -13019,7 +13025,7 @@
                 "type": "object",
                 "properties": {
                   "paymentMethod": {
-                    "description": "Metodo de pagamento",
+                    "description": "Método de pagamento",
                     "type": "string",
                     "enum": [
                       "pix",
@@ -13590,7 +13596,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -13869,7 +13875,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -14141,7 +14147,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -14398,7 +14404,7 @@
                       "description": {
                         "type": "string",
                         "maxLength": 300,
-                        "description": "Descrição do parcelamento, máximo de 300 carácter"
+                        "description": "Descrição do parcelamento, máximo de 300 caracteres"
                       },
                       "startAt": {
                         "type": "string",
@@ -15764,7 +15770,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -16275,7 +16281,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -16936,7 +16942,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -17586,7 +17592,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -17791,7 +17797,7 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Internal server error",
+                      "example": "Internal server erro",
                       "description": "Detalhes do erro"
                     }
                   }
@@ -17860,7 +17866,7 @@
                       ]
                     },
                     "minItems": 1,
-                    "description": "Informações dos Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                    "description": "Informações dos Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                   },
                   "expirationDate": {
                     "description": "Data para expirar o link de pagamento ",
@@ -18393,7 +18399,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -18827,7 +18833,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -19305,7 +19311,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -19580,7 +19586,7 @@
                       ]
                     },
                     "minItems": 1,
-                    "description": "Itens que compoem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
+                    "description": "Itens que compõem a fatura, o valor total da fatura deve ser no mínimo R$ 2,00"
                   },
                   "expirationDate": {
                     "description": "Data para expirar o link de pagamento ",
@@ -20127,7 +20133,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -20361,7 +20367,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -20576,7 +20582,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -20810,7 +20816,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Identificador unico do link de pagamento",
+            "description": "Identificador único do link de pagamento",
             "required": true,
             "in": "path",
             "schema": {
@@ -21025,7 +21031,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -21354,7 +21360,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -21676,7 +21682,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -22107,7 +22113,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -22340,7 +22346,7 @@
       "post": {
         "operationId": "ProductsController_importProducts",
         "summary": "Importar produtos",
-        "description": "Recebe um csv e importa para base de produtos, [modelo .csv](https://storage.googleapis.com/lypag-static/modelo-importacao-produtos.csv)<br/><br/>\n    *Esta requisicão poderá ser movida para segundo plano caso os servidores estejam sob alta demanda, uma resposta 202 será enviada caso a requisicão seja movida para segundo plano e uma notficação será enviada ao finalizar a importação.",
+        "description": "[Recebe um modelo.csv ](https://storage.googleapis.com/lypag-static/modelo-importacao-produtos.csv) e importa para base de produtos, <br/><br/>\n    *Esta requisicão poderá ser movida para segundo plano caso os servidores estejam sob alta demanda, uma resposta 202 será enviada caso a requisicão seja movida para segundo plano e uma notficação será enviada ao finalizar a importação.",
         "requestBody": {
           "required": true,
           "content": {
@@ -22448,7 +22454,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -22738,7 +22744,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -23070,7 +23076,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -23427,7 +23433,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -23781,7 +23787,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -24063,7 +24069,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -24296,7 +24302,7 @@
       "post": {
         "operationId": "WalletController_createWithdrawSolicitation",
         "summary": "Criar solicitação de saque",
-        "description": "Cria uma nova solicitação de saque do beneficiário",
+        "description": "Cria uma nova solicitação de saque do beneficiário.",
         "requestBody": {
           "required": true,
           "content": {
@@ -24465,7 +24471,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -24774,7 +24780,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -25053,7 +25059,7 @@
                         "Credenciais inválidas",
                         "Token inválido"
                       ],
-                      "description": "Detalhes do error"
+                      "description": "Detalhes do erro"
                     },
                     "error": {
                       "type": "string",
@@ -25285,7 +25291,7 @@
   },
   "info": {
     "title": "Lytex Pagamentos API",
-    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.\n\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n# Criar primeira cobrança\n\nPara gerar as chaves que possibilitam a integração com nosso método de pagamento, primeiramente, você precisa fazer login no painel. Em seguida, no menu lateral à esquerda, clique em **Configurações** e depois em **Integrações** e **API**. \n\nPreencha os campos com o nome e descrição de sua integração e clique em **Salvar**. Em seguida, vão ser carregadas as chaves de sua integração. Agora, precisamos configurar as permissões desta integração. Para isso, clique em **Restringir Acesso** e marque a caixinha **Faturas**. Agora, é só salvar e pronto! Está configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n  \n  \n  \n  \n## Criando token de acesso\n\nCom a integração criada e configurada dentro do painel da LyTex, agora nós vamos utilizar o **Postman** para gerar o token de acesso e também a primeira fatura. Primeiramente, é necessário montar o arquivo **JSON**. Você pode copiar e colar o código abaixo no seu Postman. Após colocar seus dados da integração, basta executá-la e você receberá uma resposta de nossa API com um parâmetro chamado **AccessToken**. O mesmo tem durabilidade de 5 minutos, também receberemos como parâmetros algumas informações referente a esse token.\n\nPara gerar esse token, utilizarmos a rota **/v1/oauth/obtain_token**\n\nFeito isso, e com o **AccessToken** salvo, podemos passar para o próximo passo: a geração de faturas.\n\n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim, vamos criar a nossa fatura! Primeiro, vamos começar a montar o arquivo JSON, onde constam várias informações como os dados do cliente, dados do produto e endereço. Nesta demonstração, usaremos somente os dados obrigatórios para que a fatura seja criada.\n\nPara gerar a fatura utilizarmos a rota **/v2/invoices**\n\nNesta requisição, vamos passar o parâmetro **Authorization** no header com o valor do token de acesso gerado anteriormente. Usando o modo Sandbox, existem alguns usuários fictícios que você deve utilizar, pois outros dados não serão reconhecidos pela API.\n\n\nUsando o modo sandbox existes alguns usuário arios fictícios para ser usados, outros dados não será reconhecido pela API\n\n  ### Dados usuários fictícios\n  <table>\n  <tbody>\n  <tr>\n      <td>Valerio de Aguiar Zorzato</td>\n      <td>96050176876</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes  </td>\n      <td>88398158808</td>\n  </tr>\n      <tr>\n      <td>Valerio Alves Barros</td>\n      <td>71943984190</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes</td>\n      <td>97965940132</td>\n  </tr>\n\n</tbody></table>\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>",
+    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.\n\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n# Criar primeira cobrança\n\nPara gerar as chaves que possibilitam a integração com nosso método de pagamento, primeiramente, você precisa fazer login no painel. Em seguida, no menu lateral à esquerda, clique em **Configurações** e depois em **Integrações** e **API**. \n\nPreencha os campos com o nome e descrição de sua integração e clique em **Salvar**. Em seguida, vão ser carregadas as chaves de sua integração. Agora, precisamos configurar as permissões desta integração. Para isso, clique em **Restringir Acesso** e marque a caixinha **Faturas**. Agora, é só salvar e pronto! Está configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n  \n  \n  \n  \n## Criando token de acesso\n\nCom a integração criada e configurada dentro do painel da LyTex, agora nós vamos utilizar o **Postman** para gerar o token de acesso e também a primeira fatura. Primeiramente, é necessário montar o arquivo **JSON**. Você pode copiar e colar o código abaixo no seu Postman. Após colocar seus dados da integração, basta executá-la e você receberá uma resposta de nossa API com um parâmetro chamado **AccessToken**. O mesmo tem durabilidade de 5 minutos, também receberemos como parâmetros algumas informações referente a esse token.\n\nPara gerar esse token, utilizarmos a rota **/v1/oauth/obtain_token**\n\nFeito isso, e com o **AccessToken** salvo, podemos passar para o próximo passo: a geração de faturas.\n\n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim, vamos criar a nossa fatura! Primeiro, vamos começar a montar o arquivo JSON, onde constam várias informações como os dados do cliente, dados do produto e endereço. Nesta demonstração, usaremos somente os dados obrigatórios para que a fatura seja criada.\n\nPara gerar a fatura utilizarmos a rota **/v2/invoices**\n\nNesta requisição, vamos passar o parâmetro **Authorization** no header com o valor do token de acesso gerado anteriormente. Usando o modo sandbox existem alguns usuários fictícios para ser usados, outros dados não serão reconhecidos pela API.\n\n\nUsando o modo sandbox existes alguns usuário arios fictícios para ser usados, outros dados não será reconhecido pela API\n\n  ### Dados usuários fictícios\n  <table>\n  <tbody>\n  <tr>\n      <td>Valerio de Aguiar Zorzato</td>\n      <td>96050176876</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes  </td>\n      <td>88398158808</td>\n  </tr>\n      <tr>\n      <td>Valerio Alves Barros</td>\n      <td>71943984190</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes</td>\n      <td>97965940132</td>\n  </tr>\n\n</tbody></table>\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>",
     "version": "2.0.0",
     "contact": {
       "name": "Lytex",
