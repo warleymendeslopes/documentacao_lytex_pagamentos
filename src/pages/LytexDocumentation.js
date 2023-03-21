@@ -1,18 +1,27 @@
 import { RedocStandalone } from 'redoc';
 import DocJson from '../documents/doc.json';
 import DocJsonv2 from '../documents/lypagV2.json';
+import {useEffect} from "react";
+
+
+
  function DocumentationLytex({version}) {
 
 
+     useEffect(() => {
 
+         setTimeout(function() {
+             document.querySelector('.search-input').placeholder= "Pesquisar";
+         }, 1000);
+     }, []);
 
 
   const currentVersion = version === "v1" ? DocJson : DocJsonv2
-
     return (
       <>
         <RedocStandalone
           specUrl= {currentVersion}
+
           options={{
             nativeScrollbars: true,
             //sideNavStyle: "path-only",

@@ -97,15 +97,6 @@ function Home() {
                             </div>
                         </div>
                     </div>
-
-
-                    
-                    
-                    
-
-
-                    
-
                 </div>
             </div>
         </div>
@@ -122,6 +113,7 @@ function Home() {
                 color: white;
             }
             .container-essecia-lytex {
+                border-radius: 3px;
                 background: #004cff;
                 margin-top: 20px;
                 padding: 20px 40px 20px 40px;

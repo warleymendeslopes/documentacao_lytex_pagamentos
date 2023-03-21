@@ -6,8 +6,8 @@
       "description": "Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
     },
     {
-      "name": "Assinaturas",
-      "description": "As assinaturas ou a recorrência são uma ótima maneira de fidelizar clientes e ter mais previsibilidade de caixa. Configurar esse tipo de cobrança do jeito que o seu negócio precisa é bem simples via API. Esse processo consiste em criar planos, nos quais são definidos os detalhes dessa cobrança, como periodicidade e produtos ou serviços atrelados a eles. Após definir as regras, em Criação de Assinatura, você cria uma cobrança para os clientes, seguindo as especificações do plano."
+      "name": "Recorrências",
+      "description": "Disponibiliza a cobrança automática de pagamentos recorrentes por boleto, Pix ou cartão de crédito para clientes. Com a recorrência, é possível gerenciar assinaturas e cobranças automáticas com conciliação bancária, acompanhar o controle financeiro e as métricas e relatórios de cobrança. A recorrência também permite a criação de planos específicos de assinatura para produtos e serviços."
     },
     {
       "name": "Faturas",
@@ -32,11 +32,8 @@
     {
       "name": "Parcelamentos",
       "description": "Disponibiliza função de Parcelamento/Carnê de faturas. No Sistema, no menu lateral esquerdo, em Vendas, acesse a aba Parcelamento. Ao criar um parcelamento, serão emitidas todas as faturas correspondentes à quantidade de parcelas selecionadas, com o vencimento mensal no dia escolhido na primeira parcela.\n\n\nPoderão ser selecionadas todas as possíveis configurações de uma emissão de fatura, exceto a opção de parcelamento com mais de 1x no cartão de crédito.\n\nOs parcelamentos criados terão um código próprio de geração. As faturas geradas através de um parcelamento são exibidas na aba Faturas, e o parcelamento que gerou as faturas está na aba Parcelamentos. Será possível acompanhar o andamento de todas as faturas de um parcelamento pela grade de exibição.\n\nOs parcelamentos gerados possuem filtros, que pode-se filtrar por nome do parcelamento, código do parcelamento, nome ou CPF/CNPJ do cliente, data de início e fim de criação, por status ativo ou cancelado.\n"
-    },
-    {
-      "name": "Recorrências",
-      "description": "Disponibiliza a cobrança automática de pagamentos recorrentes por boleto, Pix ou cartão de crédito para clientes. Com a recorrência, é possível gerenciar assinaturas e cobranças automáticas com conciliação bancária, acompanhar o controle financeiro e as métricas e relatórios de cobrança. A recorrência também permite a criação de planos específicos de assinatura para produtos e serviços."
     }
+
   ],
   "paths": {
     "/v2/clients": {
@@ -25366,3 +25363,4 @@
     "schemas": {}
   }
 }
+

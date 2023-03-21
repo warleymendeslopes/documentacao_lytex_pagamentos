@@ -65,68 +65,6 @@ function Solutions() {
                 <div className='col-lg-5'>
                     <div className='slid-sulutions'>
                     <Slider {...settings}>
-                        {
-                        /*
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img  src='/icones/solution_billet.svg' alt='Boleto Turbinado' />
-                                </div>
-                                <div className='name-solution'><span>Boleto Turbinado</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/sulution_payment_link .svg' alt='Link de Pagamento' />
-                                </div>
-                                <div className='name-solution'><span>Link de Pagamento</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/payment_splint.svg' alt='Split de Pagamento' />
-                                </div>
-                                <div className='name-solution'><span>Split de Pagamento</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/recurrence.svg' alt='Recorrência automática' />
-                                </div>
-                                <div className='name-solution'><span>Recorrência automática</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/pix.svg' alt='Pix' />
-                                </div>
-                                <div className='name-solution'><span>Pix</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-
-                        <div className='container-solutions-card'>
-                            <div className='solutions-card'>
-                                <div className='icon-solution'>
-                                    <img src='/icones/smart_billing.svg' alt='Cobrança Inteligente' />
-                                </div>
-                                <div className='name-solution'><span>Notificações</span></div>
-                                <div className='cta-solution'><Link className='cta-login-doc fundo-blue' to="/documentacao">AcessarDocumentação</Link></div>
-                            </div>
-                        </div>
-                        */}
 
                         <div className='content-img-slide'>
                                 <img src='/slides/Boleto_Turbinado.png' alt='Cobrança Inteligente' />
@@ -159,9 +97,6 @@ function Solutions() {
                                 <Link className='link_doc_ref' to="/documentacao/v2#tag/Faturas">Acessar documento</Link>
                         </div>
 
-
-
-
                     </Slider>
 
                     </div>
@@ -185,28 +120,16 @@ function Solutions() {
         font-size: 13px;
         border-radius: 8px;
     }
-
-
-
-
-
-
-    
-
-    
-
     ul.list-dots-api {
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
     }
-    
     ul.list-dots-api li {
         padding: 0;
         margin: 0;
     }
-    
     ul.list-dots-api li button::before {
         content: ' ';
         font-size: 25px;

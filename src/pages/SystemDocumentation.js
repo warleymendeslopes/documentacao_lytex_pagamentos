@@ -4,11 +4,12 @@ import { useEffect } from 'react';
 
 
 function SystemDocumentation() {
-  useEffect( () => {
-    window.onload = function () { 
-      document.querySelector('.search-input').placeholder= "Pesquisar";
-     } 
-  });
+    useEffect(() => {
+
+        setTimeout(function() {
+            document.querySelector('.search-input').placeholder= "Pesquisar";
+        }, 1000);
+    }, []);
 
     return (
       <div>

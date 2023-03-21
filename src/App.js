@@ -17,7 +17,6 @@ import Footer from './components/footer'
 
 
 export default function App() {
-
   return (
     <>
       <Routes>
@@ -31,7 +30,6 @@ export default function App() {
     </>
   );
 }
-
 function Layout() {
   return (
     <div>

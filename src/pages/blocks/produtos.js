@@ -118,14 +118,6 @@ export default function SimpleSlider() {
                                         <p className="card-text">Garantimos que nossos serviços estarão disponíveis mensalmente, em média, 99,5% do tempo. Ou seja, você não terá dor de cabeça com seus clientes</p>
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
                             </Slider>
                         </div>
                     </div>
