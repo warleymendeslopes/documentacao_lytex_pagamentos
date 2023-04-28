@@ -85,7 +85,12 @@ export default function Header() {
                   <a className="menu-item" href="/documentacao/v2">Documentação</a>
                 </Menu>
               </div>
-                <div className='col-2 logo-lytex'><img src="/logo_02.png" className="lytex-logo" alt="logo" /></div>
+                <div className='col-2 logo-lytex'>
+                  <a href='https://lytex.com.br/'>
+                  <img src="/logo_02.png" className="lytex-logo" alt="logo" />
+                  </a>
+                 
+                  </div>
                 <div className='col-7 nav-menu-lytex'>
                   <ul>
                     <li><Link to="/">Home </Link></li>
