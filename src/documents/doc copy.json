@@ -6,10 +6,6 @@
       "description": "Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
     },
     {
-      "name": "Régua de cobrança",
-      "description": "Na aba Régua de cobrança, você pode criar varios modelos de notificaçòes para suas cobranças."
-    },
-    {
       "name": "Assinaturas",
       "description": "As assinaturas ou a recorrência são uma ótima maneira de fidelizar clientes e ter mais previsibilidade de caixa. Configurar esse tipo de cobrança do jeito que o seu negócio precisa é bem simples via API. Esse processo consiste em criar planos, nos quais são definidos os detalhes dessa cobrança, como periodicidade e produtos ou serviços atrelados a eles. Após definir as regras, em Criação de Assinatura, você cria uma cobrança para os clientes, seguindo as especificações do plano."
     },
@@ -12426,7 +12422,7 @@
                       },
                       "parcels": {
                         "type": "integer",
-                        "description": "Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas",
+                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -12920,7 +12916,7 @@
                       },
                       "parcels": {
                         "type": "integer",
-                        "description": "Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas",
+                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -13956,7 +13952,7 @@
           {
             "name": "startDate",
             "in": "query",
-            "description": "Data Inicial",
+            "description":"Data Inicial",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -13982,7 +13978,7 @@
           {
             "name": "payedStartDate",
             "in": "query",
-            "description": "data de início paga",
+            "description":"data de início paga",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -15822,6 +15818,7 @@
         ]
       }
     },
+
     "/v2/billing-rules": {
       "get": {
         "operationId": "BillingRulesController_list",
@@ -17376,6 +17373,7 @@
         ]
       }
     },
+
     "/v1/receivables/{transactionId}": {
       "get": {
         "operationId": "ReceivablesController_getReceivablesByTransaction",
