@@ -11,7 +11,7 @@ import {useEffect} from "react";
      useEffect(() => {
 
          setTimeout(function() {
-             document.querySelector('.search-input').placeholder= "Pesquisar";
+             document.querySelector('.search-input').placeholder= "Pesquisar...";
          }, 1000);
      }, []);
 
