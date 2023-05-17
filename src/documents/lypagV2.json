@@ -2595,101 +2595,7 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "description": "Habilitar ou desabilitar notificações",
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "True para habilitar False para desabilitar"
-                          },
-                          "channels": {
-                            "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "x-required": true
-                          },
-                          "types": {
-                            "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "x-required": true
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ]
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "split": {
                         "description": "Para os estabelecimentos a fazer o split (tem que ser solicitado previamente no site)",
@@ -2750,21 +2656,6 @@
                           "taxationMode",
                           "recipients"
                         ]
-                      },
-                      "cancelOverdue": {
-                        "type": "boolean",
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "enum": [
-                          true,
-                          false
-                        ],
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Determinar dias para o cancelamento da fatura após vencimento"
                       },
                       "mulctAndInterest": {
                         "description": "Configurar multa e juros",
@@ -3133,101 +3024,7 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "description": "Habilitar ou desabilitar notificações",
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "True para habilitar False para desabilitar"
-                          },
-                          "channels": {
-                            "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "x-required": true
-                          },
-                          "types": {
-                            "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "x-required": true
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ]
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "split": {
                         "description": "Para os estabelecimentos a fazer o split (tem que ser solicitado previamente no site)",
@@ -3288,21 +3085,6 @@
                           "taxationMode",
                           "recipients"
                         ]
-                      },
-                      "cancelOverdue": {
-                        "type": "boolean",
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "enum": [
-                          true,
-                          false
-                        ],
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Determinar dias para o cancelamento da fatura após vencimento"
                       },
                       "mulctAndInterest": {
                         "description": "Configurar multa e juros",
@@ -3466,9 +3248,6 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
@@ -3477,43 +3256,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -4416,9 +4159,6 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
@@ -4427,43 +4167,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -5054,101 +4758,7 @@
                   },
                   "_billingRuleId":{
                     "type": "string",
-                    "description": "Identificado único da régua de cobrança"
-                  },
-                  "notifications": {
-                    "description": "Habilitar ou desabilitar notificações",
-                    "type": "object",
-                    "properties": {
-                      "enable": {
-                        "type": "boolean",
-                        "description": "True para habilitar False para desabilitar"
-                      },
-                      "channels": {
-                        "description": "Canais de notificação ",
-                        "type": "object",
-                        "properties": {
-                          "sms": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de SMS"
-                          },
-                          "email": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de e-mail"
-                          },
-                          "whatsApp": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de whatsApp"
-                          }
-                        },
-                        "required": [
-                          "sms",
-                          "email",
-                          "whatsApp"
-                        ],
-                        "x-required": true
-                      },
-                      "types": {
-                        "description": "Configurações de disparo da notificação",
-                        "type": "object",
-                        "properties": {
-                          "invoiceCreate": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for criada"
-                          },
-                          "daysBeforeExpiration3": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação 3 dias antes da fatura vencer"
-                          },
-                          "expirationDay": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação no dia de expiração"
-                          },
-                          "invoicePaid": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for paga "
-                          }
-                        },
-                        "required": [
-                          "invoiceCreate",
-                          "daysBeforeExpiration3",
-                          "expirationDay",
-                          "invoicePaid"
-                        ],
-                        "x-required": true
-                      }
-                    },
-                    "required": [
-                      "enable"
-                    ]
+                    "description": "Identificador único da régua de cobrança"
                   },
                   "split": {
                     "description": "Para os estabelecimentos a fazer o split (tem que ser solicitado previamente no site)",
@@ -5209,21 +4819,6 @@
                       "taxationMode",
                       "recipients"
                     ]
-                  },
-                  "cancelOverdue": {
-                    "type": "boolean",
-                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                  },
-                  "cancelOverdueDays": {
-                    "type": "number",
-                    "format": "float",
-                    "enum": [
-                      true,
-                      false
-                    ],
-                    "minimum": 1,
-                    "maximum": 60,
-                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
                     "description": "Configurar multa e juros",
@@ -5395,9 +4990,6 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
@@ -5406,43 +4998,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -5906,9 +5462,6 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
@@ -5917,43 +5470,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -6607,121 +6124,12 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "description": "Habilitar ou desabilitar notificações",
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "True para habilitar False para desabilitar"
-                          },
-                          "channels": {
-                            "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "x-required": true
-                          },
-                          "types": {
-                            "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "x-required": true
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ]
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "referenceId": {
                         "description": "Pode-se inserir um identificador de referência",
                         "type": "string",
                         "maxLength": 150
-                      },
-                      "cancelOverdue": {
-                        "enum": [
-                          true,
-                          false
-                        ],
-                        "type": "boolean",
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Determinar dias para o cancelamento da fatura após vencimento"
                       },
                       "mulctAndInterest": {
                         "description": "Configurar multa e juros",
@@ -7170,121 +6578,12 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "description": "Habilitar ou desabilitar notificações",
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "True para habilitar False para desabilitar"
-                          },
-                          "channels": {
-                            "description": "Canais de notificação ",
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de SMS"
-                              },
-                              "email": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de e-mail"
-                              },
-                              "whatsApp": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Canail de whatsApp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "x-required": true
-                          },
-                          "types": {
-                            "description": "Configurações de disparo da notificação",
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação 3 dias antes da fatura vencer"
-                              },
-                              "expirationDay": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação no dia de expiração"
-                              },
-                              "invoicePaid": {
-                                "enum": [
-                                  "true",
-                                  "false"
-                                ],
-                                "type": "boolean",
-                                "description": "Enviar notificação quando a fatura for paga "
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "x-required": true
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ]
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "referenceId": {
                         "description": "Pode-se inserir um identificador de referencia",
                         "type": "string",
                         "maxLength": 150
-                      },
-                      "cancelOverdue": {
-                        "enum": [
-                          true,
-                          false
-                        ],
-                        "type": "boolean",
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Determinar dias para o cancelamento da fatura após vencimento"
                       },
                       "mulctAndInterest": {
                         "description": "Configurar multa e juros",
@@ -7455,9 +6754,6 @@
                       "type": "string",
                       "format": "date-time"
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "rates": {
                       "type": "object",
                       "properties": {
@@ -7489,7 +6785,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "notifications": {
                           "type": "object",
@@ -7626,7 +6922,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "object",
@@ -8895,9 +8191,6 @@
                       "type": "string",
                       "format": "date-time"
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "rates": {
                       "type": "object",
                       "properties": {
@@ -8929,7 +8222,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "notifications": {
                           "type": "object",
@@ -9066,7 +8359,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "object",
@@ -9783,121 +9076,12 @@
                   },
                   "_billingRuleId":{
                     "type": "string",
-                    "description": "Identificado único da régua de cobrança"
-                  },
-                  "notifications": {
-                    "description": "Habilitar ou desabilitar notificações",
-                    "type": "object",
-                    "properties": {
-                      "enable": {
-                        "type": "boolean",
-                        "description": "True para habilitar False para desabilitar"
-                      },
-                      "channels": {
-                        "description": "Canais de notificação ",
-                        "type": "object",
-                        "properties": {
-                          "sms": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de SMS"
-                          },
-                          "email": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de e-mail"
-                          },
-                          "whatsApp": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de whatsApp"
-                          }
-                        },
-                        "required": [
-                          "sms",
-                          "email",
-                          "whatsApp"
-                        ],
-                        "x-required": true
-                      },
-                      "types": {
-                        "description": "Configurações de disparo da notificação",
-                        "type": "object",
-                        "properties": {
-                          "invoiceCreate": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for criada"
-                          },
-                          "daysBeforeExpiration3": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação 3 dias antes da fatura vencer"
-                          },
-                          "expirationDay": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação no dia de expiração"
-                          },
-                          "invoicePaid": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for paga "
-                          }
-                        },
-                        "required": [
-                          "invoiceCreate",
-                          "daysBeforeExpiration3",
-                          "expirationDay",
-                          "invoicePaid"
-                        ],
-                        "x-required": true
-                      }
-                    },
-                    "required": [
-                      "enable"
-                    ]
+                    "description": "Identificador único da régua de cobrança"
                   },
                   "observation": {
                     "description": "Você pode inserir também uma observação, com até 300 caracteres",
                     "type": "string",
                     "maxLength": 300
-                  },
-                  "cancelOverdue": {
-                    "enum": [
-                      true,
-                      false
-                    ],
-                    "type": "boolean",
-                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                  },
-                  "cancelOverdueDays": {
-                    "type": "number",
-                    "format": "float",
-                    "minimum": 1,
-                    "maximum": 60,
-                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
                     "description": "Configurar multa e juros",
@@ -10069,9 +9253,6 @@
                       "type": "string",
                       "format": "date-time"
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "rates": {
                       "type": "object",
                       "properties": {
@@ -10103,33 +9284,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
-                        },
-                        "notifications": {
-                          "type": "object",
-                          "properties": {
-                            "whatsapp": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "email": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "sms": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "processing": {
                           "type": "object",
@@ -10240,43 +9395,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "updatedAt": {
                       "type": "string",
@@ -11009,9 +10128,6 @@
                       "type": "string",
                       "format": "date-time"
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "rates": {
                       "type": "object",
                       "properties": {
@@ -11043,7 +10159,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "notifications": {
                           "type": "object",
@@ -11180,7 +10296,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "object",
@@ -11789,9 +10905,6 @@
                       "type": "string",
                       "format": "date-time"
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "rates": {
                       "type": "object",
                       "properties": {
@@ -11823,7 +10936,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "notifications": {
                           "type": "object",
@@ -11960,7 +11073,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "object",
@@ -12655,83 +11768,12 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "referenceId": {
                         "type": "string",
                         "maxLength": 150,
                         "description": "Pode-se inserir um identificador de referência"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                       },
                       "mulctAndInterest": {
                         "type": "object",
@@ -13153,83 +12195,12 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
-                      },
-                      "notifications": {
-                        "type": "object",
-                        "properties": {
-                          "enable": {
-                            "type": "boolean",
-                            "description": "Habilitar ou desabilitar as notificações para a fatura"
-                          },
-                          "channels": {
-                            "type": "object",
-                            "properties": {
-                              "sms": {
-                                "type": "boolean",
-                                "description": "Habilitar SMS"
-                              },
-                              "email": {
-                                "type": "boolean",
-                                "description": "Habilitar E-mail"
-                              },
-                              "whatsApp": {
-                                "type": "boolean",
-                                "description": "Habilitar Whatsapp"
-                              }
-                            },
-                            "required": [
-                              "sms",
-                              "email",
-                              "whatsApp"
-                            ],
-                            "description": "Canais de notificação"
-                          },
-                          "types": {
-                            "type": "object",
-                            "properties": {
-                              "invoiceCreate": {
-                                "type": "boolean",
-                                "description": "Notificar fatura criada"
-                              },
-                              "daysBeforeExpiration3": {
-                                "type": "boolean",
-                                "description": "Lembrete 3 dias antes do vencimento (caso não pago)"
-                              },
-                              "expirationDay": {
-                                "type": "boolean",
-                                "description": "Lembrete no dia do vencimento (caso não pago)"
-                              },
-                              "invoicePaid": {
-                                "type": "boolean",
-                                "description": "Comprovante de pagamento"
-                              }
-                            },
-                            "required": [
-                              "invoiceCreate",
-                              "daysBeforeExpiration3",
-                              "expirationDay",
-                              "invoicePaid"
-                            ],
-                            "description": "Tipos de notificação"
-                          }
-                        },
-                        "required": [
-                          "enable"
-                        ],
-                        "description": "Configuração das notificações"
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "referenceId": {
                         "type": "string",
                         "maxLength": 150,
                         "description": "Pode-se inserir um identificador de referência"
-                      },
-                      "cancelOverdueDays": {
-                        "type": "number",
-                        "format": "float",
-                        "minimum": 1,
-                        "maximum": 60,
-                        "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
                       },
                       "mulctAndInterest": {
                         "type": "object",
@@ -13367,9 +12338,6 @@
                     "status"
                   ],
                   "properties": {
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "description": {
                       "type": "string"
                     },
@@ -13404,7 +12372,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "notifications": {
                           "type": "object",
@@ -13658,43 +12626,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "mulctAndInterest": {
                       "type": "object",
@@ -14587,9 +13519,6 @@
                     "status"
                   ],
                   "properties": {
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "description": {
                       "type": "string"
                     },
@@ -14624,33 +13553,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
-                        },
-                        "notifications": {
-                          "type": "object",
-                          "properties": {
-                            "whatsapp": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "email": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "sms": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "processing": {
                           "type": "object",
@@ -14878,7 +13781,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "object",
@@ -15276,9 +14179,6 @@
                     "status"
                   ],
                   "properties": {
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "description": {
                       "type": "string"
                     },
@@ -15313,33 +14213,7 @@
                         },
                         "_billingRuleId":{
                           "type": "string",
-                          "description": "Identificado único da régua de cobrança"
-                        },
-                        "notifications": {
-                          "type": "object",
-                          "properties": {
-                            "whatsapp": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "email": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            },
-                            "sms": {
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "properties": {}
-                              }
-                            }
-                          }
+                          "description": "Identificador único da régua de cobrança"
                         },
                         "processing": {
                           "type": "object",
@@ -15567,43 +14441,7 @@
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "mulctAndInterest": {
                       "type": "object",
@@ -15961,7 +14799,7 @@
                       },
                       "_billingRuleId":{
                         "type": "string",
-                        "description": "Identificado único da régua de cobrança"
+                        "description": "Identificador único da régua de cobrança"
                       },
                       "notifications": {
                         "type": "array",
@@ -16246,7 +15084,7 @@
                   },
                   "_billingRuleId":{
                     "type": "string",
-                    "description": "Identificado único da régua de cobrança"
+                    "description": "Identificador único da régua de cobrança"
                   },
                   "notifications": {
                     "type": "array",
@@ -16364,7 +15202,7 @@
                   "properties": {
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "array",
@@ -16667,7 +15505,7 @@
                   "properties": {
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "array",
@@ -16993,7 +15831,7 @@
                   "properties": {
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "array",
@@ -17294,7 +16132,7 @@
                   "properties": {
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "notifications": {
                       "type": "array",
@@ -17909,101 +16747,7 @@
                   },
                   "_billingRuleId":{
                     "type": "string",
-                    "description": "Identificado único da régua de cobrança"
-                  },
-                  "notifications": {
-                    "description": "Habilitar ou desabilitar notificações",
-                    "type": "object",
-                    "properties": {
-                      "enable": {
-                        "type": "boolean",
-                        "description": "True para habilitar False para desabilitar"
-                      },
-                      "channels": {
-                        "description": "Canais de notificação ",
-                        "type": "object",
-                        "properties": {
-                          "sms": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de SMS"
-                          },
-                          "email": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de e-mail"
-                          },
-                          "whatsApp": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de whatsApp"
-                          }
-                        },
-                        "required": [
-                          "sms",
-                          "email",
-                          "whatsApp"
-                        ],
-                        "x-required": true
-                      },
-                      "types": {
-                        "description": "Configurações de disparo da notificação",
-                        "type": "object",
-                        "properties": {
-                          "invoiceCreate": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for criada"
-                          },
-                          "daysBeforeExpiration3": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação 3 dias antes da fatura vencer"
-                          },
-                          "expirationDay": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação no dia de expiração"
-                          },
-                          "invoicePaid": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for paga "
-                          }
-                        },
-                        "required": [
-                          "invoiceCreate",
-                          "daysBeforeExpiration3",
-                          "expirationDay",
-                          "invoicePaid"
-                        ],
-                        "x-required": true
-                      }
-                    },
-                    "required": [
-                      "enable"
-                    ]
+                    "description": "Identificador único da régua de cobrança"
                   },
                   "split": {
                     "type": "object",
@@ -18062,21 +16806,6 @@
                       "taxationMode",
                       "recipients"
                     ]
-                  },
-                  "cancelOverdue": {
-                    "enum": [
-                      true,
-                      false
-                    ],
-                    "type": "boolean",
-                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                  },
-                  "cancelOverdueDays": {
-                    "type": "number",
-                    "format": "float",
-                    "minimum": 1,
-                    "maximum": 60,
-                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
                     "description": "Configurar multa e juros",
@@ -18233,51 +16962,9 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
-                    "observation": {
-                      "type": "string"
-                    },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -19026,51 +17713,12 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -19534,101 +18182,7 @@
                   },
                   "_billingRuleId":{
                     "type": "string",
-                    "description": "Identificado único da régua de cobrança"
-                  },
-                  "notifications": {
-                    "description": "Habilitar ou desabilitar notificações",
-                    "type": "object",
-                    "properties": {
-                      "enable": {
-                        "type": "boolean",
-                        "description": "True para habilitar False para desabilitar"
-                      },
-                      "channels": {
-                        "description": "Canais de notificação ",
-                        "type": "object",
-                        "properties": {
-                          "sms": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de SMS"
-                          },
-                          "email": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de e-mail"
-                          },
-                          "whatsApp": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Canail de whatsApp"
-                          }
-                        },
-                        "required": [
-                          "sms",
-                          "email",
-                          "whatsApp"
-                        ],
-                        "x-required": true
-                      },
-                      "types": {
-                        "description": "Configurações de disparo da notificação",
-                        "type": "object",
-                        "properties": {
-                          "invoiceCreate": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for criada"
-                          },
-                          "daysBeforeExpiration3": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação 3 dias antes da fatura vencer"
-                          },
-                          "expirationDay": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação no dia de expiração"
-                          },
-                          "invoicePaid": {
-                            "enum": [
-                              "true",
-                              "false"
-                            ],
-                            "type": "boolean",
-                            "description": "Enviar notificação quando a fatura for paga "
-                          }
-                        },
-                        "required": [
-                          "invoiceCreate",
-                          "daysBeforeExpiration3",
-                          "expirationDay",
-                          "invoicePaid"
-                        ],
-                        "x-required": true
-                      }
-                    },
-                    "required": [
-                      "enable"
-                    ]
+                    "description": "Identificador único da régua de cobrança"
                   },
                   "split": {
                     "type": "object",
@@ -19687,21 +18241,6 @@
                       "taxationMode",
                       "recipients"
                     ]
-                  },
-                  "cancelOverdue": {
-                    "enum": [
-                      true,
-                      false
-                    ],
-                    "type": "boolean",
-                    "description": "Cancelar a fatura quando a mesma vencer, passe true para cancelar"
-                  },
-                  "cancelOverdueDays": {
-                    "type": "number",
-                    "format": "float",
-                    "minimum": 1,
-                    "maximum": 60,
-                    "description": "Determinar dias para o cancelamento da fatura após vencimento"
                   },
                   "mulctAndInterest": {
                     "description": "Configurar multa e juros",
@@ -19869,51 +18408,12 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -20299,51 +18799,12 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
@@ -20729,51 +19190,12 @@
                         }
                       }
                     },
-                    "cancelOverdueDays": {
-                      "type": "number"
-                    },
                     "observation": {
                       "type": "string"
                     },
                     "_billingRuleId":{
                       "type": "string",
-                      "description": "Identificado único da régua de cobrança"
-                    },
-                    "notifications": {
-                      "type": "object",
-                      "properties": {
-                        "types": {
-                          "type": "object",
-                          "properties": {
-                            "invoicePaid": {
-                              "type": "boolean"
-                            },
-                            "expirationDay": {
-                              "type": "boolean"
-                            },
-                            "daysBeforeExpiration3": {
-                              "type": "boolean"
-                            },
-                            "invoiceCreate": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "channels": {
-                          "type": "object",
-                          "properties": {
-                            "email": {
-                              "type": "boolean"
-                            },
-                            "sms": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enable": {
-                          "type": "boolean"
-                        }
-                      }
+                      "description": "Identificador único da régua de cobrança"
                     },
                     "paymentMethods": {
                       "type": "object",
