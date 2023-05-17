@@ -15812,6 +15812,123 @@
         "operationId": "BillingRulesController_update",
         "summary": "Atualize uma régua de cobrança",
         "description": "Atualizar uma determinada régua de cobrança",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "isDefault": {
+                    "type": "boolean"
+                  },
+                  "_billingRuleId":{
+                    "type": "string",
+                    "description": "Identificador único da régua de cobrança"
+                  },
+                  "notifications": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "event": {
+                          "type": "string",
+                          "enum": [
+                            "invoiceCreate",
+                            "invoicePaid",
+                            "invoiceChange",
+                            "beforeOverdue",
+                            "afterOverdue",
+                            "expirationDay"
+                          ],
+                          "description": "Evento da notificação"
+                        },
+                        "channel": {
+                          "type": "string",
+                          "enum": [
+                            "email",
+                            "sms",
+                            "whatsApp"
+                          ],
+                          "description": "Canal da notificação"
+                        },
+                        "beforeOverdue": {
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "days": {
+                                  "type": "number",
+                                  "format": "float",
+                                  "minimum": 1,
+                                  "description": "Dias antes do vencimento"
+                                }
+                              },
+                              "required": [
+                                "days"
+                              ],
+                              "description": "Configuração das notificações",
+                              "x-required": true
+                            }
+                          ],
+                          "description": "notificação antes do vencimento (quando o evento for beforeOverdue)"
+                        },
+                        "afterOverdue": {
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "daysInit": {
+                                  "type": "number",
+                                  "format": "float",
+                                  "minimum": 1,
+                                  "description": "Dias após o vencimento"
+                                },
+                                "daysInterval": {
+                                  "type": "number",
+                                  "format": "float",
+                                  "minimum": 1,
+                                  "description": "Intervalo de dias"
+                                },
+                                "daysDuration": {
+                                  "type": "number",
+                                  "format": "float",
+                                  "minimum": 1,
+                                  "description": "Duração do intervalo"
+                                }
+                              },
+                              "required": [
+                                "daysInit",
+                                "daysInterval",
+                                "daysDuration"
+                              ],
+                              "x-required": true
+                            }
+                          ],
+                          "description": "notificação após o vencimento (quando o evento for afterOverdue)"
+                        }
+                      },
+                      "required": [
+                        "event",
+                        "channel"
+                      ],
+                      "description": "Configuração das notificações"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "name",
+                  "isDefault",
+                  "notifications"
+                ]
+              }
+            }
+          }
+        },
         "parameters": [
           {
             "name": "id",
