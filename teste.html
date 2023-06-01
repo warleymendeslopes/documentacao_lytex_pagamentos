@@ -1,0 +1,71 @@
+<style>
+.audio-player {
+  width: 300px;
+  background-color: #1db954;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.play {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 4px;
+  background-color: #fff;
+  margin: 0 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #1db954;
+  width: 0;
+}
+
+
+</style>
+<div class="audio-player">
+    <audio id="myAudio" src="caminho/do/arquivo.mp3"></audio>
+    <div class="controls">
+      <button id="playButton" class="play"></button>
+      <div id="progressBar" class="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('myAudio');
+const playButton = document.getElementById('playButton');
+const progressBar = document.getElementById('progress');
+
+playButton.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+    playButton.classList.remove('play');
+    playButton.classList.add('pause');
+  } else {
+    audio.pause();
+    playButton.classList.remove('pause');
+    playButton.classList.add('play');
+  }
+});
+
+audio.addEventListener('timeupdate', function() {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = progress + '%';
+});
+
+  </script>

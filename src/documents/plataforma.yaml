@@ -9,50 +9,53 @@ info:
     # Cadastro
 
       Para acessar a plataforma LyTex Pagamentos, o usuário poderá entrar através de nosso site https://lytex.com.br/ onde deverá clicar no botão Entrar no menu superior direito e inserir suas informações na tela de login. Ele também poderá acessar o sistema diretamente pelo link https://pay.lytex.com.br/auth/login.
-      
-      <video width="100%" height="100%" loop="" controls="">
-        <source src="https://homologacao-site.lytex.com.br/videos/Criar-conta-lytex-pagamentos.mov" type="video/mp4">
-      </video>
 
       Para começar a utilização da plataforma, você precisa ter uma[ conta na LyTex Pagamentos](https://pay.lytex.com.br/auth/registration) e acesso à Internet. Para isso, basta clicar em inscrever-se. Disponível na tela inicial.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/1.png" />
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Pagina%20de%20login.png" />
       
-      Após clicar vai aparecer a seguinte tela, selecione a opção **Para Meu Negócio** como descrito na imagem abaixo.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/2.png" />
+      Crie o usuário e senha para acesso ao sistema e marque que leu, entendeu e concorda com os termos de uso, após leitura. como descrito na imagem abaixo.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20inscricao%201.png" />
 
-      Após selecionar o método de utilização da plataforma, insira os dados solicitados.<br />
-       **Obs:** Os dados que se encontram com * são obrigatórios.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/3.png" />
+      Após clicar em **Criar conta grátis**, vai aparecer a seguinte tela, onde você deverá descrever seu negócio e escolher o segmento de atuação.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20inscricao%202.png" />
 
-      Inserindo os dados de acesso, aceite os termos de uso e clique em próximo. Logo, abrirá uma segunda tela para inserção dos dados da empresa.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/4.png" />
+      Clicando para continuar, selecione na próxima tela a opção **Sou MEI** ou **Sou Empresa**, como descrito na imagem abaixo.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%203.png" />
+
+      Após selecionar o método de utilização da plataforma, insira os dados solicitados da empresa.<br />
+        **OBS:** Os dados que se encontram com * são obrigatórios.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%204.png" /><br />
+        
 
       Após inserir os dados da empresa, clique em próximo e insira os dados do endereço.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/5.png" />
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20INscricao%205.png" />
+        
+      Após inserir os dados do endereço de sua empresa, clique em Continuar. Abrirá os campos para preenchimento dos dados do sócio-administrador da empresa.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%206.png" />
+        
+      Seu cadastro terá sido finalizado e o acesso ao sistema já poderá ser feito clicando em Clique e Acesse sua Conta!
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%207.png" />
 
-      Após inserir os dados do endereço de sua empresa, clique em finalizar. Você será redirecionado a página de boas-vindas.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/5.png" />
+
 
 
 
     # Login
 
-      Após o cadastro, será encaminhado um e-mail para ativação da conta. Para realizar o login é necessário utilizar o e-mail e senha cadastrados anteriormente. Link de acesso https://pay.lytex.com.br/auth/login.
-        <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/login1.png" />
+      O sistema poderá ser utilizado em qualquer tipo de navegador para acesso à conta. Após o cadastro, o usuário estará ciente e de acordo com os termos de uso da LyTex Pagamentos.
+        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Pagina%20de%20login.png" />
 
-      O sistema poderá ser utilizado em qualquer tipo de navegador para acesso a conta. Após o cadastro, o usuário estará ciente e de acordo com os termos de uso da LyTex Pagamentos.
-
-      Caso, ao tentar acesso, os dados sejam inseridos incorretamente o sistema apresentará a seguinte mensagem **Usuário não encontrado**. Ao realizar 6 tentativas seguidas de login o usuário será bloqueado e será necessária uma ação do setor de análise de risco juntamente do usuário para que seja desbloqueado.
+      Caso, ao tentar acesso, os dados sejam inseridos incorretamente o sistema apresentará a seguinte mensagem:  Usuário não encontrado. Ao realizar 6 tentativas seguidas de login, o usuário será bloqueado e será necessária uma ação do setor de Análise de Risco juntamente do usuário para que seja desbloqueado.
 
     # Envio de Documentos
 
-      Após realizar o login, o usuário deverá realizar o cadastro dos documentos para que possa ter as funcionalidades do sistema liberadas. O cadastro poderá ser realizado clicando em “Realizar Verificação” no ícone laranja disponível na parte superior da página.
+      Após realizar o login, o usuário deverá realizar o cadastro dos documentos para que possa ter o cadastro de sua empresa verificado. O cadastro poderá ser realizado clicando em “Realizar Verificação” no ícone laranja disponível na parte superior da página.
         
-      <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/documento1.png" />
+      <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Tela%20Inicial%201.png" />
 
-      Após clicar em “Realizar Verificação”, será aberta uma tela onde será inserido os documentos e selecionado o “Ramo de atividade do seu negócio”.
+      Após clicar em “Realizar Verificação”, será aberta uma tela onde será selecionado o “Ramo de atividade do seu negócio”, ”Tipo de empresa”, “Quantidade de emissões mensais esperadas”, “Faturamento mensal esperado” e inseridos os documentos necessários para a verificação do Analista de Risco da plataforma.
         
-      <br /><img class="image-tutorial-sistema" src="https://lytex.com.br/documentation/files/Cadastro/documento2.png" />
+      <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Tela%20de%20envio%20de%20documentos.png" />
 
 
 
@@ -61,7 +64,7 @@ info:
 
     # Integração
       
-      Para realizar a integração de nosso sistema é necessário que o usuário cumpra todos os passos citados acima. Certifique-se de não haver nenhuma pendência com a plataforma. O usuário deverá obter as chaves de acesso conforme será mostrado abaixo.
+      Para realizar a integração com o sistema LyTex Pagamentos, é necessário que o usuário cumpra todos os passos citados acima e tenha a verificação de cadastro do seu negócio aprovada pelo Analista de Risco. A liberação da opção de integração poderá estar sujeita ao plano escolhido pelo estabelecimento. Certifique-se de não haver nenhuma pendência com a plataforma. O usuário deverá obter as chaves de acesso conforme será mostrado abaixo. 
       
       <video width="100%" height="100%" autoplay="" loop="">
         <source src="https://homologacao-site.lytex.com.br/videos/criando-integracao.mov" type="video/mp4">
