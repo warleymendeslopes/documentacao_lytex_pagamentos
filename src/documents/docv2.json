@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "Clientes",
-      "description": "Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
+      "description": "warley Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
     },
     {
       "name": "Assinaturas",
@@ -137,7 +137,7 @@
                       "state",
                       "zip"
                     ],
-                    "description": "Devese-se informar o endereço do cliente"
+                    "description": "Informar o endereço do cliente"
                   }
                 },
                 "required": [
@@ -8070,7 +8070,6 @@
             },
             "description": "Tipo de cliente<br/><br/>\n      pf = Pessoa Física<br/>\n      pj = Pessoa Jurídica"
           },
-
           {
             "name": "startDate",
             "description": "Data Inicial",
@@ -8133,7 +8132,6 @@
               "format": "date-time"
             }
           },
-          
           {
             "name": "exportTo",
             "description": "tipo de resposta",
@@ -12351,7 +12349,6 @@
         ]
       }
     },
-    
     "/v1/installment": {
       "post": {
         "operationId": "InstallmentController_createInstallment",
@@ -12425,7 +12422,7 @@
                       },
                       "parcels": {
                         "type": "integer",
-                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
+                        "description": "Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas",
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -12919,7 +12916,7 @@
                       },
                       "parcels": {
                         "type": "integer",
-                        "description":"Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas", 
+                        "description": "Quantidade de parcelas mínimo de 2 e máximo de 119 parcelas",
                         "minimum": 2,
                         "maximum": 119
                       },
@@ -13955,7 +13952,7 @@
           {
             "name": "startDate",
             "in": "query",
-            "description":"Data Inicial",
+            "description": "Data Inicial",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -13981,7 +13978,7 @@
           {
             "name": "payedStartDate",
             "in": "query",
-            "description":"data de início paga",
+            "description": "data de início paga",
             "schema": {
               "type": "string",
               "format": "date-time"
@@ -15821,7 +15818,6 @@
         ]
       }
     },
-    
     "/v1/receivables/{transactionId}": {
       "get": {
         "operationId": "ReceivablesController_getReceivablesByTransaction",
@@ -22617,7 +22613,7 @@
   },
   "info": {
     "title": "Lytex Pagamentos API",
-    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.\n\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n# Criar primeira cobrança\n\nPara gerar as chaves que possibilitam a integração com nosso método de pagamento, primeiramente, você precisa fazer login no painel. Em seguida, no menu lateral à esquerda, clique em **Configurações** e depois em **Integrações** e **API**. \n\nPreencha os campos com o nome e descrição de sua integração e clique em **Salvar**. Em seguida, vão ser carregadas as chaves de sua integração. Agora, precisamos configurar as permissões desta integração. Para isso, clique em **Restringir Acesso** e marque a caixinha **Faturas**. Agora, é só salvar e pronto! Está configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n  \n  \n  \n  \n## Criando token de acesso\n\nCom a integração criada e configurada dentro do painel da LyTex, agora nós vamos utilizar o **Postman** para gerar o token de acesso e também a primeira fatura. Primeiramente, é necessário montar o arquivo **JSON**. Você pode copiar e colar o código abaixo no seu Postman. Após colocar seus dados da integração, basta executá-la e você receberá uma resposta de nossa API com um parâmetro chamado **AccessToken**. O mesmo tem durabilidade de 5 minutos, também receberemos como parâmetros algumas informações referente a esse token.\n\nPara gerar esse token, utilizarmos a rota **/v1/oauth/obtain_token**\n\nFeito isso, e com o **AccessToken** salvo, podemos passar para o próximo passo: a geração de faturas.\n\n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim, vamos criar a nossa fatura! Primeiro, vamos começar a montar o arquivo JSON, onde constam várias informações como os dados do cliente, dados do produto e endereço. Nesta demonstração, usaremos somente os dados obrigatórios para que a fatura seja criada.\n\nPara gerar a fatura utilizarmos a rota **/v1/invoices**\n\nNesta requisição, vamos passar o parâmetro **Authorization** no header com o valor do token de acesso gerado anteriormente. Usando o modo Sandbox, existem alguns usuários fictícios que você deve utilizar, pois outros dados não serão reconhecidos pela API.\n\n\nUsando o modo sandbox existes alguns usuário arios fictícios para ser usados, outros dados não será reconhecido pela API\n\n  ### Dados usuários fictícios\n  <table>\n  <tbody>\n  <tr>\n      <td>Valerio de Aguiar Zorzato</td>\n      <td>96050176876</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes  </td>\n      <td>88398158808</td>\n  </tr>\n      <tr>\n      <td>Valerio Alves Barros</td>\n      <td>71943984190</td>\n  </tr>\n      <tr>\n      <td>Joao da Costa Antunes</td>\n      <td>97965940132</td>\n  </tr>\n\n</tbody></table>\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>",
+    "description": "\nA LyTex Pagamentos é uma Fintech com foco na potencialização de resultados em empresas, atuando com meios de pagamentos digitais. Somos reconhecidos pela excelência na entrega de soluções específicas para aceleração de crescimento por meio da tecnologia e inovação estratégica. Tornamos a gestão financeira da sua empresa mais eficiente com nossas soluções. Automatizamos seus processos de recebimentos únicos ou recorrentes, aumentando a produtividade do seu negócio. Temos a certificação internacional PCI-DSS de segurança, garantindo mais confiança e eficiência nas suas transações.\n\nOferecemos aos desenvolvedores uma API simples e poderosa para integrar pagamentos por boleto e PIX em seu site ou aplicação. Antes de prosseguir, é necessário criar uma conta em nosso sistema.\n\n <div class=\"container-cta-api\">\n \n  <a class=\"botton-create-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Não tem conta ?\n  <a/>\n    \n  <a class=\"botton-open-account\" href=\"/introducao-ao-sistema#section/Cadastro\">\n    Abrir conta agora\n  <a/>\n  \n  </div>\n  \n# Criar primeira cobrança\n\nPara gerar as chaves que possibilitam a integração com nosso método de pagamento, primeiramente, você precisa fazer login no painel. Em seguida, no menu lateral à esquerda, clique em **Configurações** e depois em **Integrações** e **API**. \n\nPreencha os campos com o nome e descrição de sua integração e clique em **Salvar**. Em seguida, vão ser carregadas as chaves de sua integração. Agora, precisamos configurar as permissões desta integração. Para isso, clique em **Restringir Acesso** e marque a caixinha **Faturas**. Agora, é só salvar e pronto! Está configurada a sua integração na plataforma. No próximo passo vamos criar sua primeira fatura.\n\n\n  <video width=\"100%\" height=\"100%\" autoplay=\"\" loop=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-integracao.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n  \n  \n  \n  \n## Criando token de acesso\n\nCom a integração criada e configurada dentro do painel da LyTex, agora nós vamos utilizar o **Postman** para gerar o token de acesso e também a primeira fatura. Primeiramente, é necessário montar o arquivo **JSON**. Você pode copiar e colar o código abaixo no seu Postman. Após colocar seus dados da integração, basta executá-la e você receberá uma resposta de nossa API com um parâmetro chamado **AccessToken**. O mesmo tem durabilidade de 5 minutos, também receberemos como parâmetros algumas informações referente a esse token.\n\nPara gerar esse token, utilizarmos a rota **/v1/oauth/obtain_token**\n\nFeito isso, e com o **AccessToken** salvo, podemos passar para o próximo passo: a geração de faturas.\n\n      JSON\n      {\n          \"grantType\": \"clientCredentials\",\n          \"clientId\": \"SEU Client ID\",\n          \"clientSecret\":\"SEU CLIENT SECRET\",\n          \"scopes\": [\n              \"invoice\"\n          ]\n      }\n      \n  <video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n    <source src=\"https://homologacao-site.lytex.com.br/videos/criando-token-de-acesso.mov\" type=\"video/mp4\">\n  </video>\n  \n  \n## Criando a cobrança\n\nAgora sim, vamos criar a nossa fatura! Primeiro, vamos começar a montar o arquivo JSON, onde constam várias informações como os dados do cliente, dados do produto e endereço. Nesta demonstração, usaremos somente os dados obrigatórios para que a fatura seja criada.\n\nPara gerar a fatura utilizarmos a rota **/v2/invoices**\n\nNesta requisição, vamos passar o parâmetro Authorization no header com o valor do token de acesso gerado anteriormente. Usando o modo Sandbox, existem alguns usuários fictícios que você deve utilizar, pois outros dados não serão reconhecidos pela API.\n\n\n    {\n        \"client\": {\n            \"treatmentPronoun\": \"you\",\n            \"name\": \"Valerio de Aguiar Zorzato\",\n            \"type\": \"pf\",\n            \"cpfCnpj\": \"96050176876\",\n            \"email\": \"valerio@gmail.com\",\n            \"cellphone\": \"78798798798\",\n            \"address\": {\n    \n                \"zip\": \"35170128\",\n                \"city\": \"Coronel Fabriciano\",\n                \"street\": \"Rua Doutor Moacir Byrro\",\n                \"state\": \"MG\",\n                \"zone\": \"Centro\"\n            }\n          },\n        \"items\": [\n            {\n                \"name\": \"Notebook A315-58-573p I5 8gb 256gb Ssd 15,6\",\n                \"quantity\": 1,\n                \"value\": 279900\n            }\n    \n        ],\n        \"dueDate\": \"2023-12-30T23:59:59.999Z\",\n        \"paymentMethods\": {\n            \"pix\": {\n                \"enable\": true\n            },\n            \"boleto\": {\n                \"enable\": true\n            },\n            \"creditCard\": {\n                \"enable\": false\n            }\n        },\n        \"notifications\":{\n            \"enable\": false,\n            \"channels\":{\n                \"sms\":false,\n                \"email\":true,\n                \"whatsApp\":false\n            },\n            \"types\":{\n                \"daysBeforeExpiration3\":true,\n                \"expirationDay\":true,\n                \"invoiceCreate\":true,\n                \"invoicePaid\":true\n            }\n        },\n        \"cancelOverdue\": false\n    }\n\n<video width=\"100%\" height=\"100%\" loop=\"\" controls=\"\">\n  <source src=\"https://homologacao-site.lytex.com.br/videos/criar-fatura.mov\" type=\"video/mp4\">\n</video>",
     "version": "2.0.0",
     "contact": {
       "name": "Lytex",
