@@ -11,30 +11,30 @@ info:
       Para acessar a plataforma LyTex Pagamentos, o usuário poderá entrar através de nosso site https://lytex.com.br/ onde deverá clicar no botão Entrar no menu superior direito e inserir suas informações na tela de login. Ele também poderá acessar o sistema diretamente pelo link https://pay.lytex.com.br/auth/login.
 
       Para começar a utilização da plataforma, você precisa ter uma[ conta na LyTex Pagamentos](https://pay.lytex.com.br/auth/registration) e acesso à Internet. Para isso, basta clicar em inscrever-se. Disponível na tela inicial.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Pagina%20de%20login.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/Tela-de-login.png" />
       
       Crie o usuário e senha para acesso ao sistema e marque que leu, entendeu e concorda com os termos de uso, após leitura. como descrito na imagem abaixo.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20inscricao%201.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/Registrar.png" />
 
       Após clicar em **Criar conta grátis**, vai aparecer a seguinte tela, onde você deverá descrever seu negócio e escolher o segmento de atuação.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20inscricao%202.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/company-model.png" />
 
       Clicando para continuar, selecione na próxima tela a opção **Sou MEI** ou **Sou Empresa**, como descrito na imagem abaixo.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%203.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/company-framework.png" />
 
       Após selecionar o método de utilização da plataforma, insira os dados solicitados da empresa.<br />
         **OBS:** Os dados que se encontram com * são obrigatórios.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%204.png" /><br />
+        <br /><img class="image-tutorial-sistema" src="/docPage/company-data.png" /><br />
         
 
       Após inserir os dados da empresa, clique em próximo e insira os dados do endereço.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20INscricao%205.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/company-address.png" />
         
       Após inserir os dados do endereço de sua empresa, clique em Continuar. Abrirá os campos para preenchimento dos dados do sócio-administrador da empresa.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%206.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/company-admin.png" />
         
       Seu cadastro terá sido finalizado e o acesso ao sistema já poderá ser feito clicando em Clique e Acesse sua Conta!
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Formulario%20de%20Inscricao%207.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/finish.png" />
 
 
 
@@ -43,7 +43,7 @@ info:
     # Login
 
       O sistema poderá ser utilizado em qualquer tipo de navegador para acesso à conta. Após o cadastro, o usuário estará ciente e de acordo com os termos de uso da LyTex Pagamentos.
-        <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Pagina%20de%20login.png" />
+        <br /><img class="image-tutorial-sistema" src="/docPage/Tela-de-login.png" />
 
       Caso, ao tentar acesso, os dados sejam inseridos incorretamente o sistema apresentará a seguinte mensagem:  Usuário não encontrado. Ao realizar 6 tentativas seguidas de login, o usuário será bloqueado e será necessária uma ação do setor de Análise de Risco juntamente do usuário para que seja desbloqueado.
 
@@ -51,11 +51,11 @@ info:
 
       Após realizar o login, o usuário deverá realizar o cadastro dos documentos para que possa ter o cadastro de sua empresa verificado. O cadastro poderá ser realizado clicando em “Realizar Verificação” no ícone laranja disponível na parte superior da página.
         
-      <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Tela%20Inicial%201.png" />
+      <br /><img class="image-tutorial-sistema" src="/docPage/dashboard1.png" />
 
       Após clicar em “Realizar Verificação”, será aberta uma tela onde será selecionado o “Ramo de atividade do seu negócio”, ”Tipo de empresa”, “Quantidade de emissões mensais esperadas”, “Faturamento mensal esperado” e inseridos os documentos necessários para a verificação do Analista de Risco da plataforma.
         
-      <br /><img class="image-tutorial-sistema" src="https://storage.googleapis.com/lypag-docs/upload%20contents/Tela%20de%20envio%20de%20documentos.png" />
+      <br /><img class="image-tutorial-sistema" src="/docPage/dashboard2.png" />
 
 
 
