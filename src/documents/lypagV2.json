@@ -4396,7 +4396,7 @@
                         "description": "ID do cartão tokenizado"
                       },
                       "_invoiceId": {
-                        "description": "ID da fatura com recerrencia gerenciada habilitada",
+                        "description": "ID da fatura com recorrência gerenciada habilitada",
                         "type": "string"
                       }
                     },
