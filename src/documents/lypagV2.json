@@ -6411,7 +6411,7 @@
       "post": {
         "operationId": "InvoicesController_createInvoice",
         "summary": "Criar fatura",
-        "description": "Cria uma fatura para efetuar cobrança de clientes. dfsdfsmndf smdf",
+        "description": "Cria uma fatura para efetuar cobrança de clientes.",
         "requestBody": {
           "required": true,
           "content": {
