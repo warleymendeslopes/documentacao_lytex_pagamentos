@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lypag-homologacao",
+  "private_key_id": "af5cfef1491c92eef6693928e7974ffca9264a4a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCaco4/oUAObtp3\nVrsBAN23Bck8X2m9IEWnqsAap48HFi8CKWx6JekEyju4kfx3FmXJs67N08TIi6X/\n73xKSVU1LphkXRUXtlhuQ1CrsS527T+0nYbyb916RmugtNnAYbW2meG+jUNP6u6O\no29tSX3nvjH9pme8JqTjquK6qJn+/ayTrtjH2epHrp1Sm2StT+8uy3N8OOvCVj9D\ndXtPvy+00j7txNkMetpWCKFQcl5TjGGN7lcY5AkhZwrpEukN6Ux5CIZeoUa3huxT\ny5vUD3X/6WtWf9rxIx/3NapSyS3Jn2BayAdFUq6jOYnuxwI1a2HXCn0kq5gP6zYl\nEJX4RW1/AgMBAAECggEAK1IviTSDIalBWRD4QidKiVAzql3+7EAVmZqA6NkP+sZj\nqCETXs2sZx4Mk1BLduHO6j0erngUbcYR6VB01eds4Y5wy1H6nRyWAFOcWJRJuq0A\nXfqDhBQRlP8UqE6h917Q1+eg1NCNzWhRwqugERD4olyMbB/VYAac4IkpsH6jN0zj\nhug51WdWPy+fHGJCSQlDaQRyTAIuuRg7d+xslZCqs6f0zxqq8i8Bzfa4K7ZaTs8r\n/aKzSnXVUYgKvyIHrhxydRwLfGs7+HIZkfEyFzS89fTd3Eau/liBKbpJsuMzZ195\nXSdFMFCPFQjSEaAxVC9fNbgONlUhuIVBr+9CD1arSQKBgQDP5/GD753J5fdT8yjx\nXl3qp1u46+tdji0dHjUKZbQnP10DaR1ljupwvADIsEf3Slsf08mTwCApS104jM9C\nKW9R4OaIP39iD6dbPhG2DIkQQ0X2bKGeiiC2AqktO93qxzlLeU7LjHpSsGxJvkdD\nFyVnyCu1EcbM0ZoXdHYmuK+fOQKBgQC+LNUvDcsCE+lgFiei0+YjqhDvYwBC6Ew/\nZUBg1+vncSqb5Ot+iT3w8dl4Q34pcAuYi9mXCbtR2j00ss4qVzv6ZDyHIsq8r08Y\nXwfLN2Pp4XZGgJBZc8QUZyDFEnM2jSCO6Hg7mHTESjRaQp0MUDlhxdncC7BlQIuf\nD0nymYu6dwKBgFkKmWFMKmPh3b9SkOJu7AInkxzrzW3QCnpCCa1eSX3VoVxolHJ+\nduG5YwyQkwHSEpza86YXzq5g3JfvloRbgpWqoJERwNiao65sMuGpFLqmVTxo4f8o\nYUISeaopza1TjbJJTfnXPDxV2srqd1LAgwCjtjRiXKYzzq7k7gU/a9fhAoGAInY1\nW4WAWCwLimH5ZMRJXAUhdH/YOEeoKYTLmcEG+rXDJuTg19k+5D6vTd/NKO0o7MfK\n8lfNHhQSK06LlZihQcqQPVzMqEyMZLozy1uKO4OjzzrU7aDQ03GsuomRXz1LvRnb\nT9Fct4VK32Ba3TRccZ9Mz1c+69o6cuRuXgv9ChkCgYAwIdv+2lFbhaWkH5HFy4Zq\nkq3drVrCjzhpNxu4brtRvcaSrmlSQXq68m5N/LXtmgCjYD7al25jyW6lcOSfANdJ\nOxhjTnZ1QRzTeAPXfS5iNQG0ZXUHUQnMJm/Y0L2mn+hF9sgl3qX2lU0jY+m9jE8D\nhlk3QL1pB3ZrBGNSY2GWKA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "development@lypag-homologacao.iam.gserviceaccount.com",
+  "client_id": "102255376784624498675",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/development%40lypag-homologacao.iam.gserviceaccount.com"
+}
