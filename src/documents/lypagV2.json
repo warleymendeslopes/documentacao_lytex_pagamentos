@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "Clientes",
-      "description": "Na aba Clientes, você tem diversas opções disponíveis para gerir sua carteira de clientes com mais facilidade e otimizar suas operações. Você pode cadastrar seus clientes para facilitar a emissão de faturas, recorrências e links de pagamento. Além disso, pode listar clientes para possibilitar consultas detalhadas e importar clientes do seu banco de dados.  "
+      "description": "aqui e uma descricao do clint"
     },
     {
       "name": "Régua de cobrança",
@@ -19161,9 +19161,135 @@
     "/v2/receivables": {
       "get": {
         "operationId": "ReceivablesController_listInvoices",
+        "summary": "Listar todos os recebíveis",
+        "description": "Listar todos os recebíveis gerados",
         "responses": {
           "200": {
-            "description": ""
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "results",
+                    "paginate"
+                  ],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "description": "Resultados da pesquisa/listagem",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "inQueue",
+                              "blocked",
+                              "canceled",
+                              "released"
+                            ]
+                          },
+                          "_invoiceId": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "number"
+                          },
+                          "parcel": {
+                            "type": "number"
+                          },
+                          "parcels": {
+                            "type": "number"
+                          },
+                          "transaction": {
+                            "type": "object",
+                            "properties": {
+                              "paymentMethod": {
+                                "type": "string",
+                                "enum": [
+                                  "creditCard"
+                                ]
+                              },
+                              "creditCard": {
+                                "type": "object",
+                                "properties": {
+                                  "brand": {
+                                    "type": "string",
+                                    "enum": [
+                                      "Master"
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "invoice": {
+                            "type": "object",
+                            "properties": {
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "client": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paginate": {
+                      "type": "object",
+                      "description": "Dados da paginação",
+                      "required": [
+                        "perPage",
+                        "page",
+                        "pages",
+                        "total"
+                      ],
+                      "properties": {
+                        "perPage": {
+                          "type": "number",
+                          "description": "Número de resultados por página",
+                          "minimum": 1,
+                          "maximum": 100,
+                          "default": 10
+                        },
+                        "page": {
+                          "type": "number",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "Número da página"
+                        },
+                        "pages": {
+                          "type": "number",
+                          "minimum": 1,
+                          "default": 1,
+                          "description": "Número total de páginas"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "Número total de resultados"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Não autorizado",

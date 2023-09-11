@@ -15,8 +15,8 @@ import {useEffect} from "react";
          }, 1000);
      }, []);
 
-
-  const currentVersion = version === "v1" ? DocJson : DocJsonv2
+     const currentVersion = version === "v1" ? DocJson : DocJsonv2
+     //const currentVersion = version === "v1" ? DocJson : 'http://localhost:3000/v2/open-api-v3-spec.json'
     return (
       <>
         <RedocStandalone
